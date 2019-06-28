@@ -33,6 +33,9 @@ public class PlayerScript : MonoBehaviour
         }
         if (Input.GetKeyDown("1")) {
             anim.Play("DAMAGED01", -1, 0f);
+        }        
+        if (Input.GetKeyDown("g")) {
+            anim.Play("Gangnam Style", -1, 0f);
         }
 
         // for running
