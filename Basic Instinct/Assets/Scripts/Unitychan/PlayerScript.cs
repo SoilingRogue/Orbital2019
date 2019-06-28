@@ -67,11 +67,12 @@ public class PlayerScript : MonoBehaviour
         anim.SetBool("run", run);
 
         // multiplier for horizontal and vertical movement
-        float moveX = inputH * 20f * Time.deltaTime;
-        float moveZ = inputV * 50f * Time.deltaTime;
+        float moveX = inputH * 200f * Time.deltaTime;
+        float moveZ = inputV * 500f * Time.deltaTime;
 
         if (moveZ == 0f) // if we are not moving foward, disallow sideway movement
         {
+            // Debug.Log("moveZ == 0");
             moveX = 0f;
         }
         else if (run) // if running, increase speed
@@ -79,6 +80,7 @@ public class PlayerScript : MonoBehaviour
             moveX *= 3f;
             moveZ *= 3f;
         }
+        Debug.Log("moveZ: " + moveZ);
 
         // setting velocity for rigidbody
         rBody.velocity = new Vector3(moveX, 0f, moveZ);
