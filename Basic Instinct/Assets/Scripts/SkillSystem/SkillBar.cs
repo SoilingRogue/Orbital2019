@@ -14,6 +14,7 @@ public class SkillBar : MonoBehaviour {
     public Skill getSkill(int index) {
         try {
             return skillList[index];
+            // return skillMap.Keys
         }
         catch (System.IndexOutOfRangeException e) {
             Debug.Log("No skill with given index {index}.");
