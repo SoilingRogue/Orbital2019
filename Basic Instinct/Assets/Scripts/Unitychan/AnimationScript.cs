@@ -57,5 +57,8 @@ public class AnimationScript : MonoBehaviour
         if (Input.GetKeyDown("g")) {
             anim.Play("Gangnam Style", -1, 0f);
         }
+        if (Input.GetKeyDown("t")) {
+            anim.Play("Thriller Part 2", -1, 0f);
+        }
     }
 }

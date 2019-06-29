@@ -21,7 +21,6 @@ public class PlayerScript : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rBody = GetComponent<Rigidbody>();
-        run = false;
     }
     // Update is called once per frame
     void Update()

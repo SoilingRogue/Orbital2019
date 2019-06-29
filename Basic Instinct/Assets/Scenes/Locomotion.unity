@@ -364,7 +364,6 @@ GameObject:
   - component: {fileID: 1502123214}
   - component: {fileID: 1502123216}
   - component: {fileID: 1502123215}
-  - component: {fileID: 1502123217}
   - component: {fileID: 1502123218}
   m_Layer: 0
   m_Name: Camera
@@ -438,19 +437,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &1502123217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502123213}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc6b0f75682c8d144bad6aa110dd0560, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camPivot: {fileID: 0}
 --- !u!114 &1502123218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,9 +450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 4
-  scrollSensitvity: 2
-  orbitDampening: 10
-  scrollDampening: 6
+  scrollSensitivity: 2
 --- !u!1001 &7068292879653846619
 PrefabInstance:
   m_ObjectHideFlags: 0
