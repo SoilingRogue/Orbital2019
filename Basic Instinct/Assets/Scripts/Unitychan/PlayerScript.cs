@@ -14,7 +14,7 @@ public class PlayerScript : MonoBehaviour
     private Animator anim;
     private float inputH, inputV;
     private Rigidbody rBody;
-    private bool run;
+    public float walkSpeed = 1f, runSpeed = 3f, runSlideSpeed = 3f, walkSlideSpeed = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,22 +31,36 @@ public class PlayerScript : MonoBehaviour
 
         anim.SetFloat("inputH", inputH);
         anim.SetFloat("inputV", inputV);
-        anim.SetBool("run", run);
 
         // multiplier for horizontal and vertical movement
-        float moveX = inputH * 200f * Time.deltaTime;
+        float moveX = inputH * 500f * Time.deltaTime;
         float moveZ = inputV * 500f * Time.deltaTime;
 
-        if (moveZ == 0f) // if we are not moving foward, disallow sideway movement
+        // if (moveZ == 0f) // if we are not moving foward, disallow sideway movement
+        // {
+        //     // Debug.Log("moveZ == 0");
+        //     moveX = 0f;
+        // }
+        // else if (run) // if running, increase speed
+        if (anim.GetBool("run"))
         {
-            // Debug.Log("moveZ == 0");
-            moveX = 0f;
+            moveX *= runSpeed;
+            moveZ *= runSpeed;
         }
-        else if (run) // if running, increase speed
+        else
         {
-            moveX *= 3f;
-            moveZ *= 3f;
+            moveX *= walkSpeed;
+            moveZ *= walkSpeed;
         }
+        if (anim.GetBool("slide"))
+        {
+
+        }
+        else
+        {
+
+        }
+        
         // Debug.Log("moveZ: " + moveZ);
 
         // setting velocity for rigidbody
