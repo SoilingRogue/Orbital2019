@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shield : Skill {
     private float duration;
+
     // Constructor
     public Shield() {
         name = "Shield";
@@ -20,9 +21,9 @@ public class Shield : Skill {
     }
 
     private void display(GameObject character) {
-        GameObject bubble = new GameObject("Bubble");
-        bubble.AddComponent(typeof(ShieldBubble));
-        bubble.GetComponent<ShieldBubble>().character = character;
-        GameObject.Destroy(bubble, duration);
+        // GameObject bubble = new GameObject("Bubble");
+        // bubble.AddComponent(typeof(ShieldBubble));
+        // bubble.GetComponent<ShieldBubble>().character = character;
+        // GameObject.Destroy(bubble, duration);
     }
 }
