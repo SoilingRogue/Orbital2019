@@ -26,55 +26,6 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // for damaged/killed
-        if (Input.GetKeyDown("0"))
-        {
-            anim.Play("DAMAGED00", -1, 0f);
-        }
-        if (Input.GetKeyDown("1")) {
-            anim.Play("DAMAGED01", -1, 0f);
-        }        
-        if (Input.GetKeyDown("g")) {
-            anim.Play("Gangnam Style", -1, 0f);
-        }
-
-        // for running
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            run = true;
-        }
-        else
-        {
-            run = false;
-        }
-
-        // for jumping
-        if (Input.GetKey(KeyCode.Space))
-        {
-            anim.SetBool("jump", true);
-        }
-        else
-        {
-            anim.SetBool("jump", false);
-        }
-
-        // for sliding
-        if (Input.GetKey(KeyCode.LeftControl))
-        {
-            anim.SetBool("slide", true);
-            if (run) 
-            {
-
-            } 
-            else 
-            {
-
-            }
-        }
-        else
-        {
-            anim.SetBool("slide", false);
-        }
         /* for movement */
         inputH = Input.GetAxis("Horizontal");
         inputV = Input.GetAxis("Vertical");
