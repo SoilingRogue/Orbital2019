@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour {
     void attack() {
         // Find player to target
         // This only works assuming the scene has only 1 player.
+        // Computationally expensive.
         Object[] temp = FindObjectsOfType(typeof(GameObject));
         foreach (GameObject o in temp) {
             if (o.CompareTag("Player")) {
