@@ -58,6 +58,23 @@ public class PlayerScript : MonoBehaviour
             anim.SetBool("jump", false);
         }
 
+        // for sliding
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            anim.SetBool("slide", true);
+            if (run) 
+            {
+
+            } 
+            else 
+            {
+
+            }
+        }
+        else
+        {
+            anim.SetBool("slide", false);
+        }
         /* for movement */
         inputH = Input.GetAxis("Horizontal");
         inputV = Input.GetAxis("Vertical");
