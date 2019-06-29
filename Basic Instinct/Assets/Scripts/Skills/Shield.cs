@@ -7,9 +7,8 @@ public class Shield : Skill {
     // Constructor
     public Shield() {
         name = "Shield";
-        damage = 0;
         cooldown = 5f;
-        previousUseTime = 0f;
+        // previousUseTime = -cooldown;
         duration = 1.5f;
     }
 

@@ -4,17 +4,15 @@ using UnityEngine;
 
 public abstract class Skill {
     public string name;
-    protected int damage;
     public float cooldown;
     public float previousUseTime;
 
-    protected bool isOnCooldown(float timeNow) {
-        return !(timeNow - previousUseTime > cooldown || previousUseTime == 0f);
+    protected Skill() {
+        previousUseTime = 0f;
     }
 
-    protected void printCooldownMessage(float timeNow) {
-        float cooldownTimer = cooldown - (timeNow - previousUseTime);
-        Debug.Log(name + " on cooldown for " + cooldownTimer + "s.");
+    protected bool isOnCooldown(float timeNow) {
+        return !(timeNow - previousUseTime > cooldown || previousUseTime == 0);
     }
 
     public void useSkill(GameObject character) {
@@ -27,6 +25,11 @@ public abstract class Skill {
         else {
             printCooldownMessage(timeNow);
         }
+    }
+    
+    protected void printCooldownMessage(float timeNow) {
+        float cooldownTimer = cooldown - (timeNow - previousUseTime);
+        Debug.Log(name + " on cooldown for " + cooldownTimer + "s.");
     }
 
     protected abstract void use(GameObject character);

@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Shockwave : Skill {
+    private int damage;
+    private float duration;
     // Constructor
     public Shockwave() {
         name = "Shockwave";
-        damage = 50;
         cooldown = 3f;
-        previousUseTime = 0f;
+        // previousUseTime = -cooldown;
+        damage = 50;
+        duration = 10f;
     }
 
     protected override void use(GameObject character) {
@@ -18,6 +21,10 @@ public class Shockwave : Skill {
     }
 
     private void display(GameObject character) {
-
+        GameObject waveObject = new GameObject("Wave");
+        Component o = waveObject.AddComponent(typeof(WaveObject));
+        WaveObject obj = (WaveObject)o;
+        obj.character = character;
+        GameObject.Destroy(waveObject, duration);
     }
 }

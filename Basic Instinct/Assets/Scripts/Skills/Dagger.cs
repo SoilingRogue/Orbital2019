@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Dagger : Skill {
+    private int damage;
+    private float duration;
+
     // Constructor
     public Dagger() {
         name = "Dagger";
-        damage = 20;
         cooldown = 3f;
-        previousUseTime = 0f;
+        // previousUseTime = -cooldown;
+        damage = 20;
+        duration = 5f;
     }
 
     protected override void use(GameObject character) {
@@ -20,8 +24,9 @@ public class Dagger : Skill {
 
     private void display(GameObject character) {
         GameObject dagger = new GameObject("Dagger");
-        dagger.AddComponent(typeof(DaggerObject));
-        dagger.GetComponent<DaggerObject>().character = character;
-        GameObject.Destroy(dagger, 5f);
+        Component o = dagger.AddComponent(typeof(DaggerObject));
+        DaggerObject obj = (DaggerObject)o;
+        obj.character = character;
+        GameObject.Destroy(dagger, duration);
     }
 }

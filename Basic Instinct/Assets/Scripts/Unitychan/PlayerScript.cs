@@ -80,7 +80,7 @@ public class PlayerScript : MonoBehaviour
             moveX *= 3f;
             moveZ *= 3f;
         }
-        Debug.Log("moveZ: " + moveZ);
+        // Debug.Log("moveZ: " + moveZ);
 
         // setting velocity for rigidbody
         rBody.velocity = new Vector3(moveX, 0f, moveZ);
