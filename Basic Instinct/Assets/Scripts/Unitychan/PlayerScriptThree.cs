@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerScriptThree : MonoBehaviour {
     public Camera playerCamera;
-    public Animator anim;
+    private Animator anim;
     private Rigidbody body;
     public float walkingSpeed;
     public float runningSpeed;
@@ -13,11 +13,22 @@ public class PlayerScriptThree : MonoBehaviour {
 
     void Start() {
         body = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate() {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
+        
+        // Setting boolean value for moving - for other scripts to access moving boolean
+        if (horizontalInput != 0 || verticalInput != 0)
+        {
+            anim.SetBool("moving", true);
+        }
+        else 
+        {
+            anim.SetBool("moving", false);
+        }
 
         // Set running
         if (Input.GetKey(KeyCode.LeftShift)) {
