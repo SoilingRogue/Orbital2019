@@ -7,7 +7,7 @@ public class PlayerScript4 : MonoBehaviour
     private Animator anim;
     private float inputH, inputV;
     private Rigidbody rBody;
-    public float walkSpeed = 1f, runSpeed = 3f, runSlideSpeed = 3f, walkSlideSpeed = 1f;
+    public float walkSpeed = 1f, runSpeed = 3f, runSlideSpeed = 3.3f, walkSlideSpeed = 1.3f;
     public Camera cam;
     // Start is called before the first frame update
     void Start()
@@ -31,11 +31,25 @@ public class PlayerScript4 : MonoBehaviour
             anim.SetBool("moving", true);
             if (anim.GetBool("run"))
             {
+                if (anim.GetBool("slide"))
+                {
+                    moveSpeed = runSlideSpeed;
+                }
+                else
+                {
                 moveSpeed = runSpeed;
+                }
             }
             else
             {
-                moveSpeed = walkSpeed;
+                if (anim.GetBool("slide"))
+                {
+                    moveSpeed = walkSlideSpeed;
+                }
+                else
+                {
+                    moveSpeed = walkSpeed;
+                }
             }
 
             Vector3 movementVector = new Vector3(inputH, 0 , inputV);
@@ -52,12 +66,6 @@ public class PlayerScript4 : MonoBehaviour
         {
             anim.SetBool("moving", false);
         }
-        // if (anim.GetBool("slide"))
-        // {
-
-        // }
-        // else
-        // {
     }
 
     private Quaternion GetCameraTurn()
