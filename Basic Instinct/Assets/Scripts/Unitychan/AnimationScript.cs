@@ -23,16 +23,6 @@ public class AnimationScript : MonoBehaviour
             anim.Play("DAMAGED01", -1, 0f);
         }
 
-        // Running
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            anim.SetBool("run", true);
-        }
-        else
-        {
-            anim.SetBool("run", false);
-        }
-
         // Jumping
         if (Input.GetKey(KeyCode.Space))
         {
@@ -43,14 +33,28 @@ public class AnimationScript : MonoBehaviour
             anim.SetBool("jump", false);
         }
 
-        // Sliding
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        // Movement
+        if (anim.GetBool("moving"))
         {
-            anim.SetBool("slide", true);
-        }
-        else
-        {
-            anim.SetBool("slide", false);
+            // Running
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                anim.SetBool("run", true);
+            }
+            else
+            {
+                anim.SetBool("run", false);
+            }
+
+            // Sliding
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                anim.SetBool("slide", true);
+            }
+            else
+            {
+                anim.SetBool("slide", false);
+            }
         }
 
         // Emotes
