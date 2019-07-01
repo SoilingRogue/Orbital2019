@@ -17,8 +17,7 @@ public class PlayerScript4 : MonoBehaviour
     }
     // Update is called once per frame
     void FixedUpdate()
-    {
-        
+    {   
         /* for movement */
         inputH = Input.GetAxis("Horizontal"); // set this based on camera angle
         inputV = Input.GetAxis("Vertical"); // set this based on camera angle
