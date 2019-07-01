@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 1e79f5e733df84044a45d6ab05035627
 ModelImporter:
-  serializedVersion: 27
+  serializedVersion: 28
   internalIDToNameTable:
   - first:
       1: 100000
@@ -1782,9 +1782,34 @@ ModelImporter:
   - first:
       137: 13700040
     second: cheek
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eye_L1
+    second: {fileID: 2100000, guid: 4987862c1c195e74c86994ba4bcbd812, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eye_R1
+    second: {fileID: 2100000, guid: a87def7cf3654cc43add52e645fee2ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eyebase
+    second: {fileID: 2100000, guid: 9bec51fc47eda6047ba5cc01addbf46f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eyeline
+    second: {fileID: 2100000, guid: 407f97b032a277c44b753ed1c256a3b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: face
+    second: {fileID: 2100000, guid: 4d83bd267b90e934e88637afcd02cb8a, type: 2}
   materials:
-    importMaterials: 0
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -1825,7 +1850,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1

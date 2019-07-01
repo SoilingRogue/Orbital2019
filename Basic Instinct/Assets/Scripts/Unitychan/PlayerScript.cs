@@ -32,6 +32,16 @@ public class PlayerScript : MonoBehaviour
         anim.SetFloat("inputH", inputH);
         anim.SetFloat("inputV", inputV);
 
+        // Setting boolean value for moving - for other scripts to access moving boolean
+        if (inputH != 0 || inputV != 0)
+        {
+            anim.SetBool("moving", true);
+        }
+        else 
+        {
+            anim.SetBool("moving", false);
+        }
+
         // multiplier for horizontal and vertical movement
         float moveX = inputH * 500f * Time.deltaTime;
         float moveZ = inputV * 500f * Time.deltaTime;
@@ -64,6 +74,7 @@ public class PlayerScript : MonoBehaviour
         // Debug.Log("moveZ: " + moveZ);
 
         // setting velocity for rigidbody
-        rBody.velocity = new Vector3(moveX, 0f, moveZ);
+        // rBody.velocity = new Vector3(moveX, 0f, moveZ);
+        rBody.velocity = transform.forward.normalized * walkSpeed;
     }
 }
