@@ -564,6 +564,7 @@ MonoBehaviour:
   runSpeed: 3
   runSlideSpeed: 3
   walkSlideSpeed: 1
+  cam: {fileID: 1475474173}
 --- !u!1001 &1205461917
 PrefabInstance:
   m_ObjectHideFlags: 0
