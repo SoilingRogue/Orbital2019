@@ -6,7 +6,7 @@ public class Shield : Skill {
     private float duration;
 
     // Constructor
-    public Shield() {
+    void Start() {
         name = "Shield";
         cooldown = 5f;
         // previousUseTime = -cooldown;

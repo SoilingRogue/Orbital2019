@@ -2,17 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Skill {
-    public string name;
+public class Skill : MonoBehaviour {
     public float cooldown;
     public float previousUseTime;
 
-    protected Skill() {
+    void Start() {
         previousUseTime = 0f;
     }
 
     protected bool isOnCooldown(float timeNow) {
         return !(timeNow - previousUseTime > cooldown || previousUseTime == 0);
+    }
+
+    public float getPercentageCD() {
+        float timeNow = Time.time;
+        if (!isOnCooldown(timeNow)) {
+            return 0;
+        }
+        else {
+            float cd = (timeNow - previousUseTime) / cooldown;
+            return 1 - cd;
+        }
     }
 
     public void useSkill(GameObject character) {
@@ -32,5 +42,7 @@ public abstract class Skill {
         Debug.Log(name + " on cooldown for " + cooldownTimer + "s.");
     }
 
-    protected abstract void use(GameObject character);
+    protected virtual void use(GameObject character) {
+        Debug.Log("This skill did not implement \'use\' method");
+    }
 }

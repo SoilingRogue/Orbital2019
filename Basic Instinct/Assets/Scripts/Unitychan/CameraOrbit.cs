@@ -2,10 +2,8 @@
  
 public class CameraOrbit : MonoBehaviour
 {
-    // camera
-    protected Transform cam;
-    // pivot
-    protected Transform pivot;
+    // camera & pivot
+    protected Transform cam, pivot;
     // storing rotations of camera pivot
     protected Vector3 camRotation;
     protected float camDistance = 3f;
@@ -15,11 +13,8 @@ public class CameraOrbit : MonoBehaviour
         Dampening - enables faster scrolling the further we are from the object, but slower scrolling when closer 
         Sigmoidal effect when scrolling
     */
-    
-    public float mouseSensitivity = 4f;
-    public float scrollSensitivity = 2f;
+    public float mouseSensitivity = 4f, scrollSensitivity = 2f;
     protected float orbitDampening = 10f, scrollDampening = 6f;
- 
  
     // Use this for initialization
     void Start() {
@@ -27,7 +22,7 @@ public class CameraOrbit : MonoBehaviour
         this.pivot = this.transform.parent;
     }
  
- // LateUpdate called after Update() on every game object in the scene, for rendering
+    // LateUpdate called after Update() on every game object in the scene, for rendering
     void LateUpdate() {
             // Rotation of the Camera based on Mouse Coordinates
             if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
@@ -43,7 +38,6 @@ public class CameraOrbit : MonoBehaviour
             if (Input.GetAxis("Mouse ScrollWheel") != 0f)
             {
                 float scrollAmount = Input.GetAxis("Mouse ScrollWheel") * scrollSensitivity;
- 
                 scrollAmount *= (this.camDistance * 0.3f);
  
                 this.camDistance += scrollAmount * -1f;
@@ -55,6 +49,7 @@ public class CameraOrbit : MonoBehaviour
         // Actual Camera Rig Transformations - has to be inside of LateUpdate()
         // setting pitch and yaw for rotation
         Quaternion QT = Quaternion.Euler(camRotation.y, camRotation.x, 0);
+        
         // Lerp - linear interpolation btw current rotation at start of frame & animate towards target rotation
         this.pivot.rotation = Quaternion.Lerp(this.pivot.rotation, QT, Time.deltaTime * orbitDampening);
  

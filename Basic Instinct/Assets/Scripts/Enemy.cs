@@ -8,24 +8,10 @@ public class Enemy : MonoBehaviour {
     private float timeToNextAttack;
     public float attackCooldown = 3f;
     private GameObject player;
+    private Vector3 direction;
     void Start() {
-        currentHealth = maxHealth;
-        // After spawning, 
-        timeToNextAttack = 2f;
-    }
-
-    void Update() {
-        timeToNextAttack -= Time.deltaTime;
-        if (timeToNextAttack <= 0) {
-            attack();
-            timeToNextAttack = attackCooldown;
-        }
-    }
-
-    void attack() {
         // Find player to target
         // This only works assuming the scene has only 1 player.
-        // Computationally expensive.
         Object[] temp = FindObjectsOfType(typeof(GameObject));
         foreach (GameObject o in temp) {
             if (o.CompareTag("Player")) {
@@ -34,15 +20,32 @@ public class Enemy : MonoBehaviour {
             }
         }
 
-        // Cast a sphere projectile in towards player
-        // Calculate the direction to shoot
-        Vector3 direction = player.transform.position - transform.position;
+        currentHealth = maxHealth;
+        // After spawning, 
+        timeToNextAttack = 2f;
+    }
+
+    void Update() {
+        // Calculate the direction to face the player
+        direction = player.transform.position - transform.position;
+        // Make the enemy face the player
+        Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
+        transform.rotation = rotation;
+
+        timeToNextAttack -= Time.deltaTime;
+        if (timeToNextAttack <= 0) {
+            attack();
+            timeToNextAttack = attackCooldown;
+        }
+    }
+
+    void attack() {
         // Spawn a sphere
-        GameObject fireball = spawnFireball(direction);
+        GameObject fireball = spawnFireball();
         Destroy(fireball, 6f);
     }
 
-    GameObject spawnFireball(Vector3 direction) {
+    GameObject spawnFireball() {
         GameObject fireball = new GameObject("Fireball");
         // Set fireball location to enemy location at the start
         fireball.transform.position = transform.position;

@@ -6,8 +6,7 @@ public class Dagger : Skill {
     private int damage;
     private float duration;
 
-    // Constructor
-    public Dagger() {
+    void Start() {
         name = "Dagger";
         cooldown = 3f;
         // previousUseTime = -cooldown;

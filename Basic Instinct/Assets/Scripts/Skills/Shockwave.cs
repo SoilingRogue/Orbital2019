@@ -6,7 +6,7 @@ public class Shockwave : Skill {
     private int damage;
     private float duration;
     // Constructor
-    public Shockwave() {
+    void Start() {
         name = "Shockwave";
         cooldown = 3f;
         // previousUseTime = -cooldown;

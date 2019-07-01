@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawningSystem : MonoBehaviour {
+    public int currentWave;
     public GameObject enemyPrefab;
     public GameObject spawnPlane;
     private GameObject player;
-    private float timeToNextSpawn;
+    public float timeToNextSpawn;
     private int nextSpawnCount;
 
     void Start() {
+        // First wave is wave 0
+        currentWave = 0;
+
         // Get a reference to the player
         Object[] temp = FindObjectsOfType(typeof(GameObject));
         foreach (GameObject o in temp) {
@@ -27,6 +31,9 @@ public class SpawningSystem : MonoBehaviour {
     void Update() {
         timeToNextSpawn -= Time.deltaTime;
         if (timeToNextSpawn <= 0) {
+            // Increase current wave number
+            currentWave++;
+
             spawnEnemies();
             nextSpawnCount = getNextSpawnCount();
             // 10 sec delay between waves
@@ -63,9 +70,9 @@ public class SpawningSystem : MonoBehaviour {
     }
 
     void spawnEnemyAt(Vector3 position) {
-        // Temporary rotation
-        Quaternion rotation = Quaternion.identity;
-        GameObject enemyClone = Instantiate(enemyPrefab, position, rotation);
+        // Dummy rotation, doesn't matter as it will get updated every frame
+        Quaternion dummyRotation = Quaternion.identity;
+        GameObject enemyClone = Instantiate(enemyPrefab, position, dummyRotation);
         enemyClone.SetActive(true);
     }
 }

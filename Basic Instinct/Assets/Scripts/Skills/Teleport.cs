@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Teleport : Skill {
     // Constructor
-    public Teleport() {
+    void Start() {
         name = "Teleport";
         cooldown = 5f;
         // previousUseTime = -cooldown;
