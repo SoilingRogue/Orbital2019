@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerScript4 : MonoBehaviour
 {
     private Animator anim;
-    private float inputH, inputV, moveSpeed;
+    private float inputH, inputV;
     private Rigidbody rBody;
     public float walkSpeed = 1f, runSpeed = 3f, runSlideSpeed = 3f, walkSlideSpeed = 1f;
     public Camera cam;
@@ -23,6 +23,7 @@ public class PlayerScript4 : MonoBehaviour
         inputV = Input.GetAxis("Vertical"); // set this based on camera angle
         anim.SetFloat("inputH", inputH);
         anim.SetFloat("inputV", inputV);
+        float moveSpeed;
 
         // Setting boolean value for moving - for other scripts to access moving boolean
         if (inputV != 0 || inputH != 0)
