@@ -60,7 +60,7 @@ public class PlayerScript4 : MonoBehaviour
 
             // rBody.velocity += inputH * Vector3.ProjectOnPlane(cam.transform.right, Vector3.up).normalized * moveSpeed * Time.deltaTime;            
             // rBody.velocity += new Vector3(inputH, 0, inputV) * moveSpeed; // for debugging
-            Debug.Log(rBody.position); // for debugging
+            // Debug.Log(rBody.position); // for debugging
         }
         else 
         {
