@@ -15,6 +15,10 @@ public class KeySettingsMenu : MonoBehaviour {
     public void changeKey(Button self) {
         Debug.Log("Key selected.");
         buttonPressed = self;
+
+        // Change color
+        Image buttonImage = buttonPressed.GetComponent<Image>();
+        buttonImage.color = new Color32(0, 0, 0, 100);
     }
 
     public void saveKeys() {
@@ -79,6 +83,11 @@ public class KeySettingsMenu : MonoBehaviour {
             if (buttonPressed != null) {
                 TMP_Text buttonText = buttonPressed.transform.GetChild(0).GetComponent<TMP_Text>();
                 buttonText.text = ev.keyCode.ToString();
+
+                // Change back color
+                Image buttonImage = buttonPressed.GetComponent<Image>();
+                buttonImage.color = new Color(255, 255, 255, 255);
+
                 buttonPressed = null;
             }
         }
