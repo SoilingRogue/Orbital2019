@@ -37,7 +37,7 @@ public class PlayerScript4 : MonoBehaviour
                 }
                 else
                 {
-                moveSpeed = runSpeed;
+                    moveSpeed = runSpeed;
                 }
             }
             else

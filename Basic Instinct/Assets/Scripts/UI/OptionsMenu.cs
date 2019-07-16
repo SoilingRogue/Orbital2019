@@ -7,16 +7,23 @@ using TMPro;
 public class OptionsMenu : MonoBehaviour {
     public AudioMixer audioMixer;
     public TMP_Dropdown resolutionDropdown;
-    private Resolution[] resolutions;
+    private List<Resolution> resolutions;
 
     void Start() {
+        // Initialise
+        resolutions = new List<Resolution>();
         // Set dropdown options to the available resolutions for each user
         // and set default resolution to default resolution of system
         resolutionDropdown.ClearOptions();
         List<string> options = new List<string>();
-        resolutions = Screen.resolutions;
+        // Filter 60Hz resolutions only
+        foreach (Resolution res in Screen.resolutions) {
+            if (res.refreshRate == 60) {
+                resolutions.Add(res);
+            }
+        }
         int defaultIndex = 0;
-        for (int i = 0; i < resolutions.Length; i++) {
+        for (int i = 0; i < resolutions.Count; i++) {
             Resolution res = resolutions[i];
             options.Add(res.width + " X " + res.height);
             if (res.Equals(Screen.currentResolution)) {

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿#if (UNITY_EDITOR)
+
+using UnityEngine;
 using System.Collections;
 
 namespace DigitalRuby.PyroParticles
@@ -246,3 +248,5 @@ namespace DigitalRuby.PyroParticles
         }
     }
 }
+
+#endif

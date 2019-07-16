@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SkillBar : MonoBehaviour {
+    public KeyConfig keyConfig;
     public List<Skill> skillList;
     public List<KeyCode> keycodeList;
     public Dictionary<KeyCode, Skill> skillMap = new Dictionary<KeyCode, Skill>();
@@ -14,6 +15,9 @@ public class SkillBar : MonoBehaviour {
     }
  
     void Start() {
+        keyConfig = (KeyConfig)FindObjectOfType(typeof(KeyConfig));
+        keycodeList = keyConfig.keyCodeList;
+
         // Debug.Log("skillList size: " + skillList.Count);
         populateSkillMap();
     }

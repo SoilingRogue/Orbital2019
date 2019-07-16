@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour {
         }
 
         currentHealth = maxHealth;
-        // After spawning, 
+        // After spawning, attack only after 2s
         timeToNextAttack = 2f;
     }
 
@@ -44,13 +44,16 @@ public class Enemy : MonoBehaviour {
         // Spawn a sphere
         GameObject fireball = spawnFireball();
         fireball.SetActive(true);
-        Destroy(fireball, 6f);
+        // Destroy(fireball, 6f);
     }
 
     GameObject spawnFireball() {
         float enemyHeight = GetComponent<Collider>().bounds.extents.y;
         Vector3 scale = new Vector3(2, 2, 2);
-        return Instantiate(fireboltPrefab, new Vector3(transform.position.x, transform.position.y + enemyHeight, transform.position.z) + transform.forward.normalized, transform.rotation);
+        Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + enemyHeight, transform.position.z);
+        Vector3 buffer = transform.forward.normalized;
+        Quaternion spawnRotation = transform.rotation;
+        return Instantiate(fireboltPrefab, spawnPosition + buffer, spawnRotation);
         // GameObject fireball = new GameObject("Fireball");
         // // Set fireball location to enemy location at the start
         // fireball.transform.position = transform.position;

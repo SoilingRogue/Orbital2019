@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterStats : MonoBehaviour {
+    public GameManager gameManager;
     public int maxHealth;
     private int currentHealth;
     private bool isInvulnerable;
@@ -19,11 +20,16 @@ public class CharacterStats : MonoBehaviour {
             Debug.Log(name + " takes " + damage + " damage.");
             Debug.Log(name + " has " + currentHealth + " health.");
         }
-        else if (currentHealth <= 0) {
-            Debug.Log(name + " is already dead.");
-        }
+        // else if (currentHealth <= 0) {
+            // Die();
+            // Debug.Log(name + " is already dead.");
+        // }
         else {
             Debug.Log("No damage taken. " + name + " is invulnerable.");
+        }
+        // Check if dead
+        if (currentHealth <= 0) {
+            Die();
         }
     }
 
@@ -36,5 +42,10 @@ public class CharacterStats : MonoBehaviour {
     private void setVulnerable() {
         isInvulnerable = false;
         Debug.Log(name + " is now vulnerable.");
+    }
+
+    private void Die() {
+        // gameManager.restart();
+        gameManager.unhideLoseMenu();
     }
 }

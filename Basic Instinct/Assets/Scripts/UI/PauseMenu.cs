@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class PauseMenu : MonoBehaviour {
     public static bool isPaused;
     public GameObject pausePanel;
@@ -17,7 +18,7 @@ public class PauseMenu : MonoBehaviour {
         }
     }
 
-    void pauseGame() {
+    public void pauseGame() {
         // Freeze game
         Time.timeScale = 0f;
         // Hide Game UI
@@ -40,11 +41,19 @@ public class PauseMenu : MonoBehaviour {
     }
 
     public void loadMenu() {
+        // Unfreeze game
+        Time.timeScale = 1f;
+        // Set static variable
+        isPaused = false;
         SceneManager.LoadScene(0);
     }
 
     public void quitGame() {
         Debug.Log("Exiting game.");
         Application.Quit();
+    }
+
+    public void restartGame() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

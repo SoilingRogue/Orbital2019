@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     public SpawningSystem spawningSystem;
-    public GameObject player;
-    public Canvas UI;
+    public PauseMenu pauseMenu;
+    // public GameObject player;
+    // public Canvas UI;
 
     public int getCurrentWave() {
         return spawningSystem.currentWave;
@@ -16,7 +17,12 @@ public class GameManager : MonoBehaviour {
         return spawningSystem.timeToNextSpawn;
     }
 
-    void restart() {
+    public void restart() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void unhideLoseMenu() {
+        pauseMenu.pauseGame();
+        pauseMenu.transform.GetChild(1).gameObject.SetActive(true);
     }
 }

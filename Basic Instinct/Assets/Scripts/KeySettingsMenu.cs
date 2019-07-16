@@ -6,11 +6,22 @@ using UnityEngine.UI;
 using TMPro;
 
 public class KeySettingsMenu : MonoBehaviour {
+    public KeyConfig keyConfig;
     public TMP_Text errorMessage;
     private int numberOfSkills = 4;
     private List<string> keyCodeStringList;
-    private List<KeyCode> keyCodeList;
+    public List<KeyCode> keyCodeList;
     private Button buttonPressed;
+
+    void Start() {
+        // Use this to bind keyConfig instead of drag-and-drop because of the code used to make it persist across scenes
+        keyConfig = (KeyConfig)GameObject.FindGameObjectWithTag("Config").transform.GetChild(0).gameObject.GetComponent<KeyConfig>();
+        // Display the previously binded keys
+        for (int i = 0; i < numberOfSkills; i++) {
+            TMP_Text buttonText = transform.GetChild(i).gameObject.transform.GetChild(0).GetComponent<TMP_Text>();
+            buttonText.text = keyConfig.keyCodeList[i].ToString();
+        }
+    }
 
     public void changeKey(Button self) {
         Debug.Log("Key selected.");
@@ -53,6 +64,12 @@ public class KeySettingsMenu : MonoBehaviour {
 
         // Converts the string to actual key code object
         keyCodeStringList.ForEach(str => keyCodeList.Add((KeyCode)System.Enum.Parse(typeof(KeyCode), str)));
+
+        if (keyConfig == null) {
+            keyConfig = (KeyConfig)FindObjectOfType(typeof(KeyConfig));
+        }
+
+        keyConfig.updateKeys(keyCodeList);
     }
 
     void displayErrorMessage(string errorText) {
