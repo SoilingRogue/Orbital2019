@@ -59,6 +59,9 @@ public class KeySettingsMenu : MonoBehaviour {
             }
             else {
                 keyCodeStringList.Add(keyCodeText);
+
+                // Use PlayerPrefs
+                // PlayerPrefs.SetString("Skill_" + (i + 1), keyCodeText);
             }
         }
 

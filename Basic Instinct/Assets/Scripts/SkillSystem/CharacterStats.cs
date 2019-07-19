@@ -29,7 +29,7 @@ public class CharacterStats : MonoBehaviour {
         }
         // Check if dead
         if (currentHealth <= 0) {
-            Die();
+            die();
         }
     }
 
@@ -44,8 +44,7 @@ public class CharacterStats : MonoBehaviour {
         Debug.Log(name + " is now vulnerable.");
     }
 
-    private void Die() {
-        // gameManager.restart();
-        gameManager.unhideLoseMenu();
+    private void die() {
+        gameManager.lose();
     }
 }
