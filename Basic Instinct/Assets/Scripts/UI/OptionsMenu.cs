@@ -76,4 +76,11 @@ public class OptionsMenu : MonoBehaviour {
         audioMixer.SetFloat("volume", volume);
         PlayerPrefs.SetFloat("Volume", volume);
     }
+
+    public void writeAllDefaultValues() {
+       Animator[] anims = GameObject.FindObjectsOfType<Animator>();
+       foreach (Animator anim in anims) {
+           anim.WriteDefaultValues();
+       }
+    }
 }

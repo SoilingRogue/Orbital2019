@@ -125,4 +125,11 @@ public class KeySettingsMenu : MonoBehaviour {
             }
         }
     }
+
+    public void writeAllDefaultValues() {
+       Animator[] anims = GameObject.FindObjectsOfType<Animator>();
+       foreach (Animator anim in anims) {
+           anim.WriteDefaultValues();
+       }
+    }
 }

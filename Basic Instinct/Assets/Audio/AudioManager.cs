@@ -4,9 +4,17 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour {
 	public static AudioManager instance;
-
 	public AudioMixerGroup mixerGroup;
 	public Sound[] sounds;
+
+	void OnApplicationFocus(bool hasFocus) {
+		if (!hasFocus) {
+			AudioListener.pause = true;
+		}
+		else {
+			AudioListener.pause = false;
+		}
+	}
 
 	void Awake() {
 		if (instance != null) {

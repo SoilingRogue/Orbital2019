@@ -12,4 +12,11 @@ public class StartMenu : MonoBehaviour {
         Debug.Log("Quit Game.");
         Application.Quit();
     }
+
+    public void writeAllDefaultValues() {
+       Animator[] anims = GameObject.FindObjectsOfType<Animator>();
+       foreach (Animator anim in anims) {
+           anim.WriteDefaultValues();
+       }
+    }
 }
