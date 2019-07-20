@@ -2,47 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill : MonoBehaviour {
+public abstract class Skill : MonoBehaviour {
+    // public bool initialised;
     public float cooldown;
-    public float previousUseTime;
+    public float cooldownTimer;
 
     void Start() {
-        previousUseTime = 0f;
+        cooldownTimer = 0f;
     }
 
-    protected bool isOnCooldown(float timeNow) {
-        return !(timeNow - previousUseTime > cooldown || previousUseTime == 0);
+    public bool isOnCooldown() {
+        return cooldownTimer > 0;
     }
 
-    public float getPercentageCD() {
-        float timeNow = Time.time;
-        if (!isOnCooldown(timeNow)) {
-            return 0;
-        }
-        else {
-            float cd = (timeNow - previousUseTime) / cooldown;
-            return 1 - cd;
-        }
-    }
-
-    public void useSkill(GameObject character) {
-        float timeNow = Time.time;
-        if (!isOnCooldown(timeNow)) {
+    public void useSkill() {
+        if (!isOnCooldown()) {
             Debug.Log(name + " used.");
-            use(character);
-            previousUseTime = timeNow;
+            use();
+            cooldownTimer = cooldown;
         }
         else {
-            printCooldownMessage(timeNow);
+            printCooldownMessage();
         }
     }
     
-    protected void printCooldownMessage(float timeNow) {
-        float cooldownTimer = cooldown - (timeNow - previousUseTime);
+    private void printCooldownMessage() {
         Debug.Log(name + " on cooldown for " + cooldownTimer + "s.");
     }
 
-    protected virtual void use(GameObject character) {
-        Debug.Log("This skill did not implement \'use\' method");
+    protected abstract void use();
+
+    void Update() {
+        Debug.Log(cooldownTimer);
+        cooldownTimer -= Time.deltaTime;
     }
 }

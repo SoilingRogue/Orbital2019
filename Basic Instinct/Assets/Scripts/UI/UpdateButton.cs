@@ -15,8 +15,8 @@ public class UpdateButton : MonoBehaviour {
 
     void LateUpdate() {
         Text.text = displayedKey.ToString();
-        float cd = trackedSkill.getPercentageCD();
+        // float cd = trackedSkill.getPercentageCD();
         Color transparent = new Color(0, 0, 0, 0);
-        panelImage.color = Color.Lerp(transparent, Color.black, cd);
+        // panelImage.color = Color.Lerp(transparent, Color.black, cd);
     }
 }

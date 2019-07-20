@@ -30,7 +30,7 @@ public class SkillBar : MonoBehaviour {
             // cycle through bound keys
             foreach (KeyCode key in skillMap.Keys) {
                 if (Input.GetKeyDown(key)) {
-                    skillMap[key].useSkill(gameObject);
+                    // skillMap[key].useSkill(gameObject);
                 }
             }
             // foreach (KeyCode key in keycodes) {
