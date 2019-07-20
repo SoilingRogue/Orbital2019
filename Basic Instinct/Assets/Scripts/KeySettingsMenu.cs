@@ -6,38 +6,49 @@ using UnityEngine.UI;
 using TMPro;
 
 public class KeySettingsMenu : MonoBehaviour {
-    public KeyConfig keyConfig;
     public TMP_Text errorMessage;
     private int numberOfSkills = 4;
-    private List<string> keyCodeStringList;
-    public List<KeyCode> keyCodeList;
     private Button buttonPressed;
+    private Color unpressedColor = new Color32(255, 255, 255, 255);
+    private Color pressedColor = new Color32(0, 0, 0, 100);
 
     void Start() {
-        // Use this to bind keyConfig instead of drag-and-drop because of the code used to make it persist across scenes
-        keyConfig = (KeyConfig)GameObject.FindGameObjectWithTag("Config").transform.GetChild(0).gameObject.GetComponent<KeyConfig>();
+        if (PlayerPrefs.GetString("Skill_0") == null) {
+            PlayerPrefs.SetString("Skill_0", "Q");
+        }
+        if (PlayerPrefs.GetString("Skill_1") == null) {
+            PlayerPrefs.SetString("Skill_1", "E");
+        }
+        if (PlayerPrefs.GetString("Skill_2") == null) {
+            PlayerPrefs.SetString("Skill_2", "R");
+        }
+        if (PlayerPrefs.GetString("Skill_3") == null) {
+            PlayerPrefs.SetString("Skill_3", "F");
+        }
+
         // Display the previously binded keys
         for (int i = 0; i < numberOfSkills; i++) {
             TMP_Text buttonText = transform.GetChild(i).gameObject.transform.GetChild(0).GetComponent<TMP_Text>();
-            buttonText.text = keyConfig.keyCodeList[i].ToString();
+            buttonText.text = PlayerPrefs.GetString("Skill_" + i);
+            // buttonText.text = keyConfig.keyCodeList[i].ToString();
         }
     }
 
     public void changeKey(Button self) {
         Debug.Log("Key selected.");
+        // If another button was pressed previously, change its state back to normal
+        if (buttonPressed != null) {
+            buttonPressed.GetComponent<Image>().color = unpressedColor;
+        }
         buttonPressed = self;
 
         // Change color
         Image buttonImage = buttonPressed.GetComponent<Image>();
-        buttonImage.color = new Color32(0, 0, 0, 100);
+        buttonImage.color = pressedColor;
     }
 
     public void saveKeys() {
         Debug.Log("Saving keys.");
-
-        // Reinitialise both lists
-        keyCodeStringList = new List<string>(numberOfSkills);
-        keyCodeList = new List<KeyCode>(numberOfSkills);
         
         // Copy the button texts into a list of keycodes
         for (int i = 0; i < numberOfSkills; i++) {
@@ -51,28 +62,17 @@ public class KeySettingsMenu : MonoBehaviour {
                 // throw exception to prevent execution of the next two button functions
                 throw new ArgumentException(errorText);
             }
-            else if (keyCodeStringList.Contains(keyCodeText)) {
+            else if (isDuplicated(keyCodeText, i)) {
                 string errorText = "You cannot use duplicate keys";
                 displayErrorMessage(errorText);
                 // throw exception to prevent execution of the next two button functions
                 throw new ArgumentException(errorText);
             }
             else {
-                keyCodeStringList.Add(keyCodeText);
-
                 // Use PlayerPrefs
-                // PlayerPrefs.SetString("Skill_" + (i + 1), keyCodeText);
+                PlayerPrefs.SetString("Skill_" + i, keyCodeText);
             }
         }
-
-        // Converts the string to actual key code object
-        keyCodeStringList.ForEach(str => keyCodeList.Add((KeyCode)System.Enum.Parse(typeof(KeyCode), str)));
-
-        if (keyConfig == null) {
-            keyConfig = (KeyConfig)FindObjectOfType(typeof(KeyConfig));
-        }
-
-        keyConfig.updateKeys(keyCodeList);
     }
 
     void displayErrorMessage(string errorText) {
@@ -86,12 +86,25 @@ public class KeySettingsMenu : MonoBehaviour {
         errorMessage.gameObject.SetActive(false);
     }
 
+    bool isDuplicated(string keyCodeText, int index) {
+        for (int i = 0; i < numberOfSkills; i++) {
+            if (i != index) {
+                if (keyCodeText == PlayerPrefs.GetString("Skill_" + i)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     bool keyAlreadyBinded(string keyCodeText) {
         List<string> bindedKeyTexts = new List<string>() {
             "W",
             "A",
             "S",
             "D",
+            "T",
+            "G",
             "Escape"
         };
         return bindedKeyTexts.Contains(keyCodeText); 
@@ -106,7 +119,7 @@ public class KeySettingsMenu : MonoBehaviour {
 
                 // Change back color
                 Image buttonImage = buttonPressed.GetComponent<Image>();
-                buttonImage.color = new Color(255, 255, 255, 255);
+                buttonImage.color = unpressedColor;
 
                 buttonPressed = null;
             }
