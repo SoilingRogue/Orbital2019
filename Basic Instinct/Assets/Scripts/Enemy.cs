@@ -13,13 +13,7 @@ public class Enemy : MonoBehaviour {
     void Start() {
         // Find player to target
         // This only works assuming the scene has only 1 player.
-        Object[] temp = FindObjectsOfType(typeof(GameObject));
-        foreach (GameObject o in temp) {
-            if (o.CompareTag("Player")) {
-                player = o;
-                break;
-            }
-        }
+        player = GameObject.FindWithTag("Player");
 
         currentHealth = maxHealth;
         // After spawning, attack only after 2s
@@ -27,8 +21,13 @@ public class Enemy : MonoBehaviour {
     }
 
     void Update() {
-        // Calculate the direction to face the player
-        direction = player.transform.position - transform.position;
+        if (player != null) {
+            // Calculate the direction to face the player
+            direction = player.transform.position - transform.position;
+        }
+        else {
+            direction = transform.forward;
+        }
         // Make the enemy face the player
         Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
         transform.rotation = rotation;
