@@ -53,7 +53,7 @@ public class CameraOrbit : MonoBehaviour
         // Lerp - linear interpolation btw current rotation at start of frame & animate towards target rotation
         this.pivot.rotation = Quaternion.Lerp(this.pivot.rotation, QT, Time.deltaTime * orbitDampening);
  
-        if ( this.cam.localPosition.z != this.camDistance * -1f )
+        if (this.cam.localPosition.z != this.camDistance * -1f)
         {
             this.cam.localPosition = new Vector3(0f, 0f, Mathf.Lerp(this.cam.localPosition.z, this.camDistance * -1f, Time.deltaTime * scrollDampening));
         }
