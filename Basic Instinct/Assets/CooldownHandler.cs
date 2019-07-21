@@ -12,11 +12,10 @@ public class CooldownHandler : MonoBehaviour {
         }
 
         Cooldown[] cooldowns = transform.GetComponentsInChildren<Cooldown>(true);
-        Debug.Log("Number of cooldowns: " + cooldowns.Length);
         for (int i = 0; i < cooldowns.Length; i++) {
             Cooldown cd = cooldowns[i];
             cd.skill = skillManager.getSkill(i);
-            cd.button = skillManager.getSkillKey(i);
+            cd.key.text = skillManager.getSkillKey(i);
         }
     }
 }

@@ -9,24 +9,17 @@ public class Cooldown : MonoBehaviour
     public TextMeshProUGUI key;
     public Image imageCooldown;
     public TextMeshProUGUI timer;
-    public string button;
-
-    void Start() {
-        Debug.Log("Button: " + button);
-        key.text = button;
-    }
 
     void Update() {
-        if (key.text == "") {
-            key.text = button;
-        }
-
         if (skill != null) {
             if (!skill.isOnCooldown()) {
                 imageCooldown.fillAmount = 0;
                 timer.text = "";
             }
             else {
+                if (imageCooldown.fillAmount == 0) {
+                    imageCooldown.fillAmount = 1;
+                }
                 imageCooldown.fillAmount -= 1 / skill.cooldown * Time.deltaTime;
                 timer.text = skill.cooldownTimer.ToString("F");
             }
