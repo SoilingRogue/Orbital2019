@@ -3,42 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Shield : Skill {
-    private float duration;
-    private GameObject user;
-    public GameObject visualPrefab;
+    public float duration;
+    public Vector3 diffVector;
+    private GameObject visual;
 
-    // protected override void initialise() {
-    //     Debug.Log("Executing Start in Shield");
-    //     cooldown = 5f;
-    //     duration = 1.5f;
-    //     user = GameObject.FindGameObjectWithTag("Player");
-    // }
-
-    void Start() {
-        Debug.Log("Executing Start in Shield");
+    protected override void initialise() {
         cooldown = 5f;
         duration = 1.5f;
-        user = GameObject.FindGameObjectWithTag("Player");
+        diffVector = Vector3.up;
     }
 
     protected override void use() {
-        if (user != null) {
-            Debug.Log("User is not null");
-            // CharacterStats stats = user.GetComponent<CharacterStats>();
-            // if (stats != null) {
-            //     stats.setInvulnerable(duration);
-            // }
+        CharacterStats stats = gameObject.GetComponent<CharacterStats>();
+        if (stats != null) {
+            stats.setInvulnerable(duration);
         }
 
         display();
     }
 
     private void display() {
-        GameObject visual = Instantiate(visualPrefab, user.transform.position, user.transform.rotation);
+        visual = Instantiate(visualPrefab, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(visual, duration);
-        // GameObject bubble = new GameObject("Bubble");
-        // bubble.AddComponent(typeof(ShieldBubble));
-        // bubble.GetComponent<ShieldBubble>().character = character;
-        // GameObject.Destroy(bubble, duration);
+    }
+
+    protected override void review() {
+        if (visual != null) {
+            visual.transform.position = gameObject.transform.position + diffVector;
+        }
     }
 }

@@ -336,7 +336,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 915393041}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9dbc457aacb4ed945a27532a755ba760, type: 2}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: 0acb82528073bb948b699c1b60c6dc58, type: 2}
   m_EnableTreeColliders: 1
@@ -396,7 +396,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1451656514}
   - component: {fileID: 1451656513}
-  - component: {fileID: 1451656515}
   m_Layer: 0
   m_Name: SkillManager
   m_TagString: Untagged
@@ -416,11 +415,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00aee16526aec8c499c7e7a72ad1c7bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skills:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  skillHelpers:
+  - user: {fileID: 1809726376}
+    skill: {fileID: 4795996416400762592, guid: e0de19366c5e8cb4da731d9375bedc8f, type: 3}
+    visual: {fileID: 3059389732076212686, guid: 9afed131a51e70e4c948386aa1c020b3,
+      type: 3}
+  - user: {fileID: 1809726376}
+    skill: {fileID: 5620471598324201971, guid: 3351abe173a904543b8a942255104fd9, type: 3}
+    visual: {fileID: 4849285411860955109, guid: b23128c11089dd945b3784edd5157046,
+      type: 3}
   skillKeys: 
 --- !u!4 &1451656514
 Transform:
@@ -436,18 +439,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1451656515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1451656512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef21a958f3462564b84c9883439967ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!20 &1694915308 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1502123216, guid: 6914733a6c99d7e459b5cbc4b6685b87,
@@ -2835,6 +2826,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.00082817103
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251068003138438935, guid: e9f6c21e235efd04086724a0e0166cc1,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9f6c21e235efd04086724a0e0166cc1, type: 3}

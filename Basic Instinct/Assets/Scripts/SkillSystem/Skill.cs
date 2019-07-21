@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Skill : MonoBehaviour {
-    // public bool initialised;
+    [HideInInspector]
+    public GameObject visualPrefab;
     public float cooldown;
     public float cooldownTimer;
 
     void Start() {
         cooldownTimer = 0f;
+        initialise();
     }
 
     public bool isOnCooldown() {
@@ -31,9 +33,12 @@ public abstract class Skill : MonoBehaviour {
     }
 
     protected abstract void use();
+    protected abstract void initialise();
+    protected abstract void review();
 
     void Update() {
-        Debug.Log(cooldownTimer);
         cooldownTimer -= Time.deltaTime;
+        cooldownTimer = Mathf.Clamp(cooldownTimer, 0f, cooldown);
+        review();
     }
 }

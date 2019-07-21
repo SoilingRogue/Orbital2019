@@ -4,10 +4,28 @@ using System;
 using UnityEngine;
 
 public class SkillManager : MonoBehaviour {
-    public Skill[] skills;
+    public SkillHelper[] skillHelpers;
     public KeyCode[] skillKeys;
+    private List<Skill> skills;
 
     void Start() {
+        bindSkillKeys();
+        bindSkills();
+    }
+
+    void Update() {
+        if (Input.anyKeyDown) {
+            for (int i = 0; i < 4; i++) {
+                if (Input.GetKeyDown(skillKeys[i])) {
+                    if (i < skills.Count) {
+                        skills[i].useSkill();
+                    }
+                }
+            }
+        }
+    }
+
+    void bindSkillKeys() {
         skillKeys = new KeyCode[4];
 
         for (int i = 0; i < 4; i++) {
@@ -15,14 +33,14 @@ public class SkillManager : MonoBehaviour {
         }
     }
 
-    void Update() {
-        if (Input.anyKeyDown) {
-            for (int i = 0; i < 4; i++) {
-                if (Input.GetKeyDown(skillKeys[i])) {
-                    Instantiate(skills[i].gameObject);
-                    skills[i].useSkill();
-                }
-            }
+    void bindSkills() {
+        skills = new List<Skill>();
+
+        foreach (SkillHelper skillHelper in skillHelpers) {
+            Type skillType = skillHelper.skill.GetType();
+            Skill skillComponent = (Skill)skillHelper.user.AddComponent(skillType);
+            skillComponent.visualPrefab = skillHelper.visual;
+            skills.Add(skillComponent);
         }
     }
 }
