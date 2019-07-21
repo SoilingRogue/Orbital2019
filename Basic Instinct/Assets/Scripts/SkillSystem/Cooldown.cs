@@ -23,7 +23,7 @@ public class Cooldown : MonoBehaviour
 
         if (skill != null) {
             if (!skill.isOnCooldown()) {
-                imageCooldown.fillAmount = 1;
+                imageCooldown.fillAmount = 0;
                 timer.text = "";
             }
             else {
