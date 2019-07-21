@@ -98,16 +98,23 @@ public class KeySettingsMenu : MonoBehaviour {
     }
 
     bool keyAlreadyBinded(string keyCodeText) {
-        List<string> bindedKeyTexts = new List<string>() {
-            "W",
-            "A",
-            "S",
-            "D",
-            "T",
-            "G",
-            "Escape"
+        KeyCode kc = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyCodeText);
+        List<KeyCode> bindedKeyTexts = new List<KeyCode>() {
+            KeyCode.W,
+            KeyCode.A,
+            KeyCode.S,
+            KeyCode.D,
+            KeyCode.T,
+            KeyCode.G,
+            KeyCode.Escape,
+            KeyCode.Alpha0,
+            KeyCode.Alpha1,
+            KeyCode.Space,
+            KeyCode.LeftShift,
+            KeyCode.LeftControl,
+            KeyCode.CapsLock
         };
-        return bindedKeyTexts.Contains(keyCodeText); 
+        return bindedKeyTexts.Contains(kc); 
     }
 
     void OnGUI() {
