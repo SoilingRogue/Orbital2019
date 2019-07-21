@@ -12,10 +12,15 @@ public class Cooldown : MonoBehaviour
     public string button;
 
     void Start() {
+        Debug.Log("Button: " + button);
         key.text = button;
     }
 
     void Update() {
+        if (key.text == "") {
+            key.text = button;
+        }
+
         if (skill != null) {
             if (!skill.isOnCooldown()) {
                 imageCooldown.fillAmount = 1;
