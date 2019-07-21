@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 78366508465494625}
   - component: {fileID: 7848143635192728094}
   - component: {fileID: 501621050803361032}
-  - component: {fileID: 4070008504742584213}
   m_Layer: 5
   m_Name: Skill Image
   m_TagString: Untagged
@@ -77,21 +76,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4070008504742584213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755229074521544382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a78476c828d98e248ab5e1b027d7a7d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imageCooldown: {fileID: 1915894408920493191}
-  cooldown: 5
-  button: q
 --- !u!1 &1524760082137969690
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,6 +87,7 @@ GameObject:
   - component: {fileID: 553652343749937312}
   - component: {fileID: 8502881419686102642}
   - component: {fileID: 1058987616950897227}
+  - component: {fileID: 2627798090995295130}
   m_Layer: 5
   m_Name: Skill Icon
   m_TagString: Untagged
@@ -170,6 +155,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2627798090995295130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524760082137969690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78476c828d98e248ab5e1b027d7a7d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageCooldown: {fileID: 1915894408920493191}
+  timer: {fileID: 2677730663686356133}
+  cooldown: 5
+  button: 
 --- !u!1 &3456273375487659916
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +394,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 5.0
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9803c9c105d7c66409936b8deaa4c646, type: 2}
   m_sharedMaterial: {fileID: -4073194885785856191, guid: 9803c9c105d7c66409936b8deaa4c646,
@@ -463,13 +464,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2677730663686356133}
-    characterCount: 3
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 2
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
