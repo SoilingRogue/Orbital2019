@@ -171,7 +171,6 @@ MonoBehaviour:
   key: {fileID: 1314408201203117572}
   imageCooldown: {fileID: 1915894408920493191}
   timer: {fileID: 2677730663686356133}
-  button: 
 --- !u!1 &3456273375487659916
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,9 +236,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'E
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9803c9c105d7c66409936b8deaa4c646, type: 2}
   m_sharedMaterial: {fileID: -4073194885785856191, guid: 9803c9c105d7c66409936b8deaa4c646,
@@ -271,9 +268,9 @@ MonoBehaviour:
   m_fontSize: 40
   m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 14
+  m_fontSizeMax: 40
   m_fontStyle: 1
   m_textAlignment: 514
   m_characterSpacing: 0
@@ -309,13 +306,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1314408201203117572}
-    characterCount: 2
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 1
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
