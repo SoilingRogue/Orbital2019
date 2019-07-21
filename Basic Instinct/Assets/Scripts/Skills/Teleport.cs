@@ -1,8 +1,8 @@
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-// public class Teleport : Skill {
+public class Teleport : Skill {
 //     // Constructor
 //     void Start() {
 //         name = "Teleport";
@@ -20,4 +20,18 @@
 //     private void display(GameObject character) {
 
 //     }
-// }
+    protected override void initialise()
+    {
+
+    }
+
+    protected override void use()
+    {
+
+    }
+    
+    protected override void review()
+    {
+
+    }
+}
