@@ -2043,7 +2043,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1618059372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81a4f8979988b7d458ebdec8b7e3e380, type: 3}
+  m_Script: {fileID: 11500000, guid: a78476c828d98e248ab5e1b027d7a7d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   imageCooldown: {fileID: 2117691338}
@@ -2075,7 +2075,7 @@ MonoBehaviour:
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
+  m_FillClockwise: 0
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
