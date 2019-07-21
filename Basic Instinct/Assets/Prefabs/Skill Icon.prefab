@@ -167,9 +167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78476c828d98e248ab5e1b027d7a7d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skill: {fileID: 0}
+  key: {fileID: 1314408201203117572}
   imageCooldown: {fileID: 1915894408920493191}
   timer: {fileID: 2677730663686356133}
-  cooldown: 5
   button: 
 --- !u!1 &3456273375487659916
 GameObject:
@@ -236,7 +237,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Q
+  m_text: 'E
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9803c9c105d7c66409936b8deaa4c646, type: 2}
   m_sharedMaterial: {fileID: -4073194885785856191, guid: 9803c9c105d7c66409936b8deaa4c646,
@@ -279,7 +282,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_firstOverflowCharacterIndex: -1
@@ -306,9 +309,9 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1314408201203117572}
-    characterCount: 1
+    characterCount: 2
     spriteCount: 0
-    spaceCount: 0
+    spaceCount: 1
     wordCount: 1
     linkCount: 0
     lineCount: 1
@@ -437,7 +440,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_firstOverflowCharacterIndex: 0

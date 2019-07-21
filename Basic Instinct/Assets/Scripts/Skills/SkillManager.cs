@@ -8,7 +8,7 @@ public class SkillManager : MonoBehaviour {
     public KeyCode[] skillKeys;
     private List<Skill> skills;
 
-    void Start() {
+    void Awake() {
         bindSkillKeys();
         bindSkills();
     }
@@ -42,5 +42,18 @@ public class SkillManager : MonoBehaviour {
             skillComponent.visualPrefab = skillHelper.visual;
             skills.Add(skillComponent);
         }
+    }
+
+    public Skill getSkill(int index) {
+        if (index < skills.Count) {
+            return skills[index];
+        }
+        else {
+            return null;
+        }
+    }
+
+    public string getSkillKey(int index) {
+        return skillKeys[index].ToString();
     }
 }
