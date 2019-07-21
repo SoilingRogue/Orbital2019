@@ -26,16 +26,16 @@ public class SkillManager : MonoBehaviour {
     }
 
     void bindSkillKeys() {
-        if (PlayerPrefs.GetString("Skill_0") == null) {
+        if (PlayerPrefs.GetString("Skill_0") == "") {
             PlayerPrefs.SetString("Skill_0", "Q");
         }
-        if (PlayerPrefs.GetString("Skill_1") == null) {
+        if (PlayerPrefs.GetString("Skill_1") == "") {
             PlayerPrefs.SetString("Skill_1", "E");
         }
-        if (PlayerPrefs.GetString("Skill_2") == null) {
+        if (PlayerPrefs.GetString("Skill_2") == "") {
             PlayerPrefs.SetString("Skill_2", "R");
         }
-        if (PlayerPrefs.GetString("Skill_3") == null) {
+        if (PlayerPrefs.GetString("Skill_3") == "") {
             PlayerPrefs.SetString("Skill_3", "F");
         }
 
