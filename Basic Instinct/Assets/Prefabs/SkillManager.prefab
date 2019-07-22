@@ -50,6 +50,5 @@ MonoBehaviour:
       type: 3}
   - user: {fileID: 0}
     skill: {fileID: 5620471598324201971, guid: 3351abe173a904543b8a942255104fd9, type: 3}
-    visual: {fileID: 4849285411860955109, guid: b23128c11089dd945b3784edd5157046,
-      type: 3}
+    visual: {fileID: 121802, guid: 8f18e1d8c46c51f429429815455062fc, type: 3}
   skillKeys: 
