@@ -55,7 +55,7 @@ public class PlayerScript5 : MonoBehaviour
             Vector3 movementVector = new Vector3(inputH, 0 , inputV);
             Quaternion camTurn = GetCameraTurn();
             movementVector = camTurn * movementVector;
-                        transform.LookAt(movementVector);
+            transform.LookAt(movementVector);
             // rBody.rotation = camTurn;
             // rBody.velocity += movementVector.normalized * moveSpeed;
 
