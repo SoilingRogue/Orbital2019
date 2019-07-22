@@ -3009,6 +3009,11 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1251068003138438935, guid: e9f6c21e235efd04086724a0e0166cc1,
+        type: 3}
+      propertyPath: m_Mass
+      value: 10000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9f6c21e235efd04086724a0e0166cc1, type: 3}
 --- !u!1001 &2308376506963405871
@@ -3088,10 +3093,5 @@ PrefabInstance:
       propertyPath: skillHelpers.Array.data[1].user
       value: 
       objectReference: {fileID: 1809726376}
-    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
-        type: 3}
-      propertyPath: skillHelpers.Array.data[1].visual
-      value: 
-      objectReference: {fileID: 121802, guid: 8f18e1d8c46c51f429429815455062fc, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 481094ba69a38ec46afe4af677239249, type: 3}
