@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Skill : MonoBehaviour {
     [HideInInspector]
     public GameObject visualPrefab;
+    public string skillName;
     public float cooldown;
     public float cooldownTimer;
 
@@ -19,7 +20,7 @@ public abstract class Skill : MonoBehaviour {
 
     public void useSkill() {
         if (!isOnCooldown()) {
-            Debug.Log(name + " used.");
+            Debug.Log(skillName + " used.");
             use();
             cooldownTimer = cooldown;
         }

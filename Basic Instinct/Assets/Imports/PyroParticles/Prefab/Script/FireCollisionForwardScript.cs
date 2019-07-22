@@ -18,23 +18,9 @@ namespace DigitalRuby.PyroParticles
     {
         public ICollisionHandler CollisionHandler;
 
-        void Start() {
-            CollisionHandler = new CollisionHandler();
-        }
-
         public void OnCollisionEnter(Collision col)
         {
             CollisionHandler.HandleCollision(gameObject, col);
-        }
-    }
-
-    public class CollisionHandler : ICollisionHandler {
-        public void HandleCollision(GameObject obj, Collision c) {
-            if (c.collider.CompareTag("Player")) {
-                Debug.Log("Got here.");
-                CharacterStats playerStats = c.gameObject.GetComponent<CharacterStats>();
-                playerStats.takeDamage(20);
-            }
         }
     }
 }

@@ -8,6 +8,7 @@ public class Shield : Skill {
     private GameObject visual;
 
     protected override void initialise() {
+        skillName = "Shield";
         cooldown = 5f;
         duration = 1.5f;
         diffVector = Vector3.up;
