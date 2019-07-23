@@ -628,6 +628,33 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1915728254}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &1809726380 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1251068003138438935, guid: e9f6c21e235efd04086724a0e0166cc1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1915728254}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1809726381 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1251068001856368137, guid: e9f6c21e235efd04086724a0e0166cc1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1915728254}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1809726383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809726376}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5ac02249ff6b04c9cd25b0646b9b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1809726381}
+  body: {fileID: 1809726380}
+  turnRate: 2
 --- !u!1001 &1915728254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -699,6 +726,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1694915308}
+    - target: {fileID: 1809726382, guid: e9f6c21e235efd04086724a0e0166cc1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9f6c21e235efd04086724a0e0166cc1, type: 3}
 --- !u!1001 &2308376506963405871

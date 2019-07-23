@@ -36,10 +36,15 @@ public class FireProjectile : Skill {
             Physics.IgnoreCollision(projectileCollider, userCollider);
         }
         
-        fireProjectile.AddComponent<FireProjCollider>();
+        DigitalRuby.PyroParticles.FireProjectileCollisionDelegate del = new DigitalRuby.PyroParticles.FireProjectileCollisionDelegate(applyDamage);
+        projectileScript.CollisionDelegate = del;
 
         // addCollider(fireProjectile);
         // Destroy(fireProjectile, duration);
+    }
+
+    public void applyDamage(DigitalRuby.PyroParticles.FireProjectileScript script, Vector3 pos) {
+        Debug.Log("Test");
     }
 
     protected override void review() {

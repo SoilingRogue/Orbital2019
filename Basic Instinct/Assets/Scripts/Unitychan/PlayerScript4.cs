@@ -26,7 +26,8 @@ public class PlayerScript4 : MonoBehaviour
         float moveSpeed;
 
         // Setting boolean value for moving - for other scripts to access moving boolean
-        if (inputV != 0 || inputH != 0)
+        // if (inputV != 0 || inputH != 0)
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             anim.SetBool("moving", true);
             if (anim.GetBool("run"))
