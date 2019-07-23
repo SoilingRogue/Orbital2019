@@ -26,7 +26,7 @@ public class PlayerScript5 : MonoBehaviour
         float moveSpeed;
 
         // Setting boolean value for moving - for other scripts to access moving boolean
-        if (inputV != 0 || inputH != 0)
+        if (Input.GetKey("w") || Input.GetKey("a") ||Input.GetKey("s") || Input.GetKey("d"))
         {
             anim.SetBool("moving", true);
             if (anim.GetBool("run"))
@@ -55,9 +55,8 @@ public class PlayerScript5 : MonoBehaviour
             Vector3 movementVector = new Vector3(inputH, 0 , inputV);
             Quaternion camTurn = GetCameraTurn();
             movementVector = camTurn * movementVector;
-            transform.LookAt(movementVector);
-            // rBody.rotation = camTurn;
-            // rBody.velocity += movementVector.normalized * moveSpeed;
+            rBody.rotation = camTurn;
+            rBody.velocity += movementVector.normalized * moveSpeed;
 
             // rBody.velocity += inputH * Vector3.ProjectOnPlane(cam.transform.right, Vector3.up).normalized * moveSpeed * Time.deltaTime;            
             // rBody.velocity += new Vector3(inputH, 0, inputV) * moveSpeed; // for debugging
