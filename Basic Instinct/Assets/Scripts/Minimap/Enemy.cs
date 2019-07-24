@@ -42,17 +42,24 @@ public class Enemy : MonoBehaviour {
     void attack() {
         // Spawn a sphere
         GameObject fireball = spawnFireball();
-        fireball.SetActive(true);
+        if (fireball != null) {
+            fireball.SetActive(true);
+        }
         // Destroy(fireball, 6f);
     }
 
     GameObject spawnFireball() {
-        float enemyHeight = GetComponent<Collider>().bounds.extents.y;
-        Vector3 scale = new Vector3(2, 2, 2);
-        Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + enemyHeight, transform.position.z);
-        Vector3 buffer = transform.forward.normalized;
-        Quaternion spawnRotation = transform.rotation;
-        return Instantiate(fireboltPrefab, spawnPosition + buffer, spawnRotation);
+        if (fireboltPrefab != null) {
+            float enemyHeight = GetComponent<Collider>().bounds.extents.y;
+            Vector3 scale = new Vector3(2, 2, 2);
+            Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + enemyHeight, transform.position.z);
+            Vector3 buffer = transform.forward.normalized;
+            Quaternion spawnRotation = transform.rotation;
+            return Instantiate(fireboltPrefab, spawnPosition + buffer, spawnRotation);
+        }
+        else {
+            return null;
+        }
         // GameObject fireball = new GameObject("Fireball");
         // // Set fireball location to enemy location at the start
         // fireball.transform.position = transform.position;

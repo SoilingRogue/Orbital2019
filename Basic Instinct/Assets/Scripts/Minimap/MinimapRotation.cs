@@ -30,7 +30,7 @@ public class MinimapRotation : MonoBehaviour
         // Lerp - linear interpolation btw current rotation at start of frame & animate towards target rotation
         trans.rotation = Quaternion.Lerp(trans.rotation, QT, Time.deltaTime * orbitDampening);
  
-        Debug.Log(trans.forward);
+        // Debug.Log(trans.forward);
         // if ( this.cam.localPosition.z != this.camDistance * -1f )
         // {
         //     this.cam.localPosition = new Vector3(0f, 0f, Mathf.Lerp(this.cam.localPosition.z, this.camDistance * -1f, Time.deltaTime * scrollDampening));

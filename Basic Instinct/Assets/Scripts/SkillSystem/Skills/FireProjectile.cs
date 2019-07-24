@@ -13,8 +13,8 @@ public class FireProjectile : Skill {
         skillName = "Fire Projectile";
         cooldown = 3f;
         // duration = 1.5f;
-        damage = 50;
-        // travelSpeed = 20f;
+        // damage = 50;
+        travelSpeed = 20f;
         diffVector = Vector3.up;
     }
 
@@ -36,16 +36,20 @@ public class FireProjectile : Skill {
             Physics.IgnoreCollision(projectileCollider, userCollider);
         }
         
-        DigitalRuby.PyroParticles.FireProjectileCollisionDelegate del = new DigitalRuby.PyroParticles.FireProjectileCollisionDelegate(applyDamage);
-        projectileScript.CollisionDelegate = del;
+        // DigitalRuby.PyroParticles.FireProjectileCollisionDelegate del = new DigitalRuby.PyroParticles.FireProjectileCollisionDelegate(applyDamage);
+        // projectileScript.CollisionDelegate = del;
 
         // addCollider(fireProjectile);
         // Destroy(fireProjectile, duration);
+
+        // fireProjectile.AddComponent<TestCollider>();
+        // fireProjectile.GetComponentInChildren<Collider>().isTrigger = true;
+
     }
 
-    public void applyDamage(DigitalRuby.PyroParticles.FireProjectileScript script, Vector3 pos) {
-        Debug.Log("Test");
-    }
+    // public void applyDamage(DigitalRuby.PyroParticles.FireProjectileScript script, Vector3 pos) {
+    //     Debug.Log("Test");
+    // }
 
     protected override void review() {
         // if (fireProjectile != null) {

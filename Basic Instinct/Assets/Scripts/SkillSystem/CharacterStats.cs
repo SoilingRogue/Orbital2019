@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour {
     public GameManager gameManager;
+    
     public int maxHealth;
     private int currentHealth;
     private bool isInvulnerable;
+    public Animator animator;
 
     void Start() {
         currentHealth = maxHealth;
@@ -19,6 +21,7 @@ public class CharacterStats : MonoBehaviour {
             currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
             Debug.Log(name + " takes " + damage + " damage.");
             Debug.Log(name + " has " + currentHealth + " health.");
+            animator.SetBool("damaged", true);
         }
         // else if (currentHealth <= 0) {
             // Die();
