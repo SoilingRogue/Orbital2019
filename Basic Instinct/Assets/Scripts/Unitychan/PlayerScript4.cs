@@ -5,15 +5,16 @@ using UnityEngine;
 public class PlayerScript4 : MonoBehaviour
 {
     private Animator anim;
-    private float inputH, inputV;
+    private float inputH, inputV, distToGround;
     private Rigidbody rBody;
-    public float walkSpeed = 1f, runSpeed = 3f, runSlideSpeed = 3.3f, walkSlideSpeed = 1.3f;
+    public float walkSpeed = 1f, runSpeed = 3f, runSlideSpeed = 3.3f, walkSlideSpeed = 1.3f, jumpHeight = 1f, gravity = 10f;
     public Camera cam;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         rBody = GetComponent<Rigidbody>();
+        distToGround = GetComponent<Collider>().bounds.extents.y;
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -53,6 +54,15 @@ public class PlayerScript4 : MonoBehaviour
                 }
             }
 
+            if (anim.GetBool("jump") && IsGrounded())
+            {
+                // Vector3 jumpVector = new Vector3(0, Mathf.Sqrt(jumpHeight * -2f * gravity), 0);
+                // rBody.velocity = jumpVector;
+                Debug.Log("jumping");
+                rBody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
+                
+            }
+
             Vector3 movementVector = new Vector3(inputH, 0 , inputV);
             Quaternion camTurn = GetCameraTurn();
             movementVector = camTurn * movementVector;
@@ -72,5 +82,10 @@ public class PlayerScript4 : MonoBehaviour
     private Quaternion GetCameraTurn()
     {
         return Quaternion.AngleAxis(cam.transform.rotation.eulerAngles.y, Vector3.up);
+    }
+
+    public bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
     }
 }

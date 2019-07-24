@@ -5,6 +5,8 @@ using UnityEngine;
 public class AnimationScript : MonoBehaviour
 {
     private Animator anim;
+    private PlayerScript4 script4;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -12,7 +14,7 @@ public class AnimationScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // Damaged/killed
         if (Input.GetKeyDown("0"))
@@ -23,46 +25,46 @@ public class AnimationScript : MonoBehaviour
             anim.Play("DAMAGED01", -1, 0f);
         }
 
-        // Jumping
-        if (Input.GetKey(KeyCode.Space))
+        if (script4.IsGrounded())
         {
-            anim.SetBool("jump", true);
-        }
-        else
-        {
-            anim.SetBool("jump", false);
-        }
+            // Movement
+            if (anim.GetBool("moving"))
+            {
+                // Running
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    anim.SetBool("run", true);
+                }
+                else
+                {
+                    anim.SetBool("run", false);
+                }
 
-        // Movement
-        if (anim.GetBool("moving"))
-        {
-            // Running
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                anim.SetBool("run", true);
-            }
-            else
-            {
-                anim.SetBool("run", false);
+                // Sliding
+                if (Input.GetKeyDown(KeyCode.LeftControl))
+                {
+                    anim.SetBool("slide", true);
+                }
+                else
+                {
+                    anim.SetBool("slide", false);
+                }
             }
 
-            // Sliding
-            if (Input.GetKeyDown(KeyCode.LeftControl))
-            {
-                anim.SetBool("slide", true);
+            // Emotes
+            if (Input.GetKeyDown("g")) {
+                anim.Play("Gangnam Style", -1, 0f);
             }
-            else
-            {
-                anim.SetBool("slide", false);
+            if (Input.GetKeyDown("t")) {
+                anim.Play("Thriller Part 2", -1, 0f);
             }
-        }
 
-        // Emotes
-        if (Input.GetKeyDown("g")) {
-            anim.Play("Gangnam Style", -1, 0f);
-        }
-        if (Input.GetKeyDown("t")) {
-            anim.Play("Thriller Part 2", -1, 0f);
+            // Jumping
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                anim.SetBool("jump", true);
+                anim.Play("Jump", -1, 0f);
+            }
         }
     }
 }
