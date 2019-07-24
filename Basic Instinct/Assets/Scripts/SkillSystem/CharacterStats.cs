@@ -21,12 +21,8 @@ public class CharacterStats : MonoBehaviour {
             currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
             Debug.Log(name + " takes " + damage + " damage.");
             Debug.Log(name + " has " + currentHealth + " health.");
-            animator.SetBool("damaged", true);
+            animator.Play("DAMAGED00");
         }
-        // else if (currentHealth <= 0) {
-            // Die();
-            // Debug.Log(name + " is already dead.");
-        // }
         else {
             Debug.Log("No damage taken. " + name + " is invulnerable.");
         }
