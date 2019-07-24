@@ -8,7 +8,7 @@ public class PlayerCollision : MonoBehaviour {
     void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("Enemy")) {
             Debug.Log(name + " collided with " + other.gameObject.name);
-            stats.takeDamage(10);
+            stats.takeDamage(1);
             stats.setInvulnerable(1);
         }
     }
