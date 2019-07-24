@@ -7,7 +7,8 @@ public class PlayerScript4 : MonoBehaviour
     private Animator anim;
     private float inputH, inputV, distToGround;
     private Rigidbody rBody;
-    public float walkSpeed = 1f, runSpeed = 3f, runSlideSpeed = 3.3f, walkSlideSpeed = 1.3f, jumpHeight = 1f, gravity = 10f;
+    public float walkSpeed = 1f, runSpeed = 3f, runSlideSpeed = 3.3f, walkSlideSpeed = 1.3f, jumpHeight = 1f; 
+    // public float gravity = 10f; 
     public Camera cam;
     // Start is called before the first frame update
     void Start()
@@ -54,13 +55,15 @@ public class PlayerScript4 : MonoBehaviour
                 }
             }
 
-            if (anim.GetBool("jump") && IsGrounded())
+            // if (anim.GetBool("jump") && IsGrounded())
+            if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+
             {
                 // Vector3 jumpVector = new Vector3(0, Mathf.Sqrt(jumpHeight * -2f * gravity), 0);
                 // rBody.velocity = jumpVector;
                 Debug.Log("jumping");
                 rBody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
-                anim.SetBool("jump", false);
+                // anim.SetBool("jump", false);
             }
 
             Vector3 movementVector = new Vector3(inputH, 0 , inputV);
@@ -77,6 +80,9 @@ public class PlayerScript4 : MonoBehaviour
         {
             anim.SetBool("moving", false);
         }
+
+        GetComponent<Collider>().transform.position = gameObject.transform.position;
+
     }
 
     private Quaternion GetCameraTurn()

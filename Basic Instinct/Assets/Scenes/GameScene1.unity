@@ -905,6 +905,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: unitychan
       objectReference: {fileID: 0}
+    - target: {fileID: 1251068003138438935, guid: e9f6c21e235efd04086724a0e0166cc1,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251068003138438935, guid: e9f6c21e235efd04086724a0e0166cc1,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1251068001849393545, guid: e9f6c21e235efd04086724a0e0166cc1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -960,21 +970,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1251068003138438935, guid: e9f6c21e235efd04086724a0e0166cc1,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1251068003138438935, guid: e9f6c21e235efd04086724a0e0166cc1,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1809726382, guid: e9f6c21e235efd04086724a0e0166cc1, type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 1694915308}
     - target: {fileID: 1809726382, guid: e9f6c21e235efd04086724a0e0166cc1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809726382, guid: e9f6c21e235efd04086724a0e0166cc1, type: 3}
+      propertyPath: walkSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809726382, guid: e9f6c21e235efd04086724a0e0166cc1, type: 3}
+      propertyPath: runSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809726382, guid: e9f6c21e235efd04086724a0e0166cc1, type: 3}
+      propertyPath: runSlideSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809726382, guid: e9f6c21e235efd04086724a0e0166cc1, type: 3}
+      propertyPath: walkSlideSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809726385, guid: e9f6c21e235efd04086724a0e0166cc1, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -1002,43 +1022,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
-        type: 3}
-      propertyPath: skillHelpers.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
-        type: 3}
-      propertyPath: skillHelpers.Array.data[0].user
-      value: 
-      objectReference: {fileID: 1809726376}
-    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
-        type: 3}
-      propertyPath: skillHelpers.Array.data[1].user
-      value: 
-      objectReference: {fileID: 1809726376}
-    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
-        type: 3}
-      propertyPath: skillHelpers.Array.data[2].user
-      value: 
-      objectReference: {fileID: 1809726376}
-    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
-        type: 3}
-      propertyPath: skillHelpers.Array.data[2].skill
-      value: 
-      objectReference: {fileID: 5620471598324201971, guid: 3351abe173a904543b8a942255104fd9,
-        type: 3}
-    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
-        type: 3}
-      propertyPath: skillHelpers.Array.data[2].visual
-      value: 
-      objectReference: {fileID: 1097068111972672652, guid: 16d78353568258d4493566c604144867,
-        type: 3}
-    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
-        type: 3}
-      propertyPath: skillHelpers.Array.data[1].visual
-      value: 
-      objectReference: {fileID: 121802, guid: 8f18e1d8c46c51f429429815455062fc, type: 3}
     - target: {fileID: 2308376506267576687, guid: 481094ba69a38ec46afe4af677239249,
         type: 3}
       propertyPath: m_Name
@@ -1099,5 +1082,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
+        type: 3}
+      propertyPath: skillHelpers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
+        type: 3}
+      propertyPath: skillHelpers.Array.data[0].user
+      value: 
+      objectReference: {fileID: 1809726376}
+    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
+        type: 3}
+      propertyPath: skillHelpers.Array.data[1].user
+      value: 
+      objectReference: {fileID: 1809726376}
+    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
+        type: 3}
+      propertyPath: skillHelpers.Array.data[2].user
+      value: 
+      objectReference: {fileID: 1809726376}
+    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
+        type: 3}
+      propertyPath: skillHelpers.Array.data[2].skill
+      value: 
+      objectReference: {fileID: 5620471598324201971, guid: 3351abe173a904543b8a942255104fd9,
+        type: 3}
+    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
+        type: 3}
+      propertyPath: skillHelpers.Array.data[2].visual
+      value: 
+      objectReference: {fileID: 1097068111972672652, guid: 16d78353568258d4493566c604144867,
+        type: 3}
+    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
+        type: 3}
+      propertyPath: skillHelpers.Array.data[1].visual
+      value: 
+      objectReference: {fileID: 121802, guid: 8f18e1d8c46c51f429429815455062fc, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 481094ba69a38ec46afe4af677239249, type: 3}

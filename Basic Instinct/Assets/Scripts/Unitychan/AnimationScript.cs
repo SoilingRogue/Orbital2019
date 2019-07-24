@@ -11,6 +11,7 @@ public class AnimationScript : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        script4 = GetComponent<PlayerScript4>();
     }
 
     // Update is called once per frame
@@ -49,7 +50,7 @@ public class AnimationScript : MonoBehaviour
             // Jumping
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                anim.SetBool("jump", true);
+                // anim.SetBool("jump", true);
                 anim.Play("Jump", -1, 0f);
             }
         }
