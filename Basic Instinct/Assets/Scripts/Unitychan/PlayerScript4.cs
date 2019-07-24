@@ -60,7 +60,7 @@ public class PlayerScript4 : MonoBehaviour
                 // rBody.velocity = jumpVector;
                 Debug.Log("jumping");
                 rBody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
-                
+                anim.SetBool("jump", false);
             }
 
             Vector3 movementVector = new Vector3(inputH, 0 , inputV);

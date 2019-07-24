@@ -31,24 +31,11 @@ public class AnimationScript : MonoBehaviour
             if (anim.GetBool("moving"))
             {
                 // Running
-                if (Input.GetKey(KeyCode.LeftShift))
-                {
-                    anim.SetBool("run", true);
-                }
-                else
-                {
-                    anim.SetBool("run", false);
-                }
+                anim.SetBool("run", Input.GetKey(KeyCode.LeftShift));
 
                 // Sliding
-                if (Input.GetKeyDown(KeyCode.LeftControl))
-                {
-                    anim.SetBool("slide", true);
-                }
-                else
-                {
-                    anim.SetBool("slide", false);
-                }
+                anim.SetBool("slide", Input.GetKey(KeyCode.LeftControl));
+
             }
 
             // Emotes
