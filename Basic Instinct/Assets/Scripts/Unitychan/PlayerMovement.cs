@@ -28,10 +28,16 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("inputV", inputV);
         float moveSpeed;
 
+        // Set emote bool to true to disable camera following while idle in FollowPosition.cs
+        anim.SetBool("emote", true);
+
         if (IsGrounded())
         {
             if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
+                // Set emote bool to false for camera following in FollowPosition.cs
+                anim.SetBool("emote", false);
+                
                 // Running
                 anim.SetBool("run", Input.GetKey(KeyCode.LeftShift));
 
