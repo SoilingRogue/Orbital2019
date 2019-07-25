@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterStats : MonoBehaviour {
-    public GameManager gameManager;
-    
+    private GameManager gameManager;
     public int maxHealth;
     private int currentHealth;
     private bool isInvulnerable;
@@ -13,6 +12,7 @@ public class CharacterStats : MonoBehaviour {
     void Start() {
         currentHealth = maxHealth;
         Debug.Log(name + " has " + currentHealth + " health.");
+        gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
     public void takeDamage(int damage) {
@@ -28,7 +28,7 @@ public class CharacterStats : MonoBehaviour {
         }
         // Check if dead
         if (currentHealth <= 0) {
-            die();
+            StartCoroutine(die());
         }
     }
 
@@ -43,7 +43,14 @@ public class CharacterStats : MonoBehaviour {
         Debug.Log(name + " is now vulnerable.");
     }
 
-    private void die() {
-        gameManager.lose();
+    private IEnumerator die() {
+        animator.Play("DAMAGED01");
+        if (gameManager != null) {
+            yield return new WaitForSeconds(2);
+            gameManager.lose();
+        }
+        else {
+            Debug.LogWarning("No GameManager in scene.");
+        }
     }
 }

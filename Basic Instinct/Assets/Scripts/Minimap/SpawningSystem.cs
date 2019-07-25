@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawningSystem : MonoBehaviour {
+    [HideInInspector]
     public int currentWave;
+    [HideInInspector]
+    public float timeToNextSpawn;
     public GameObject enemyPrefab;
     public GameObject spawnPlane;
     private GameObject player;
-    public float timeToNextSpawn;
+    
     private int nextSpawnCount;
 
     void Start() {
@@ -15,14 +18,9 @@ public class SpawningSystem : MonoBehaviour {
         currentWave = 0;
 
         // Get a reference to the player
-        Object[] temp = FindObjectsOfType(typeof(GameObject));
-        foreach (GameObject o in temp) {
-            if (o.CompareTag("Player")) {
-                player = o;
-                break;
-            }
-        }
-        // How long it takes after game start to spawn enemies
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        // Spawn first enemy 2 seconds after starting the game
         timeToNextSpawn = 2f;
         // First wave has 1 enemy
         nextSpawnCount = 1;
@@ -35,15 +33,15 @@ public class SpawningSystem : MonoBehaviour {
             currentWave++;
 
             spawnEnemies();
-            nextSpawnCount = getNextSpawnCount();
+            increaseSpawnCount();
             // 10 sec delay between waves
             timeToNextSpawn = 10f;
         }
     }
 
     // Enemy count increases exponentially
-    int getNextSpawnCount() {
-        return 2 * nextSpawnCount;
+    void increaseSpawnCount() {
+        nextSpawnCount ++;
     }
 
     void spawnEnemies() {
@@ -60,7 +58,7 @@ public class SpawningSystem : MonoBehaviour {
         float randomZ = Random.Range(planeBounds.min.z, planeBounds.max.z);
         Vector3 result = new Vector3(randomX, spawnPlane.transform.position.y, randomZ);
         // Check if spawning location is too close to player
-        if (Vector3.Distance(result, player.transform.position) <= 10) {
+        if (Vector3.Distance(result, player.transform.position) <= 5) {
             Debug.Log("Randomizing spawn location again.");
             return getRandomSpawnLocation();
         }

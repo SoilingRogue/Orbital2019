@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
     public GameObject fireboltPrefab;
-    public int maxHealth = 100;
-    private int currentHealth;
     private float timeToNextAttack;
-    public float attackCooldown = 3f;
+    public float attackCooldown;
     private GameObject player;
     private Vector3 direction;
+    public bool isAggressive;
     void Start() {
         // Find player to target
         // This only works assuming the scene has only 1 player.
         player = GameObject.FindWithTag("Player");
 
-        currentHealth = maxHealth;
         // After spawning, attack only after 2s
         timeToNextAttack = 2f;
     }
@@ -34,7 +32,9 @@ public class Enemy : MonoBehaviour {
 
         timeToNextAttack -= Time.deltaTime;
         if (timeToNextAttack <= 0) {
-            attack();
+            if (isAggressive) {
+                attack();
+            }
             timeToNextAttack = attackCooldown;
         }
     }
@@ -45,7 +45,6 @@ public class Enemy : MonoBehaviour {
         if (fireball != null) {
             fireball.SetActive(true);
         }
-        // Destroy(fireball, 6f);
     }
 
     GameObject spawnFireball() {
@@ -58,14 +57,8 @@ public class Enemy : MonoBehaviour {
             return Instantiate(fireboltPrefab, spawnPosition + buffer, spawnRotation);
         }
         else {
+            Debug.LogWarning("Enemy has no fireball prefab.");
             return null;
         }
-        // GameObject fireball = new GameObject("Fireball");
-        // // Set fireball location to enemy location at the start
-        // fireball.transform.position = transform.position;
-        // // Use a script to handle projectile movement
-        // Fireball fb = (Fireball)fireball.AddComponent<Fireball>();
-        // fb.setDirection(direction);
-        // return fireball;
     }
 }

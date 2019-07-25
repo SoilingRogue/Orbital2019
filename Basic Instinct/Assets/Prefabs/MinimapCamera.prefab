@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 144667827352816998}
   - component: {fileID: 144667827352816999}
   - component: {fileID: 144667827352816992}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MinimapCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,12 +83,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144667827352816993}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7dd425ca938ce794b8ba54e7261a16ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  vectorDiff: {x: 0, y: 50, z: 0}
 --- !u!114 &144667827352816992
 MonoBehaviour:
   m_ObjectHideFlags: 0
