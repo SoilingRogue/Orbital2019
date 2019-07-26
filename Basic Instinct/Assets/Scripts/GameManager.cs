@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
-    
     public GameObject gameUI;
     public GameObject pauseMenu;
     public GameObject loseMenu;
