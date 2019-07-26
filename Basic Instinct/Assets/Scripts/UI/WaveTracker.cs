@@ -6,6 +6,6 @@ public class WaveTracker : MonoBehaviour {
     public TextMeshProUGUI waveText;
 
     void Update() {
-        waveText.text = "Wave " + spawningSystem.currentWave;
+        waveText.text = $"Wave {spawningSystem.currentWave} {(int)spawningSystem.timeToNextSpawn}";
     }
 }
