@@ -2197,6 +2197,7 @@ GameObject:
   - component: {fileID: 1809726383}
   - component: {fileID: 3702182660529553212}
   - component: {fileID: 415036639234142768}
+  - component: {fileID: 1809726377}
   m_Layer: 0
   m_Name: unitychan
   m_TagString: Player
@@ -2255,7 +2256,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &1809726385
 CapsuleCollider:
@@ -2278,7 +2279,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251068001848974441}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c5ac02249ff6b04c9cd25b0646b9b01, type: 3}
   m_Name: 
@@ -2301,7 +2302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3282d6c085f18d4082baf2cf80aacd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
   maxHealth: 30
   animator: {fileID: 1251068001856368137}
 --- !u!114 &415036639234142768
@@ -2317,7 +2317,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 3702182660529553212}
-  damagePerHit: 10
+  damagePerHit: 30
+--- !u!114 &1809726377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251068001848974441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8629da23fe70b246a835a9d650907c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 1
+  runSpeed: 3
+  runSlideSpeed: 3.3
+  walkSlideSpeed: 1.3
+  jumpHeight: 1
+  cam: {fileID: 0}
 --- !u!1 &1251068001848974443
 GameObject:
   m_ObjectHideFlags: 0
