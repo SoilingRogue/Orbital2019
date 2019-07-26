@@ -74,10 +74,6 @@ public class PlayerMovement2 : MonoBehaviour
                 rBody.rotation = Quaternion.LookRotation(movementVector);
                 rBody.velocity += movementVector.normalized * moveSpeed;
                 Debug.Log("moving");
-
-                // rBody.velocity += inputH * Vector3.ProjectOnPlane(cam.transform.right, Vector3.up).normalized * moveSpeed * Time.deltaTime;            
-                // rBody.velocity += new Vector3(inputH, 0, inputV) * moveSpeed; // for debugging
-                // Debug.Log(rBody.position); // for debugging
             }
 
             // Damaged/killed
@@ -97,31 +93,28 @@ public class PlayerMovement2 : MonoBehaviour
                 anim.Play("Thriller Part 2", -1, 0f);
             }
         }
-
-        // GetComponent<Collider>().transform.position = gameObject.transform.position;
     }
 
     // AddForce is instantaneous, not frame dependent
     void Update()
     {
         // Jumping
-        // if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         if (Input.GetKeyDown(KeyCode.Space) && !midair)
         {
-            midair = true;
-            // Vector3 jumpVector = new Vector3(0, Mathf.Sqrt(jumpHeight * -2f * gravity), 0);
-            // rBody.velocity = jumpVector;
-            Debug.Log("jumping");
-            anim.Play("JUMP00B_F", -1, 0f);
-            // Delay adding of force to rBody to sync the animations
-            Invoke("Jump", 0.3f);
+            StartCoroutine(Jump());
         }
     }
 
-    private void Jump()
+    private IEnumerator Jump()
     {
+        midair = true;
+        Debug.Log("jumping");
+        anim.Play("JUMP00B_F", -1, 0f);
+        // Delay adding of force to rBody to sync the animations
+        yield return new WaitForSeconds(0.3f);
         rBody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
-        Invoke("unsetMidair", 1.45f);
+        yield return new WaitForSeconds(1.45f);
+        midair = false;
     }
 
     private void unsetMidair() {

@@ -71,6 +71,8 @@ public class GameManager : MonoBehaviour {
     }
 
     public void restartGame() {
+        // Unfreeze game
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
