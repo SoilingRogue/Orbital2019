@@ -7,7 +7,7 @@ public class PlayerMovement2 : MonoBehaviour
     private Animator anim;
     private float inputH, inputV, distToGround;
     private Rigidbody rBody;
-    public float walkSpeed = 1f, runSpeed = 3f, runSlideSpeed = 3.3f, walkSlideSpeed = 1.3f, jumpHeight = 1f; 
+    public float walkSpeed = 1f, runSpeed = 3f, runSlideSpeed = 3.3f, walkSlideSpeed = 1.3f, jumpHeight = 8f; 
     public Camera cam;
     
     // Start is called before the first frame update
@@ -108,7 +108,7 @@ public class PlayerMovement2 : MonoBehaviour
             // Vector3 jumpVector = new Vector3(0, Mathf.Sqrt(jumpHeight * -2f * gravity), 0);
             // rBody.velocity = jumpVector;
             Debug.Log("jumping");
-            anim.Play("Jump", -1, 0f);
+            anim.Play("JUMP00B_F", -1, 0f);
             // Delay adding of force to rBody to sync the animations
             Invoke("Jump", 0.3f);
         }
