@@ -7,10 +7,6 @@ public class MinimapRotation : MonoBehaviour
     protected Vector2 camRotation;
     public float mouseSensitivity = 4f;
     protected float orbitDampening = 10f;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     // LateUpdate called after Update() on every game object in the scene, for rendering
     void LateUpdate()
