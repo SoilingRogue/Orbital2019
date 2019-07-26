@@ -7,7 +7,9 @@ public class PlayerMovement2 : MonoBehaviour
     private Animator anim;
     private float inputH, inputV, distToGround;
     private Rigidbody rBody;
-    public float walkSpeed = 1f, runSpeed = 3f, runSlideSpeed = 3.3f, walkSlideSpeed = 1.3f, jumpHeight = 8f; 
+    public float walkSpeed = 1f, runSpeed = 3f, slideSpeed = 0.3f, jumpHeight = 18f;
+    private float moveSpeed;
+    private Vector3 movementVector;
     public Camera cam;
 
     private bool midair;
@@ -28,12 +30,11 @@ public class PlayerMovement2 : MonoBehaviour
         inputV = Input.GetAxis("Vertical"); // set this based on camera angle
         anim.SetFloat("inputH", inputH);
         anim.SetFloat("inputV", inputV);
-        float moveSpeed;
 
         // Set emote bool to true to disable camera following while idle in FollowPosition.cs
         anim.SetBool("emote", true);
 
-        if (!midair)
+        if (!midair && !anim.GetBool("slide"))
         {
             if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
@@ -42,33 +43,17 @@ public class PlayerMovement2 : MonoBehaviour
                 
                 // Running
                 anim.SetBool("run", Input.GetKey(KeyCode.LeftShift));
-
-                // Sliding
-                anim.SetBool("slide", Input.GetKey(KeyCode.LeftControl));
             
                 if (anim.GetBool("run"))
                 {
-                    if (anim.GetBool("slide"))
-                    {
-                        moveSpeed = runSlideSpeed;
-                    }
-                    else
-                    {
                     moveSpeed = runSpeed;
-                    }
                 }
                 else
                 {
-                    if (anim.GetBool("slide"))
-                    {
-                        moveSpeed = walkSlideSpeed;
-                    }
-                    else
-                    {
-                        moveSpeed = walkSpeed;
-                    }
+                    moveSpeed = walkSpeed;
                 }
-                Vector3 movementVector = new Vector3(inputH, 0 , inputV);
+
+                movementVector = new Vector3(inputH, 0 , inputV);
                 Quaternion camTurn = GetCameraTurn();
                 movementVector = camTurn * movementVector;
                 rBody.rotation = Quaternion.LookRotation(movementVector);
@@ -103,6 +88,12 @@ public class PlayerMovement2 : MonoBehaviour
         {
             StartCoroutine(Jump());
         }
+    
+        // Sliding
+        if (Input.GetKeyDown(KeyCode.LeftControl) && !anim.GetBool("emote"))
+        {
+            StartCoroutine(Slide());
+        }
     }
 
     private IEnumerator Jump()
@@ -117,8 +108,17 @@ public class PlayerMovement2 : MonoBehaviour
         midair = false;
     }
 
-    private void unsetMidair() {
-        midair = false;
+    private IEnumerator Slide()
+    {
+        // Sliding
+        anim.SetBool("slide", true);
+        Debug.Log("sliding");
+        anim.Play("SLIDE00_F", -1, 0f);
+        rBody.velocity += transform.forward * (moveSpeed + slideSpeed);
+        Debug.Log(moveSpeed + slideSpeed);
+        // Delay adding of force to rBody to sync the animations
+        yield return new WaitForSeconds(1.3f);
+        anim.SetBool("slide", false);
     }
 
     private Quaternion GetCameraTurn()
