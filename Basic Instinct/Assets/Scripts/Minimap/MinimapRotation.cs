@@ -17,17 +17,9 @@ public class MinimapRotation : MonoBehaviour
                 camRotation.x += Input.GetAxis("Mouse X") * mouseSensitivity;
             }
  
-        // Actual Camera Rig Transformations - has to be inside of LateUpdate()
-        // setting pitch and yaw for rotation
         Quaternion QT = Quaternion.Euler(90, camRotation.x, 0);
         
         // Lerp - linear interpolation btw current rotation at start of frame & animate towards target rotation
         transform.rotation = Quaternion.Lerp(transform.rotation, QT, Time.deltaTime * orbitDampening);
- 
-        // Debug.Log(trans.forward);
-        // if ( this.cam.localPosition.z != this.camDistance * -1f )
-        // {
-        //     this.cam.localPosition = new Vector3(0f, 0f, Mathf.Lerp(this.cam.localPosition.z, this.camDistance * -1f, Time.deltaTime * scrollDampening));
-        // }
     }
 }

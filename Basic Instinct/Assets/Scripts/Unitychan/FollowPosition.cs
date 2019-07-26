@@ -2,11 +2,11 @@
 
 public class FollowPosition : MonoBehaviour {
     public GameObject objectToFollow;
+    public Vector3 positionDifference;
     private Animator anim;
-    private Vector3 positionDifference;
     void Start() {
         anim = objectToFollow.GetComponent<Animator>();
-        positionDifference = objectToFollow.transform.position - transform.position;
+        transform.position = objectToFollow.transform.position - positionDifference;
     }
 
     void Update() {

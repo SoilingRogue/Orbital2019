@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1185070826464908823}
   - component: {fileID: 1895016942214709831}
   - component: {fileID: 7332122198659261131}
-  - component: {fileID: 545731603607935238}
+  - component: {fileID: 6382521469905532900}
   m_Layer: 9
   m_Name: PlayerIcon
   m_TagString: Untagged
@@ -96,7 +96,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToFollow: {fileID: 0}
---- !u!114 &545731603607935238
+  x: 0
+  y: 0
+  z: 0
+--- !u!114 &6382521469905532900
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,7 +108,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4327239077285637646}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84f436c8d72cc4d4a8837bb51f5af1a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 76f8eae661eeb08408a7fc5e6f9f073b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 4
