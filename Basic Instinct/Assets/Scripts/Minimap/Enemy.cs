@@ -6,9 +6,13 @@ public class Enemy : MonoBehaviour {
     public GameObject fireboltPrefab;
     private float timeToNextAttack;
     public float attackCooldown;
+    public float fireballSpeed;
+    public float fireballDuration;
     private GameObject player;
     private Vector3 direction;
     public bool isAggressive;
+    private GameObject fireball;
+    
 
     void Start() {
         // Find player to target
@@ -51,17 +55,20 @@ public class Enemy : MonoBehaviour {
 
     void attack() {
         // Spawn a sphere
-        GameObject fireball = spawnFireball();
+        fireball = spawnFireball();
         if (fireball != null) {
             fireball.SetActive(true);
+            SmallFireball script = fireball.GetComponent<SmallFireball>();
+            script.direction = direction;
+            script.duration = fireballDuration;
+            script.speed = fireballSpeed;
         }
     }
 
     GameObject spawnFireball() {
         if (fireboltPrefab != null) {
             float enemyHeight = GetComponent<Collider>().bounds.extents.y;
-            Vector3 scale = new Vector3(2, 2, 2);
-            Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + enemyHeight, transform.position.z);
+            Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + enemyHeight * 0.75f, transform.position.z);
             Vector3 buffer = transform.forward.normalized;
             Quaternion spawnRotation = transform.rotation;
             return Instantiate(fireboltPrefab, spawnPosition + buffer, spawnRotation);
