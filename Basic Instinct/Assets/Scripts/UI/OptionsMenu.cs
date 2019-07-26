@@ -19,10 +19,12 @@ public class OptionsMenu : MonoBehaviour {
         // Set dropdown options to the available resolutions for each user
         // and set default resolution to default resolution of system
         resolutionDropdown.ClearOptions();
+        // Get user's screen's refresh rate
+        int screenRefreshRate = Screen.currentResolution.refreshRate;
         List<string> options = new List<string>();
-        // Filter 60Hz resolutions only
+        // Filter user's refresh rate resolutions only
         foreach (Resolution res in Screen.resolutions) {
-            if (res.refreshRate == 60) {
+            if (res.refreshRate == screenRefreshRate) {
                 resolutions.Add(res);
             }
         }
