@@ -28,22 +28,27 @@ public class CharacterStats : MonoBehaviour {
         }
         // Check if dead
         if (currentHealth <= 0) {
-            StartCoroutine(die());
+            die();
         }
     }
 
     public void setInvulnerable(float duration) {
-        isInvulnerable = true;
-        Debug.Log(name + " is now invulnerable.");
-        Invoke("setVulnerable", duration);
+        StartCoroutine(setInvulnerableHelper(duration));
     }
 
-    private void setVulnerable() {
+    private IEnumerator setInvulnerableHelper(float duration) {
+        isInvulnerable = true;
+        Debug.Log(name + " is now invulnerable.");
+        yield return new WaitForSeconds(duration);
         isInvulnerable = false;
         Debug.Log(name + " is now vulnerable.");
     }
 
-    private IEnumerator die() {
+    public void die() {
+        StartCoroutine(dieHelper());
+    }
+
+    private IEnumerator dieHelper() {
         animator.Play("DAMAGED01");
         if (gameManager != null) {
             yield return new WaitForSeconds(2);
