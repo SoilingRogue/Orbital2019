@@ -6,12 +6,16 @@ public class Teleport : Skill{
     public KeyCode key;
     private Camera cam;
     private float distance = 100f;
-
+    private int layerMask;
+RaycastHit hit;
     void Start()
     {
         cam = Camera.main;
+        // layerMask = 1 << 0;
+        // layerMask = ~layerMask;
+        layerMask = ~2;
     }
-    
+
 //     // Constructor
 //     void Start() {
 //         name = "Teleport";
@@ -38,6 +42,9 @@ public class Teleport : Skill{
     protected override void use()
     {
         // Debug.Log(Camera.main);
+
+        raycast();
+
         if(Input.GetKeyUp(key))
         {
             teleport();
@@ -57,5 +64,15 @@ public class Teleport : Skill{
         Destroy(fireRing, 3);
     }
 
-    
+    private void raycast()
+    {
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        if (Physics.Raycast(ray, out hit, 200f, layerMask))
+        {
+            Debug.Log(hit.transform.name);
+        }
+        // Physics.Raycast(ray, out hit, 200f);
+        
+        Debug.Log(hit.distance);
+    }
 }

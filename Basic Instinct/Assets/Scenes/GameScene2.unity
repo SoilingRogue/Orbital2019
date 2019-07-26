@@ -1351,6 +1351,16 @@ PrefabInstance:
       propertyPath: positionDifference.y
       value: -1.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2915973537271138081, guid: 5d933a1cd24361b4a9070c0346be93f5,
+        type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915973537271138081, guid: 5d933a1cd24361b4a9070c0346be93f5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d933a1cd24361b4a9070c0346be93f5, type: 3}
 --- !u!1001 &3455467861612762066

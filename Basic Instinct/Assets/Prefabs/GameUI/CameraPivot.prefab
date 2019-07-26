@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2915973537271138085}
   - component: {fileID: 2915973537271138084}
   - component: {fileID: 2915973537271138083}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2915973538663780143}
   - component: {fileID: 2915973538663780128}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CameraPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
