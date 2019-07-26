@@ -8,7 +8,6 @@ TagManager:
   - UI
   - Enemy
   - Fire
-  - Config
   layers:
   - Default
   - TransparentFX

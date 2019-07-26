@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Firestrike : Skill {
     public Vector3 displacement;
+    public float scale;
 
     protected override void initialise() {
         skillName = "Firestrike";
         cooldown = 10;
-        displacement = new Vector3(0, 0, 0);
+        displacement = transform.forward.normalized * scale;
     }
 
     protected override void use() {
