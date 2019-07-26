@@ -41,7 +41,7 @@ public class SpawningSystem : MonoBehaviour {
 
     // Enemy count increases exponentially
     void increaseSpawnCount() {
-        nextSpawnCount ++;
+        nextSpawnCount++;
     }
 
     void spawnEnemies() {

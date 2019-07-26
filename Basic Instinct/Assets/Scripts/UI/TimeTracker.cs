@@ -1,18 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+using TMPro;
 
 public class TimeTracker : MonoBehaviour {
-    public GameManager gameManager;
-    private Text text;
+    public TextMeshProUGUI timeText;
+    [HideInInspector]
+    public float time;
 
     void Start() {
-        text = GetComponent<Text>();
+        time = 0f;
     }
 
     void Update() {
-        float t = gameManager.getTimeToNextWave();
-        text.text = "Next wave in " + (int)t;
+        time += Time.deltaTime;
+        timeText.text = "Time " + time.ToString("F");
     }
 }
