@@ -5,13 +5,11 @@ using UnityEngine;
 public class MinimapRotation : MonoBehaviour
 {
     protected Vector2 camRotation;
-    protected Transform trans;
     public float mouseSensitivity = 4f;
     protected float orbitDampening = 10f;
     // Start is called before the first frame update
     void Start()
     {
-        trans = gameObject.transform;
     }
 
     // LateUpdate called after Update() on every game object in the scene, for rendering
@@ -28,7 +26,7 @@ public class MinimapRotation : MonoBehaviour
         Quaternion QT = Quaternion.Euler(90, camRotation.x, 0);
         
         // Lerp - linear interpolation btw current rotation at start of frame & animate towards target rotation
-        trans.rotation = Quaternion.Lerp(trans.rotation, QT, Time.deltaTime * orbitDampening);
+        transform.rotation = Quaternion.Lerp(transform.rotation, QT, Time.deltaTime * orbitDampening);
  
         // Debug.Log(trans.forward);
         // if ( this.cam.localPosition.z != this.camDistance * -1f )
