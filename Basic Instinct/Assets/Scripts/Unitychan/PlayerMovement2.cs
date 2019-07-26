@@ -9,6 +9,8 @@ public class PlayerMovement2 : MonoBehaviour
     private Rigidbody rBody;
     public float walkSpeed = 1f, runSpeed = 3f, runSlideSpeed = 3.3f, walkSlideSpeed = 1.3f, jumpHeight = 8f; 
     public Camera cam;
+
+    private bool midair;
     
     // Start is called before the first frame update
     void Start()
@@ -31,7 +33,7 @@ public class PlayerMovement2 : MonoBehaviour
         // Set emote bool to true to disable camera following while idle in FollowPosition.cs
         anim.SetBool("emote", true);
 
-        if (IsGrounded())
+        if (!midair)
         {
             if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
@@ -103,8 +105,10 @@ public class PlayerMovement2 : MonoBehaviour
     void Update()
     {
         // Jumping
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        // if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        if (Input.GetKeyDown(KeyCode.Space) && !midair)
         {
+            midair = true;
             // Vector3 jumpVector = new Vector3(0, Mathf.Sqrt(jumpHeight * -2f * gravity), 0);
             // rBody.velocity = jumpVector;
             Debug.Log("jumping");
@@ -117,6 +121,11 @@ public class PlayerMovement2 : MonoBehaviour
     private void Jump()
     {
         rBody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
+        Invoke("unsetMidair", 1.45f);
+    }
+
+    private void unsetMidair() {
+        midair = false;
     }
 
     private Quaternion GetCameraTurn()
@@ -124,8 +133,8 @@ public class PlayerMovement2 : MonoBehaviour
         return Quaternion.AngleAxis(cam.transform.rotation.eulerAngles.y, Vector3.up);
     }
 
-    private bool IsGrounded()
-    {
-        return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
-    }
+    // private bool IsGrounded()
+    // {
+    //     return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+    // }
 }
