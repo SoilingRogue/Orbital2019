@@ -11,8 +11,6 @@ public class PlayerMovement2 : MonoBehaviour
     private float moveSpeed;
     private Vector3 movementVector;
     public Camera cam;
-
-    private bool midair;
     
     // Start is called before the first frame update
     void Start()
@@ -34,7 +32,7 @@ public class PlayerMovement2 : MonoBehaviour
         // Set emote bool to true to disable camera following while idle in FollowPosition.cs
         anim.SetBool("emote", true);
 
-        if (!midair && !anim.GetBool("slide"))
+        if (!anim.GetBool("jump") && !anim.GetBool("slide"))
         {
             if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
@@ -84,7 +82,7 @@ public class PlayerMovement2 : MonoBehaviour
     void Update()
     {
         // Jumping
-        if (Input.GetKeyDown(KeyCode.Space) && !midair)
+        if (Input.GetKeyDown(KeyCode.Space) && !anim.GetBool("jump"))
         {
             StartCoroutine(Jump());
         }
@@ -98,14 +96,15 @@ public class PlayerMovement2 : MonoBehaviour
 
     private IEnumerator Jump()
     {
-        midair = true;
+        anim.SetBool("jump", true);
         Debug.Log("jumping");
         anim.Play("JUMP00B_F", -1, 0f);
         // Delay adding of force to rBody to sync the animations
         yield return new WaitForSeconds(0.3f);
         rBody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
         yield return new WaitForSeconds(1.45f);
-        midair = false;
+        anim.SetBool("jump", false);
+
     }
 
     private IEnumerator Slide()
