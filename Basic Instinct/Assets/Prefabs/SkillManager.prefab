@@ -52,10 +52,10 @@ MonoBehaviour:
     skill: {fileID: 5620471598324201971, guid: 3351abe173a904543b8a942255104fd9, type: 3}
     visual: {fileID: 121802, guid: 8f18e1d8c46c51f429429815455062fc, type: 3}
   - user: {fileID: 0}
-    skill: {fileID: 5620471598324201971, guid: 3351abe173a904543b8a942255104fd9, type: 3}
+    skill: {fileID: 5991541852982093977, guid: ee933e85e6555214e8dc9298235d9c28, type: 3}
     visual: {fileID: 1097068111972672652, guid: 16d78353568258d4493566c604144867,
       type: 3}
   - user: {fileID: 0}
     skill: {fileID: 5160657299759270368, guid: 3ec7b637d1368fa47b5544cc95ed9abf, type: 3}
-    visual: {fileID: 0}
+    visual: {fileID: 168262, guid: 062893e7007e39441aea009115b6cefa, type: 3}
   skillKeys: 

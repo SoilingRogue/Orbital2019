@@ -6,9 +6,14 @@ public class Enemy : MonoBehaviour {
     public GameObject fireboltPrefab;
     private float timeToNextAttack;
     public float attackCooldown;
+    public float fireballSpeed;
+    public float fireballDuration;
     private GameObject player;
     private Vector3 direction;
     public bool isAggressive;
+    private GameObject fireball;
+    
+
     void Start() {
         // Find player to target
         // This only works assuming the scene has only 1 player.
@@ -26,7 +31,8 @@ public class Enemy : MonoBehaviour {
         else {
             direction = transform.forward;
         }
-        // Make the enemy face the player
+        // Make the enemy face the player without tilting
+        direction.y = 0;
         Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
         transform.rotation = rotation;
 
@@ -39,19 +45,30 @@ public class Enemy : MonoBehaviour {
         }
     }
 
+    private void OnCollisionEnter(Collision other) {
+        if (other.gameObject.CompareTag("Player")) {
+            Debug.Log("Hit by player.");
+
+            GameObject.Destroy(gameObject, 0.1f);
+        }
+    }
+
     void attack() {
         // Spawn a sphere
-        GameObject fireball = spawnFireball();
+        fireball = spawnFireball();
         if (fireball != null) {
             fireball.SetActive(true);
+            SmallFireball script = fireball.GetComponent<SmallFireball>();
+            script.direction = direction;
+            script.duration = fireballDuration;
+            script.speed = fireballSpeed;
         }
     }
 
     GameObject spawnFireball() {
         if (fireboltPrefab != null) {
             float enemyHeight = GetComponent<Collider>().bounds.extents.y;
-            Vector3 scale = new Vector3(2, 2, 2);
-            Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + enemyHeight, transform.position.z);
+            Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + enemyHeight * 0.75f, transform.position.z);
             Vector3 buffer = transform.forward.normalized;
             Quaternion spawnRotation = transform.rotation;
             return Instantiate(fireboltPrefab, spawnPosition + buffer, spawnRotation);

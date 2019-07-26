@@ -62,11 +62,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8876178939342763209}
     m_Modifications:
-    - target: {fileID: 8742942881037844792, guid: 6ba309361b5a25e48931e622cfa1de7b,
-        type: 3}
-      propertyPath: m_Name
-      value: SpawningSystem
-      objectReference: {fileID: 0}
     - target: {fileID: 8742942881037844799, guid: 6ba309361b5a25e48931e622cfa1de7b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -122,6 +117,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8742942881037844792, guid: 6ba309361b5a25e48931e622cfa1de7b,
+        type: 3}
+      propertyPath: m_Name
+      value: SpawningSystem
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ba309361b5a25e48931e622cfa1de7b, type: 3}
 --- !u!4 &8876178940182474178 stripped
@@ -137,11 +137,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8876178939342763209}
     m_Modifications:
-    - target: {fileID: 8667444413278871787, guid: 9ea9e37e4521bf44aac87ce9c3433b15,
-        type: 3}
-      propertyPath: m_Name
-      value: LoseMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 8667444413278871780, guid: 9ea9e37e4521bf44aac87ce9c3433b15,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -247,17 +242,32 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8667444413278871787, guid: 9ea9e37e4521bf44aac87ce9c3433b15,
+        type: 3}
+      propertyPath: m_Name
+      value: LoseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667444413278871782, guid: 9ea9e37e4521bf44aac87ce9c3433b15,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667444413278871782, guid: 9ea9e37e4521bf44aac87ce9c3433b15,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8667444413077185924, guid: 9ea9e37e4521bf44aac87ce9c3433b15,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8876178939342763208}
-    - target: {fileID: 8667444414182435579, guid: 9ea9e37e4521bf44aac87ce9c3433b15,
+    - target: {fileID: 8667444413246607232, guid: 9ea9e37e4521bf44aac87ce9c3433b15,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8876178939342763208}
-    - target: {fileID: 8667444413246607232, guid: 9ea9e37e4521bf44aac87ce9c3433b15,
+    - target: {fileID: 8667444414182435579, guid: 9ea9e37e4521bf44aac87ce9c3433b15,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -398,6 +408,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1215880389349387977, guid: 2d7ec1385cf26cc48bff870a2e3e5390,
+        type: 3}
+      propertyPath: m_Name
+      value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215880389349387981, guid: 2d7ec1385cf26cc48bff870a2e3e5390,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215880389349387981, guid: 2d7ec1385cf26cc48bff870a2e3e5390,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1215880390457192049, guid: 2d7ec1385cf26cc48bff870a2e3e5390,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -438,11 +463,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 630103097902294817, guid: e063e9b06bfb03447864778a09b42dbf,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 630103097902294829, guid: e063e9b06bfb03447864778a09b42dbf,
         type: 3}
@@ -553,10 +573,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1612556043, guid: e063e9b06bfb03447864778a09b42dbf, type: 3}
-      propertyPath: skillManager
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e063e9b06bfb03447864778a09b42dbf, type: 3}
