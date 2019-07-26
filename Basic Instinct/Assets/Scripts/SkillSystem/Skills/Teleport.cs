@@ -2,8 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Teleport : Skill {
+public class Teleport : Skill{
+    public KeyCode key;
+    private Camera cam;
     private float distance = 100f;
+
+    void Start()
+    {
+        cam = Camera.main;
+    }
+    
 //     // Constructor
 //     void Start() {
 //         name = "Teleport";
@@ -29,14 +37,25 @@ public class Teleport : Skill {
 
     protected override void use()
     {
+        // Debug.Log(Camera.main);
+        if(Input.GetKeyUp(key))
+        {
+            teleport();
+        }
+    }
+
+    protected override void review()
+    {
+
+    }
+    
+    private void teleport()
+    {
         GameObject fireRing = Instantiate(visualPrefab, transform.position, transform.rotation);
         fireRing.transform.localScale = fireRing.transform.localScale * 0.5f;
         transform.Translate(Vector3.forward * Time.deltaTime * distance);
         Destroy(fireRing, 3);
     }
-    
-    protected override void review()
-    {
 
-    }
+    
 }

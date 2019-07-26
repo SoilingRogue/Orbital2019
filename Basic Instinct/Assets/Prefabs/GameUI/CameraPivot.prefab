@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2915973537271138083}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,6 +143,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToFollow: {fileID: 0}
-  x: 0
-  y: -1.4
-  z: 0
+  positionDifference: {x: 0, y: 0, z: 0}
