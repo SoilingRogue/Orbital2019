@@ -29,7 +29,10 @@ public class Teleport : Skill {
 
     protected override void use()
     {
+        GameObject fireRing = Instantiate(visualPrefab, transform.position, transform.rotation);
+        fireRing.transform.localScale = fireRing.transform.localScale * 0.5f;
         transform.Translate(Vector3.forward * Time.deltaTime * distance);
+        Destroy(fireRing, 3);
     }
     
     protected override void review()
