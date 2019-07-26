@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour {
     private GameObject player;
     private Vector3 direction;
     public bool isAggressive;
+
     void Start() {
         // Find player to target
         // This only works assuming the scene has only 1 player.
@@ -26,7 +27,8 @@ public class Enemy : MonoBehaviour {
         else {
             direction = transform.forward;
         }
-        // Make the enemy face the player
+        // Make the enemy face the player without tilting
+        direction.y = 0;
         Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
         transform.rotation = rotation;
 
@@ -36,6 +38,14 @@ public class Enemy : MonoBehaviour {
                 attack();
             }
             timeToNextAttack = attackCooldown;
+        }
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        if (other.gameObject.CompareTag("Player")) {
+            Debug.Log("Hit by player.");
+
+            GameObject.Destroy(gameObject, 0.1f);
         }
     }
 
