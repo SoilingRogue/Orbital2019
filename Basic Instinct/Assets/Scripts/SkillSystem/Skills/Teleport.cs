@@ -11,9 +11,8 @@ RaycastHit hit;
     void Start()
     {
         cam = Camera.main;
-        // layerMask = 1 << 0;
-        // layerMask = ~layerMask;
-        layerMask = ~2;
+        layerMask = 1 << 2;
+        layerMask = ~layerMask;
     }
 
 //     // Constructor
@@ -43,10 +42,12 @@ RaycastHit hit;
     {
         // Debug.Log(Camera.main);
 
-        raycast();
-
+        Vector3 position = raycast();
+        GameObject fireRing = Instantiate(visualPrefab, position, transform.rotation);
+        fireRing.transform.localScale = fireRing.transform.localScale * 0.3f;
         if(Input.GetKeyUp(key))
         {
+            Destroy(fireRing);
             teleport();
         }
     }
@@ -64,15 +65,16 @@ RaycastHit hit;
         Destroy(fireRing, 3);
     }
 
-    private void raycast()
+    private Vector3 raycast()
     {
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        if (Physics.Raycast(ray, out hit, 200f, layerMask))
+        if (Physics.Raycast(ray, out hit, 500f, layerMask))
         {
             Debug.Log(hit.transform.name);
         }
-        // Physics.Raycast(ray, out hit, 200f);
         
         Debug.Log(hit.distance);
+
+        return hit.point;
     }
 }
