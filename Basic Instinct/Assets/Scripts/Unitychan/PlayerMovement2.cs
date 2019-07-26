@@ -17,7 +17,7 @@ public class PlayerMovement2 : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rBody = GetComponent<Rigidbody>();
-        distToGround = GetComponent<Collider>().bounds.extents.y;
+        // distToGround = GetComponent<Collider>().bounds.extents.y;
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class PlayerMovement2 : MonoBehaviour
 
         if (!anim.GetBool("jump") && !anim.GetBool("slide"))
         {
-            if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
                 // Set emote bool to false for camera following in FollowPosition.cs
                 anim.SetBool("emote", false);
@@ -56,16 +56,8 @@ public class PlayerMovement2 : MonoBehaviour
                 movementVector = camTurn * movementVector;
                 rBody.rotation = Quaternion.LookRotation(movementVector);
                 rBody.velocity += movementVector.normalized * moveSpeed;
-                Debug.Log("moving");
-            }
-
-            // Damaged/killed
-            if (Input.GetKeyDown("0"))
-            {
-                anim.Play("DAMAGED00", -1, 0f);
-            }
-            if (Input.GetKeyDown("1")) {
-                anim.Play("DAMAGED01", -1, 0f);
+                // Debug.Log("moving");
+                // Debug.Log("Moving velocity" + rBody.velocity);
             }
 
             // Emotes
@@ -92,6 +84,10 @@ public class PlayerMovement2 : MonoBehaviour
         {
             StartCoroutine(Slide());
         }
+
+        if (anim.GetBool("slide")) {
+            Debug.Log("Velocity: " + rBody.velocity);
+        }
     }
 
     private IEnumerator Jump()
@@ -104,7 +100,6 @@ public class PlayerMovement2 : MonoBehaviour
         rBody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
         yield return new WaitForSeconds(1.45f);
         anim.SetBool("jump", false);
-
     }
 
     private IEnumerator Slide()
@@ -113,10 +108,20 @@ public class PlayerMovement2 : MonoBehaviour
         anim.SetBool("slide", true);
         Debug.Log("sliding");
         anim.Play("SLIDE00_F", -1, 0f);
-        rBody.velocity += transform.forward * (moveSpeed + slideSpeed);
-        Debug.Log(moveSpeed + slideSpeed);
+
+        float time = 1.3f;
+        while (time > 0) {
+            Vector3 addedVel = transform.forward.normalized * (moveSpeed + slideSpeed);
+            Debug.Log("Added velocity: " + addedVel);
+            rBody.velocity = addedVel;
+
+            time -= Time.deltaTime;
+            yield return null;
+        }
+        // Vector3 addedVel = transform.forward.normalized * (moveSpeed + slideSpeed);
+        // rBody.velocity += addedVel * 10000;
         // Delay adding of force to rBody to sync the animations
-        yield return new WaitForSeconds(1.3f);
+        // yield return new WaitForSeconds(1.3f);
         anim.SetBool("slide", false);
     }
 
