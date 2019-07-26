@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6984609458181623586}
   - component: {fileID: 6984609458181623585}
-  - component: {fileID: 6984609458181623584}
   - component: {fileID: 6984609458181623591}
+  - component: {fileID: 1450780715}
   m_Layer: 0
   m_Name: MinimapCamera
   m_TagString: Untagged
@@ -60,7 +60,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 40
+  orthographic size: 20
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -76,20 +76,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &6984609458181623584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6984609458181623590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dd425ca938ce794b8ba54e7261a16ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  vectorDiff: {x: 0, y: 100, z: 0}
 --- !u!114 &6984609458181623591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,3 +89,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 4
+--- !u!114 &1450780715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6984609458181623590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e996e5f9bae4dc1debfcc065dd6f4357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToFollow: {fileID: 0}
+  positionDifference: {x: 0, y: -10, z: 0}
