@@ -30,6 +30,11 @@ public class Teleport : Skill{
     private IEnumerator useHelper() {
         while (Input.GetKey(key)) {
             Vector3 position = raycast();
+            // if (!position.Equals(raycast()) || fireRing == null)
+            // {
+
+            // }
+            position.y = transform.position.y;
             if (fireRing == null) {
                 fireRing = Instantiate(visualPrefab, position, transform.rotation);
                 fireRing.transform.localScale *= 0.3f;
@@ -40,7 +45,7 @@ public class Teleport : Skill{
             }
             yield return null;
         }
-        Destroy(fireRing);
+        
         teleport();
     }
 
@@ -52,9 +57,15 @@ public class Teleport : Skill{
     private void teleport()
     {
         Debug.Log("Teleporting.");
-        fireRing = Instantiate(visualPrefab, transform.position, transform.rotation);
-        fireRing.transform.localScale *= 0.5f;
-        transform.Translate(Vector3.forward * Time.deltaTime * distance);
+        Vector3 pos = transform.position;
+        Quaternion rot = transform.rotation;
+        // transform.Translate(fireRing.transform.position);
+        transform.position = fireRing.transform.position;
+        // fireRing = Instantiate(visualPrefab, pos, rot);
+        // fireRing.transform.localScale *= 0.3f;
+        // transform.Translate(Vector3.forward * Time.deltaTime * distance);
+        
+        fireRing.transform.position = pos;
         Destroy(fireRing, 3);
     }
 
