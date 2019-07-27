@@ -47,3 +47,4 @@ MonoBehaviour:
   skillName: 
   cooldown: 0
   cooldownTimer: 0
+  key: 102
