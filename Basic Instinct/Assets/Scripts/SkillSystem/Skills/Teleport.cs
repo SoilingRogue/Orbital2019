@@ -6,8 +6,9 @@ public class Teleport : Skill{
     private Camera cam;
     private float distance = 100f;
     private int layerMask;
-    RaycastHit hit;
-    private GameObject fireRing;
+    private RaycastHit hit;
+    private GameObject ring;
+    public GameObject teleportRing1, teleportRing2;
     // private Light lt;
 
     void Start()
@@ -36,16 +37,16 @@ public class Teleport : Skill{
 
             // }
             position.y = transform.position.y;
-            if (fireRing == null) {
-                fireRing = Instantiate(visualPrefab, position, transform.rotation);
-                fireRing.transform.localScale *= 0.3f;
-                fireRing.GetComponentInChildren<AudioSource>().mute = true;
+            if (ring == null) {
+                ring = Instantiate(teleportRing1, position, transform.rotation);
+                // fireRing.transform.localScale *= 0.3f;
+                // fireRing.GetComponentInChildren<AudioSource>().mute = true;
                 // lt = fireRing.GetComponent<Light>();
             }
             else {
                 // Set colour to bounce between blue and green
                 // lt.color = Color.Lerp(Color.blue, Color.green, Mathf.PingPong(Time.time, 1));
-                fireRing.transform.position = position;
+                ring.transform.position = position;
             }
             yield return null;
         }
@@ -64,8 +65,10 @@ public class Teleport : Skill{
         Vector3 pos = transform.position;
         Quaternion rot = transform.rotation;
         // transform.Translate(fireRing.transform.position);
-        transform.position = fireRing.transform.position;
-        fireRing = Instantiate(visualPrefab, pos, rot);
+        transform.position = ring.transform.position;
+        Destroy(ring);
+
+        GameObject fireRing = Instantiate(visualPrefab, pos, rot);
         fireRing.transform.localScale *= 0.3f;
         fireRing.GetComponentInChildren<AudioSource>().mute = true;
         // transform.Translate(Vector3.forward * Time.deltaTime * distance);
