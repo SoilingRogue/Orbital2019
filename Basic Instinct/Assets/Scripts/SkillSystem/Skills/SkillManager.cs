@@ -49,10 +49,12 @@ public class SkillManager : MonoBehaviour {
     void bindSkills() {
         skills = new List<Skill>();
 
-        foreach (SkillHelper skillHelper in skillHelpers) {
+        for (int i = 0; i < skillHelpers.Length; i++) {
+            SkillHelper skillHelper = skillHelpers[i];
             Type skillType = skillHelper.skill.GetType();
             Skill skillComponent = (Skill)skillHelper.user.AddComponent(skillType);
             skillComponent.visualPrefab = skillHelper.visual;
+            skillComponent.key = skillKeys[i];
             skills.Add(skillComponent);
         }
     }

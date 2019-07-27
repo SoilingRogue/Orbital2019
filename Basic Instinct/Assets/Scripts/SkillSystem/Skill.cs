@@ -8,6 +8,7 @@ public abstract class Skill : MonoBehaviour {
     public string skillName;
     public float cooldown;
     public float cooldownTimer;
+    public KeyCode key;
 
     void Start() {
         cooldownTimer = 0f;

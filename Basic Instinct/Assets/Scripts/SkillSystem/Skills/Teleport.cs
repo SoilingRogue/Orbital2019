@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Teleport : Skill{
-    public KeyCode key;
     private Camera cam;
     private float distance = 100f;
     private int layerMask;
-RaycastHit hit;
+    RaycastHit hit;
+    private GameObject fireRing;
+
     void Start()
     {
         cam = Camera.main;
@@ -15,23 +16,6 @@ RaycastHit hit;
         layerMask = ~layerMask;
     }
 
-//     // Constructor
-//     void Start() {
-//         name = "Teleport";
-//         cooldown = 5f;
-//         // previousUseTime = -cooldown;
-//     }
-
-//     protected override void use(GameObject character) {
-//         CharacterStats stats = character.GetComponent<CharacterStats>();
-//         character.transform.position = new Vector3(character.transform.position.x, character.transform.position.y, character.transform.position.z + 30);
-
-//         display(character);
-//     }
-
-//     private void display(GameObject character) {
-
-//     }
     protected override void initialise()
     {
         skillName = "Teleport";
@@ -40,16 +24,24 @@ RaycastHit hit;
 
     protected override void use()
     {
-        // Debug.Log(Camera.main);
+        StartCoroutine(useHelper()); 
+    }
 
-        Vector3 position = raycast();
-        GameObject fireRing = Instantiate(visualPrefab, position, transform.rotation);
-        fireRing.transform.localScale = fireRing.transform.localScale * 0.3f;
-        if(Input.GetKeyUp(key))
-        {
-            Destroy(fireRing);
-            teleport();
+    private IEnumerator useHelper() {
+        while (Input.GetKey(key)) {
+            Vector3 position = raycast();
+            if (fireRing == null) {
+                fireRing = Instantiate(visualPrefab, position, transform.rotation);
+                fireRing.transform.localScale *= 0.3f;
+                fireRing.GetComponentInChildren<AudioSource>().mute = true;
+            }
+            else {
+                fireRing.transform.position = position;
+            }
+            yield return null;
         }
+        Destroy(fireRing);
+        teleport();
     }
 
     protected override void review()
@@ -59,8 +51,9 @@ RaycastHit hit;
     
     private void teleport()
     {
-        GameObject fireRing = Instantiate(visualPrefab, transform.position, transform.rotation);
-        fireRing.transform.localScale = fireRing.transform.localScale * 0.5f;
+        Debug.Log("Teleporting.");
+        fireRing = Instantiate(visualPrefab, transform.position, transform.rotation);
+        fireRing.transform.localScale *= 0.5f;
         transform.Translate(Vector3.forward * Time.deltaTime * distance);
         Destroy(fireRing, 3);
     }
@@ -70,10 +63,10 @@ RaycastHit hit;
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (Physics.Raycast(ray, out hit, 500f, layerMask))
         {
-            Debug.Log(hit.transform.name);
+            Debug.Log("Ray hit " + hit.transform.name);
         }
         
-        Debug.Log(hit.distance);
+        Debug.Log("Ray hit distance: " + hit.distance);
 
         return hit.point;
     }
