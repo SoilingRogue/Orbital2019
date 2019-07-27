@@ -8,6 +8,7 @@ public class Teleport : Skill{
     private int layerMask;
     RaycastHit hit;
     private GameObject fireRing;
+    // private Light lt;
 
     void Start()
     {
@@ -39,8 +40,11 @@ public class Teleport : Skill{
                 fireRing = Instantiate(visualPrefab, position, transform.rotation);
                 fireRing.transform.localScale *= 0.3f;
                 fireRing.GetComponentInChildren<AudioSource>().mute = true;
+                // lt = fireRing.GetComponent<Light>();
             }
             else {
+                // Set colour to bounce between blue and green
+                // lt.color = Color.Lerp(Color.blue, Color.green, Mathf.PingPong(Time.time, 1));
                 fireRing.transform.position = position;
             }
             yield return null;
@@ -61,11 +65,13 @@ public class Teleport : Skill{
         Quaternion rot = transform.rotation;
         // transform.Translate(fireRing.transform.position);
         transform.position = fireRing.transform.position;
-        // fireRing = Instantiate(visualPrefab, pos, rot);
-        // fireRing.transform.localScale *= 0.3f;
+        fireRing = Instantiate(visualPrefab, pos, rot);
+        fireRing.transform.localScale *= 0.3f;
+        fireRing.GetComponentInChildren<AudioSource>().mute = true;
         // transform.Translate(Vector3.forward * Time.deltaTime * distance);
         
-        fireRing.transform.position = pos;
+        // fireRing.transform.position = pos;
+        // lt.color = Color.red;
         Destroy(fireRing, 3);
     }
 
