@@ -80,7 +80,7 @@ public class PlayerMovement2 : MonoBehaviour
         }
     
         // Sliding - must be moving and control is pressed
-        if (Input.GetKeyDown(KeyCode.LeftControl) && !anim.GetBool("follow"))
+        if (Input.GetKeyDown(KeyCode.LeftControl) && anim.GetBool("follow"))
         {
             StartCoroutine(Slide());
         }
