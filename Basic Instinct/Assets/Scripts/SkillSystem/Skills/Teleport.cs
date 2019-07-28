@@ -79,7 +79,9 @@ public class Teleport : Skill{
     private Vector3 raycast()
     {
         // Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        Ray ray = cam.ViewportPointToRay(projectThru.transform.position);
+        Vector3 viewPortPos = cam.WorldToViewportPoint(projectThru.transform.position);
+        Ray ray = cam.ViewportPointToRay(viewPortPos);
+
         if (Physics.Raycast(ray, out hit, 500f, layerMask))
         {
             Debug.Log("Ray hit " + hit.transform.name);

@@ -396,14 +396,20 @@ PrefabInstance:
       objectReference: {fileID: 1285841993}
     - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
         type: 3}
+      propertyPath: skillHelpers.Array.data[2].user
+      value: 
+      objectReference: {fileID: 1285841993}
+    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
+        type: 3}
       propertyPath: skillHelpers.Array.data[3].user
       value: 
       objectReference: {fileID: 1285841993}
     - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
         type: 3}
-      propertyPath: skillHelpers.Array.data[2].user
+      propertyPath: skillHelpers.Array.data[3].skill
       value: 
-      objectReference: {fileID: 1285841993}
+      objectReference: {fileID: 5160657299759270368, guid: 3ec7b637d1368fa47b5544cc95ed9abf,
+        type: 3}
     - target: {fileID: 2308376506267576687, guid: 481094ba69a38ec46afe4af677239249,
         type: 3}
       propertyPath: m_Name
@@ -1393,7 +1399,7 @@ PrefabInstance:
     - target: {fileID: 1185070826464908823, guid: de32529c88d24ef468ce1803b20a27c4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1185070826464908823, guid: de32529c88d24ef468ce1803b20a27c4,
         type: 3}
@@ -1499,6 +1505,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MinimapCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 6984609458181623590, guid: c160877cb4617a54c80bc6c77798ef74,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6984609458181623586, guid: c160877cb4617a54c80bc6c77798ef74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1554,11 +1565,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6984609458181623584, guid: c160877cb4617a54c80bc6c77798ef74,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1285841993}
     - target: {fileID: 1450780715, guid: c160877cb4617a54c80bc6c77798ef74, type: 3}
       propertyPath: objectToFollow
       value: 
