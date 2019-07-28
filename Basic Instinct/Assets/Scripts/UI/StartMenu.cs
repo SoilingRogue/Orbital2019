@@ -13,8 +13,8 @@ public class StartMenu : MonoBehaviour {
 
     void Start() {
         sceneOptions = new List<string>() {
-            "Game Scene 1",
-            "Game Scene 2"
+            "Volcano",
+            "Plane"
         };
         validSceneNames = new List<string>() {
             "GameScene1",
