@@ -23,7 +23,7 @@ public class Teleport : Skill{
     protected override void initialise()
     {
         skillName = "Teleport";
-        cooldown = 0f;
+        cooldown = 4f;
     }
 
     protected override void use()

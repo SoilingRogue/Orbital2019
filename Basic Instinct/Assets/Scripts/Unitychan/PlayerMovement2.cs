@@ -17,7 +17,6 @@ public class PlayerMovement2 : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rBody = GetComponent<Rigidbody>();
-        // distToGround = GetComponent<Collider>().bounds.extents.y;
     }
 
     void FixedUpdate()
@@ -30,13 +29,7 @@ public class PlayerMovement2 : MonoBehaviour
             anim.SetFloat("inputV", inputV);
         }
 
-        // Set emote bool to true to disable camera following while idle in FollowPosition.cs
-        // if (!anim.GetBool("slide")) {
-            // anim.SetBool("emote", true);
-        // }
-
         if (!anim.GetBool("jump") && !anim.GetBool("slide"))
-        // if (!anim.GetBool("jump") && !isSliding)
         {
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
@@ -100,22 +93,6 @@ public class PlayerMovement2 : MonoBehaviour
         }
     }
 
-    // AddForce is instantaneous, not frame dependent
-    // void Update()
-    // {
-    //     // Jumping
-    //     if (Input.GetKeyDown(KeyCode.Space) && !anim.GetBool("jump"))
-    //     {
-    //         StartCoroutine(Jump());
-    //     }
-    
-    //     // Sliding
-    //     if (Input.GetKeyDown(KeyCode.LeftControl) && !anim.GetBool("emote"))
-    //     {
-    //         // StartCoroutine(Slide());
-    //     }
-    // }
-
     private void help() {
         anim.SetBool("slide", false);
     }
@@ -125,6 +102,7 @@ public class PlayerMovement2 : MonoBehaviour
         anim.SetBool("jump", true);
         Debug.Log("jumping");
         anim.Play("JUMP00B_F", -1, 0f);
+
         // Delay adding of force to rBody to sync the animations
         yield return new WaitForSeconds(0.3f);
         rBody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
@@ -140,6 +118,7 @@ public class PlayerMovement2 : MonoBehaviour
         anim.Play("SLIDE00_F", -1, 0f);
         Vector3 addedVel = transform.forward.normalized * (moveSpeed + slideSpeed);
         rBody.velocity += addedVel;
+
         // Delay adding of force to rBody to sync the animations
         yield return new WaitForSeconds(1.3f);
         anim.SetBool("slide", false);
@@ -149,9 +128,4 @@ public class PlayerMovement2 : MonoBehaviour
     {
         return Quaternion.AngleAxis(cam.transform.rotation.eulerAngles.y, Vector3.up);
     }
-
-    // private bool IsGrounded()
-    // {
-    //     return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
-    // }
 }
