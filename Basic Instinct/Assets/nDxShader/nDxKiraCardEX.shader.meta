@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: e5c7f044c0ca90f4da12abe47b144805
+timeCreated: 1532691443
+licenseType: Pro
+ShaderImporter:
+  defaultTextures:
+  - _SubKiraTex: {fileID: 2800000, guid: 7df63a4247a77c549a2f511374372e64, type: 3}
+  - _HoloTex: {fileID: 2800000, guid: 0b3677ea3bd08c4408b9ea5a4bdf433e, type: 3}
+  - _KiraTex: {fileID: 2800000, guid: 876e4176d30bee54db2ca97158d72e55, type: 3}
+  - _node_5811: {fileID: 2800000, guid: b93073745d02aaa4eae52f933cb01384, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
