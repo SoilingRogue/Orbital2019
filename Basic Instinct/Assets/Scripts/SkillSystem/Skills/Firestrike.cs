@@ -3,20 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Firestrike : Skill {
-    public Vector3 displacement;
     public float scale;
 
     protected override void initialise() {
         skillName = "Firestrike";
         cooldown = 10;
         scale = 10;
-        displacement = transform.forward.normalized * scale;
     }
 
     protected override void use() {
+        Vector3 displacement = transform.forward.normalized * scale;
         Vector3 spawnPosition = transform.position + displacement;
         Quaternion spawnRotation = transform.rotation;
-        GameObject.Instantiate(visualPrefabs[0], spawnPosition, spawnRotation);
+        GameObject fireStrike = GameObject.Instantiate(visualPrefabs[0], spawnPosition, spawnRotation);
+
+        // Remove collision between user and firestrike
+        Collider strikeCollider = fireStrike.GetComponentInChildren<Collider>();
+        Collider userCollider = gameObject.GetComponent<Collider>();
+        if (userCollider != null) {
+            Physics.IgnoreCollision(strikeCollider, userCollider);
+        }
+
         resetCooldown();
     }
 

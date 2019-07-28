@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1097068111966182396}
   m_Layer: 8
   m_Name: FlameStrikeCollider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9548,7 +9548,7 @@ GameObject:
   - component: {fileID: 1097068111966171686}
   m_Layer: 8
   m_Name: MyFlamestrike
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

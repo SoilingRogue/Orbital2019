@@ -12,6 +12,7 @@ public class SpawningSystem : MonoBehaviour {
     private GameObject player;
     
     private int nextSpawnCount;
+    private int wavesToNextIncrease;
 
     void Start() {
         // First wave is wave 0
@@ -35,7 +36,7 @@ public class SpawningSystem : MonoBehaviour {
             spawnEnemies();
             increaseSpawnCount();
             // 10 sec delay between waves
-            timeToNextSpawn = 10f;
+            timeToNextSpawn = 20f;
         }
     }
 
