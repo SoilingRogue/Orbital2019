@@ -1017,6 +1017,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 367799717213172960, guid: 17f8bb743027c984c93fde5b4814a32d,
+        type: 3}
+      propertyPath: m_Size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 76059776216040978, guid: 17f8bb743027c984c93fde5b4814a32d,
         type: 3}
       propertyPath: scoreSystem
