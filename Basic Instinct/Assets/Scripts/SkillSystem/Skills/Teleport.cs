@@ -39,7 +39,7 @@ public class Teleport : Skill{
             position.y = transform.position.y;
             if (ring == null) {
                 // ring = Instantiate(teleportRing1, position, transform.rotation);
-                ring = Instantiate(visualPrefabs[1], position, transform.rotation);
+                ring = Instantiate(visualPrefabs[1], position, visualPrefabs[1].transform.rotation);
                 // fireRing.transform.localScale *= 0.3f;
                 // fireRing.GetComponentInChildren<AudioSource>().mute = true;
                 // lt = fireRing.GetComponent<Light>();
