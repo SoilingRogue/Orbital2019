@@ -43,12 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48091b863c80f474da231a78ce7ee6b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visualPrefab: {fileID: 0}
+  visualPrefabs: []
   skillName: 
   cooldown: 0
   cooldownTimer: 0
   key: 102
-  teleportRing1: {fileID: 6263904387121522124, guid: 889d3a86ac1337a468ff5183047ae99d,
-    type: 3}
-  teleportRing2: {fileID: 8455051216170730425, guid: dd4191c9e455a52438a250cef0151676,
-    type: 3}
+  projectThru: {fileID: 0}

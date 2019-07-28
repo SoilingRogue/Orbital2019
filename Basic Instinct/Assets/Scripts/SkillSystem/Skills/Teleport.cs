@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Teleport : Skill{
+    public GameObject projectThru;
     private Camera cam;
     private float distance = 100f;
     private int layerMask;
@@ -76,7 +77,8 @@ public class Teleport : Skill{
 
     private Vector3 raycast()
     {
-        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        // Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        Ray ray = cam.ViewportPointToRay(projectThru.transform.position);
         if (Physics.Raycast(ray, out hit, 500f, layerMask))
         {
             Debug.Log("Ray hit " + hit.transform.name);
