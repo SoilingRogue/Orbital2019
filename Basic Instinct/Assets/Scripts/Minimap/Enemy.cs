@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour {
     public bool isAggressive;
     private GameObject fireball;
     
+    private ScoreSystem scoreSystem;
+    
 
     void Start() {
         // Find player to target
@@ -21,6 +23,8 @@ public class Enemy : MonoBehaviour {
 
         // After spawning, attack only after 2s
         timeToNextAttack = 2f;
+
+        scoreSystem = GameObject.FindObjectOfType<ScoreSystem>();
     }
 
     void Update() {
@@ -50,6 +54,10 @@ public class Enemy : MonoBehaviour {
             Debug.Log("Hit by player.");
 
             GameObject.Destroy(gameObject, 0.1f);
+
+            if (scoreSystem != null) {
+                scoreSystem.score++;
+            }
         }
     }
 

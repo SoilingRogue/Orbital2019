@@ -1,21 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ScoreTracker : MonoBehaviour {
-    private Text scoreText;
-
-    void Start() {
-        scoreText = GetComponent<Text>();
-        scoreText.text = "0";
-    }
+    public TextMeshProUGUI scoreText;
+    public ScoreSystem scoreSystem;
 
     void Update() {
-        updateScore(Time.deltaTime);
-    }
-
-    void updateScore(float d) {
-        float curr = float.Parse(scoreText.text);
-        float next = curr + d;
-        scoreText.text = "" + next;
+        scoreText.text = "Score " + scoreSystem.score;
     }
 }

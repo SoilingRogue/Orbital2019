@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour {
     public GameObject gameUI;
     public GameObject pauseMenu;
     public GameObject loseMenu;
-    public SpawningSystem spawningSystem;
     public ScoreSystem scoreSystem;
     [HideInInspector]
     public float timer;
@@ -75,28 +74,13 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public int getCurrentWave() {
-        return spawningSystem.currentWave;
-    }
-
-    public float getTimeToNextWave() {
-        return spawningSystem.timeToNextSpawn;
-    }
-
     public void lose() {
         loseGame();
         // Save highscore
         scoreSystem.saveHighScore();
     }
 
-    public int getHighscore() {
-        return scoreSystem.loadHighScore();
-    }
-
     void Update() {
-        // int score = (int)(Time.time - timer);
-        // scoreSystem.score = score;
-
         if (!gameOver) {
             if (Input.GetKeyDown(KeyCode.Escape)) {
                 if (isPaused) {

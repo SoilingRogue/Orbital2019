@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ScoreSystem : MonoBehaviour {
+    [HideInInspector]
     public int score;
 
     void Start() {
