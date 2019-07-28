@@ -698,7 +698,7 @@ PrefabInstance:
     - target: {fileID: 4648612462511676605, guid: c0ff2d6e549508a4e83c7e4a8665009f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8563710961878347438, guid: c0ff2d6e549508a4e83c7e4a8665009f,
         type: 3}
@@ -779,7 +779,7 @@ PrefabInstance:
     - target: {fileID: 1797024334214661834, guid: c0ff2d6e549508a4e83c7e4a8665009f,
         type: 3}
       propertyPath: isAggressive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0ff2d6e549508a4e83c7e4a8665009f, type: 3}
@@ -828,6 +828,12 @@ PrefabInstance:
       propertyPath: skillHelpers.Array.data[3].user
       value: 
       objectReference: {fileID: 1251068002690886935}
+    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
+        type: 3}
+      propertyPath: skillHelpers.Array.data[0].visuals.Array.data[0]
+      value: 
+      objectReference: {fileID: 3059389732076212686, guid: 9afed131a51e70e4c948386aa1c020b3,
+        type: 3}
     - target: {fileID: 2308376506267576687, guid: 481094ba69a38ec46afe4af677239249,
         type: 3}
       propertyPath: m_Name
@@ -987,6 +993,11 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3804053975589665855, guid: acb7920ca974bc149ab57979800e64ba,
+        type: 3}
+      propertyPath: damagePerHit
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acb7920ca974bc149ab57979800e64ba, type: 3}
 --- !u!1001 &8876178938912075742
@@ -996,6 +1007,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4119289540157006389, guid: 17f8bb743027c984c93fde5b4814a32d,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4119289540157006389, guid: 17f8bb743027c984c93fde5b4814a32d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 76059776216040978, guid: 17f8bb743027c984c93fde5b4814a32d,
         type: 3}
       propertyPath: scoreSystem
@@ -1065,6 +1086,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8876178940182474181, guid: 17f8bb743027c984c93fde5b4814a32d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4508750883305984111, guid: 17f8bb743027c984c93fde5b4814a32d,
         type: 3}

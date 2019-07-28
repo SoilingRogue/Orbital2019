@@ -1505,9 +1505,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38df1e4f58e4b4d47ad3e9d75ecd9300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireboltPrefab: {fileID: 141530, guid: 369eee557c4d41c479225bf744fa6a5f, type: 3}
-  attackCooldown: 10
-  isAggressive: 0
+  fireboltPrefab: {fileID: 4849285411860955109, guid: b23128c11089dd945b3784edd5157046,
+    type: 3}
+  attackCooldown: 5
+  fireballSpeed: 0.6
+  fireballDuration: 3
+  isAggressive: 1
 --- !u!136 &8296172667829815628
 CapsuleCollider:
   m_ObjectHideFlags: 0
