@@ -8,7 +8,7 @@ public class Teleport : Skill{
     private int layerMask;
     private RaycastHit hit;
     private GameObject ring;
-    public GameObject teleportRing1, teleportRing2;
+    // public GameObject teleportRing1, teleportRing2;
     // private Light lt;
 
     void Start()
@@ -38,7 +38,8 @@ public class Teleport : Skill{
             // }
             position.y = transform.position.y;
             if (ring == null) {
-                ring = Instantiate(teleportRing1, position, transform.rotation);
+                // ring = Instantiate(teleportRing1, position, transform.rotation);
+                ring = Instantiate(visualPrefabs[1], position, transform.rotation);
                 // fireRing.transform.localScale *= 0.3f;
                 // fireRing.GetComponentInChildren<AudioSource>().mute = true;
                 // lt = fireRing.GetComponent<Light>();
@@ -68,7 +69,7 @@ public class Teleport : Skill{
         transform.position = ring.transform.position;
         Destroy(ring);
 
-        GameObject fireRing = Instantiate(visualPrefab, pos, rot);
+        GameObject fireRing = Instantiate(visualPrefabs[0], pos, rot);
         fireRing.transform.localScale *= 0.3f;
         fireRing.GetComponentInChildren<AudioSource>().mute = true;
         // transform.Translate(Vector3.forward * Time.deltaTime * distance);

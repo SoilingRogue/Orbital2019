@@ -21,7 +21,7 @@ public class FireProjectile : Skill {
     protected override void use() {
         direction = transform.forward.normalized;
         Vector3 spawnPosition = transform.position + diffVector;
-        fireProjectile = Instantiate(visualPrefab, spawnPosition, transform.rotation);
+        fireProjectile = Instantiate(visualPrefabs[0], spawnPosition, transform.rotation);
 
         DigitalRuby.PyroParticles.FireProjectileScript projectileScript = fireProjectile.GetComponentInChildren<DigitalRuby.PyroParticles.FireProjectileScript>();
             if (projectileScript != null)

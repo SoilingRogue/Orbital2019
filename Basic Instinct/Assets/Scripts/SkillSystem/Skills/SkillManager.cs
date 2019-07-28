@@ -53,7 +53,7 @@ public class SkillManager : MonoBehaviour {
             SkillHelper skillHelper = skillHelpers[i];
             Type skillType = skillHelper.skill.GetType();
             Skill skillComponent = (Skill)skillHelper.user.AddComponent(skillType);
-            skillComponent.visualPrefab = skillHelper.visual;
+            skillComponent.visualPrefabs = skillHelper.visuals;
             skillComponent.key = skillKeys[i];
             skills.Add(skillComponent);
         }

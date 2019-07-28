@@ -798,6 +798,26 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
         type: 3}
+      propertyPath: skillHelpers.Array.data[0].visuals.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
+        type: 3}
+      propertyPath: skillHelpers.Array.data[1].visuals.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
+        type: 3}
+      propertyPath: skillHelpers.Array.data[2].visuals.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
+        type: 3}
+      propertyPath: skillHelpers.Array.data[3].visuals.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
+        type: 3}
       propertyPath: skillHelpers.Array.data[0].user
       value: 
       objectReference: {fileID: 1251068002690886935}
@@ -827,6 +847,40 @@ PrefabInstance:
       propertyPath: skillHelpers.Array.data[3].visual
       value: 
       objectReference: {fileID: 168262, guid: 062893e7007e39441aea009115b6cefa, type: 3}
+    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
+        type: 3}
+      propertyPath: skillHelpers.Array.data[0].visuals.Array.data[0]
+      value: 
+      objectReference: {fileID: 1833736173561324992, guid: e0de19366c5e8cb4da731d9375bedc8f,
+        type: 3}
+    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
+        type: 3}
+      propertyPath: skillHelpers.Array.data[1].visuals.Array.data[0]
+      value: 
+      objectReference: {fileID: 121802, guid: 8f18e1d8c46c51f429429815455062fc, type: 3}
+    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
+        type: 3}
+      propertyPath: skillHelpers.Array.data[2].visuals.Array.data[0]
+      value: 
+      objectReference: {fileID: 1097068111972672652, guid: 16d78353568258d4493566c604144867,
+        type: 3}
+    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
+        type: 3}
+      propertyPath: skillHelpers.Array.data[3].visuals.Array.data[0]
+      value: 
+      objectReference: {fileID: 168262, guid: 062893e7007e39441aea009115b6cefa, type: 3}
+    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
+        type: 3}
+      propertyPath: skillHelpers.Array.data[3].visuals.Array.data[1]
+      value: 
+      objectReference: {fileID: 6263904387121522124, guid: 889d3a86ac1337a468ff5183047ae99d,
+        type: 3}
+    - target: {fileID: 2308376506267576686, guid: 481094ba69a38ec46afe4af677239249,
+        type: 3}
+      propertyPath: skillHelpers.Array.data[3].visuals.Array.data[2]
+      value: 
+      objectReference: {fileID: 8455051216170730425, guid: dd4191c9e455a52438a250cef0151676,
+        type: 3}
     - target: {fileID: 2308376506267576687, guid: 481094ba69a38ec46afe4af677239249,
         type: 3}
       propertyPath: m_Name

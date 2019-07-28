@@ -24,7 +24,7 @@ public class Shield : Skill {
     }
 
     private void display() {
-        visual = Instantiate(visualPrefab, gameObject.transform.position, gameObject.transform.rotation);
+        visual = Instantiate(visualPrefabs[0], gameObject.transform.position, gameObject.transform.rotation);
         Destroy(visual, duration);
     }
 

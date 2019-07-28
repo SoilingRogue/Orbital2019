@@ -15,7 +15,7 @@ public class Firestrike : Skill {
     protected override void use() {
         Vector3 spawnPosition = transform.position + displacement;
         Quaternion spawnRotation = transform.rotation;
-        GameObject.Instantiate(visualPrefab, spawnPosition, spawnRotation);
+        GameObject.Instantiate(visualPrefabs[0], spawnPosition, spawnRotation);
     }
 
     protected override void review() {

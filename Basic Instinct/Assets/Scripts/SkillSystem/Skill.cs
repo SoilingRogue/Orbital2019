@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Skill : MonoBehaviour {
     [HideInInspector]
-    public GameObject visualPrefab;
+    public GameObject[] visualPrefabs;
     public string skillName;
     public float cooldown;
     public float cooldownTimer;
