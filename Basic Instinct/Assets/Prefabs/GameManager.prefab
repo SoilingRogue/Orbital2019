@@ -122,6 +122,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawningSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 8742942881037844792, guid: 6ba309361b5a25e48931e622cfa1de7b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ba309361b5a25e48931e622cfa1de7b, type: 3}
 --- !u!4 &8876178940182474178 stripped
@@ -300,16 +305,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8876178939342763209}
     m_Modifications:
-    - target: {fileID: 1082682936298444155, guid: e063e9b06bfb03447864778a09b42dbf,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1082682936298444155, guid: e063e9b06bfb03447864778a09b42dbf,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 630103097902294829, guid: e063e9b06bfb03447864778a09b42dbf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -444,11 +439,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.spaceCount
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9039295036686998814, guid: e063e9b06bfb03447864778a09b42dbf,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9039295036686998814, guid: e063e9b06bfb03447864778a09b42dbf,
         type: 3}
