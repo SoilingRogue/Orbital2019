@@ -19,4 +19,11 @@ public class StartMenu : MonoBehaviour {
            anim.WriteDefaultValues();
        }
     }
+
+    public void stopBackgroundMusic() {
+        AudioManager audioManager = GameManager.FindObjectOfType<AudioManager>();
+        if (audioManager != null) {
+            audioManager.Stop("ActionTime");
+        }
+    }
 }

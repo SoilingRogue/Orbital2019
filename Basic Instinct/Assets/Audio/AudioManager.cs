@@ -56,8 +56,4 @@ public class AudioManager : MonoBehaviour {
 
 		s.source.Stop();
 	}
-
-	void Start() {
-		Play("ActionTime");
-	}
 }
