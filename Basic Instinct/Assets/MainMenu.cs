@@ -1,10 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MainMenu : MonoBehaviour {
+    public TextMeshProUGUI highscoreText;
+
     void Start() {
         startBackgroundMusic();
+        highscoreText.text = "Highscore " + getHighscore();
+    }
+
+    private int getHighscore() {
+        return PlayerPrefs.GetInt("Highscore");
     }
 
     public void exitGame() {

@@ -7,6 +7,8 @@ using TMPro;
 public class StartMenu : MonoBehaviour {
     private string sceneName;
     public TMP_Dropdown sceneDropdown;
+    public TextMeshProUGUI skillDescriptionText;
+    private GameObject selectedSkillButton;
 
     private List<string> validSceneNames;
     private List<string> sceneOptions;
@@ -51,5 +53,13 @@ public class StartMenu : MonoBehaviour {
 
     public void setSceneName(int sceneNameIndex) {
         sceneName = validSceneNames[sceneNameIndex];
+    }
+
+    public void selectSkillButton(GameObject button) {
+        selectedSkillButton = button;
+    }
+
+    public void displaySkillDescription() {
+        skillDescriptionText.text = selectedSkillButton.GetComponentInChildren<Text>().text;
     }
 }
