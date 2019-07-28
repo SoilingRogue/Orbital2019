@@ -278,30 +278,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6984609458181623586, guid: c160877cb4617a54c80bc6c77798ef74,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6984609458181623586, guid: c160877cb4617a54c80bc6c77798ef74,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6984609458181623586, guid: c160877cb4617a54c80bc6c77798ef74,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 1450780715, guid: c160877cb4617a54c80bc6c77798ef74, type: 3}
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 1251068002690886935}
-    - target: {fileID: 6984609458181623585, guid: c160877cb4617a54c80bc6c77798ef74,
-        type: 3}
-      propertyPath: orthographic size
-      value: 60
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c160877cb4617a54c80bc6c77798ef74, type: 3}
 --- !u!1001 &313926029
@@ -691,31 +671,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1185070826464908823, guid: de32529c88d24ef468ce1803b20a27c4,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1185070826464908823, guid: de32529c88d24ef468ce1803b20a27c4,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1185070826464908823, guid: de32529c88d24ef468ce1803b20a27c4,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7332122198659261131, guid: de32529c88d24ef468ce1803b20a27c4,
         type: 3}
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 1251068002690886935}
-    - target: {fileID: 7332122198659261131, guid: de32529c88d24ef468ce1803b20a27c4,
-        type: 3}
-      propertyPath: positionDifference.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de32529c88d24ef468ce1803b20a27c4, type: 3}
 --- !u!1001 &1906900849
