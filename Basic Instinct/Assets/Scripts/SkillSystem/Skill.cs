@@ -9,8 +9,10 @@ public abstract class Skill : MonoBehaviour {
     public float cooldown;
     public float cooldownTimer;
     public KeyCode key;
+    // private Animator anim;
 
     void Start() {
+        // anim = gameObject.GetComponent<Animator>();
         cooldownTimer = 0f;
         initialise();
     }
@@ -22,8 +24,10 @@ public abstract class Skill : MonoBehaviour {
     public void useSkill() {
         if (!isOnCooldown()) {
             Debug.Log(skillName + " used.");
+            // gameObject.GetComponent<Animator>().SetBool("skill", true);
             use();
             cooldownTimer = cooldown;
+            // gameObject.GetComponent<Animator>().SetBool("skill", false);
         }
         else {
             printCooldownMessage();

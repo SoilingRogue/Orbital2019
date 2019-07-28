@@ -32,7 +32,7 @@ public class PlayerMovement2 : MonoBehaviour
 
         // Set emote bool to true to disable camera following while idle in FollowPosition.cs
         // if (!anim.GetBool("slide")) {
-            anim.SetBool("emote", true);
+            // anim.SetBool("emote", true);
         // }
 
         if (!anim.GetBool("jump") && !anim.GetBool("slide"))
@@ -41,7 +41,7 @@ public class PlayerMovement2 : MonoBehaviour
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
                 // Set follow bool to true for camera following in FollowPosition.cs
-                anim.SetBool("follow", true);
+                anim.SetBool("move", true);
                 
                 // Running
                 anim.SetBool("run", Input.GetKey(KeyCode.LeftShift));
@@ -63,6 +63,10 @@ public class PlayerMovement2 : MonoBehaviour
                 // Debug.Log("moving");
                 // Debug.Log("Moving velocity" + rBody.velocity);
             }
+            else
+            {
+                anim.SetBool("move", false);
+            }
 
             // Emotes
             if (Input.GetKeyDown("g")) {
@@ -73,6 +77,16 @@ public class PlayerMovement2 : MonoBehaviour
             }
         }
 
+        // Setting follow bool to true when moving, sliding or using skill
+        if (anim.GetBool("move") || anim.GetBool("slide") || anim.GetBool("skill"))
+        {
+            anim.SetBool("follow", true);
+        }
+        else 
+        {
+            anim.SetBool("follow", false);
+        }
+
         // Jumping - must not be jumping currently and space is pressed
         if (Input.GetKeyDown(KeyCode.Space) && !anim.GetBool("jump"))
         {
@@ -80,7 +94,7 @@ public class PlayerMovement2 : MonoBehaviour
         }
     
         // Sliding - must be moving and control is pressed
-        if (Input.GetKeyDown(KeyCode.LeftControl) && anim.GetBool("follow"))
+        if (Input.GetKeyDown(KeyCode.LeftControl) && anim.GetBool("move"))
         {
             StartCoroutine(Slide());
         }
@@ -122,7 +136,6 @@ public class PlayerMovement2 : MonoBehaviour
     {
         // Sliding
         anim.SetBool("slide", true);
-        anim.SetBool("follow", true); // Set follow bool to true for camera following while sliding
         Debug.Log("sliding");
         anim.Play("SLIDE00_F", -1, 0f);
         Vector3 addedVel = transform.forward.normalized * (moveSpeed + slideSpeed);

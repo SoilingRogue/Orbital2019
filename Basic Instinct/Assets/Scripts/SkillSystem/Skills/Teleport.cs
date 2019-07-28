@@ -8,12 +8,14 @@ public class Teleport : Skill{
     private int layerMask;
     private RaycastHit hit;
     private GameObject ring;
+    private Animator anim;
 
     void Start()
     {
         cam = Camera.main;
         layerMask = 1 << 2;
         layerMask = ~layerMask;
+        anim = gameObject.GetComponent<Animator>();
     }
 
     protected override void initialise()
@@ -24,6 +26,7 @@ public class Teleport : Skill{
 
     protected override void use()
     {
+        anim.SetBool("skill", true);
         StartCoroutine(useHelper()); 
     }
 
@@ -44,6 +47,12 @@ public class Teleport : Skill{
         teleport();
     }
 
+    private IEnumerator setBool() 
+    {
+        yield return new WaitForSeconds(2);
+        anim.SetBool("skill", false);
+    }
+
     protected override void review()
     {
 
@@ -62,6 +71,7 @@ public class Teleport : Skill{
         fireRing.GetComponentInChildren<AudioSource>().mute = true;
         
         Destroy(fireRing, 3);
+        StartCoroutine(setBool()); 
     }
 
     private Vector3 raycast()
