@@ -10,7 +10,7 @@ public class FollowPosition : MonoBehaviour {
     }
 
     void Update() {
-        if (!anim.GetBool("emote") || anim.GetBool("slide"))
+        if (anim.GetBool("follow"))
         {
         transform.position = objectToFollow.transform.position - positionDifference;
         }

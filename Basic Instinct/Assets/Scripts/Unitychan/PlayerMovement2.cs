@@ -40,8 +40,8 @@ public class PlayerMovement2 : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
-                // Set emote bool to false for camera following in FollowPosition.cs
-                anim.SetBool("emote", false);
+                // Set follow bool to true for camera following in FollowPosition.cs
+                anim.SetBool("follow", true);
                 
                 // Running
                 anim.SetBool("run", Input.GetKey(KeyCode.LeftShift));
@@ -73,14 +73,14 @@ public class PlayerMovement2 : MonoBehaviour
             }
         }
 
-        // Jumping
+        // Jumping - must not be jumping currently and space is pressed
         if (Input.GetKeyDown(KeyCode.Space) && !anim.GetBool("jump"))
         {
             StartCoroutine(Jump());
         }
     
-        // Sliding
-        if (Input.GetKeyDown(KeyCode.LeftControl) && !anim.GetBool("emote"))
+        // Sliding - must be moving and control is pressed
+        if (Input.GetKeyDown(KeyCode.LeftControl) && !anim.GetBool("follow"))
         {
             StartCoroutine(Slide());
         }
@@ -122,6 +122,7 @@ public class PlayerMovement2 : MonoBehaviour
     {
         // Sliding
         anim.SetBool("slide", true);
+        anim.SetBool("follow", true); // Set follow bool to true for camera following while sliding
         Debug.Log("sliding");
         anim.Play("SLIDE00_F", -1, 0f);
         Vector3 addedVel = transform.forward.normalized * (moveSpeed + slideSpeed);
