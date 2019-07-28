@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Teleport : Skill{
+public class Teleport : Skill {
     public GameObject projectThru;
     private Camera cam;
     private float distance = 100f;
@@ -11,8 +11,10 @@ public class Teleport : Skill{
     private GameObject ring;
     private Animator anim;
 
-    void Start()
+    protected override void initialise()
     {
+        skillName = "Teleport";
+        cooldown = 4f;
         cam = Camera.main;
         layerMask = 1 << 2;
         layerMask = ~layerMask;
@@ -20,16 +22,10 @@ public class Teleport : Skill{
         projectThru = cam.transform.parent.gameObject;
     }
 
-    protected override void initialise()
-    {
-        skillName = "Teleport";
-        cooldown = 4f;
-    }
-
     protected override void use()
     {
         anim.SetBool("skill", true);
-        StartCoroutine(useHelper()); 
+        StartCoroutine(useHelper());
     }
 
     private IEnumerator useHelper() {
@@ -45,7 +41,7 @@ public class Teleport : Skill{
             }
             yield return null;
         }
-        
+        resetCooldown();
         teleport();
     }
 
@@ -84,10 +80,10 @@ public class Teleport : Skill{
 
         if (Physics.Raycast(ray, out hit, 500f, layerMask))
         {
-            Debug.Log("Ray hit " + hit.transform.name);
+            // Debug.Log("Ray hit " + hit.transform.name);
         }
         
-        Debug.Log("Ray hit distance: " + hit.distance);
+        // Debug.Log("Ray hit distance: " + hit.distance);
 
         return hit.point;
     }

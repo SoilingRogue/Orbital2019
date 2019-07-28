@@ -35,6 +35,7 @@ public class FireProjectile : Skill {
         if (userCollider != null) {
             Physics.IgnoreCollision(projectileCollider, userCollider);
         }
+        resetCooldown();
         
         // DigitalRuby.PyroParticles.FireProjectileCollisionDelegate del = new DigitalRuby.PyroParticles.FireProjectileCollisionDelegate(applyDamage);
         // projectileScript.CollisionDelegate = del;

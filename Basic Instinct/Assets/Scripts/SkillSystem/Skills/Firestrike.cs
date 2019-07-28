@@ -9,6 +9,7 @@ public class Firestrike : Skill {
     protected override void initialise() {
         skillName = "Firestrike";
         cooldown = 10;
+        scale = 10;
         displacement = transform.forward.normalized * scale;
     }
 
@@ -16,6 +17,7 @@ public class Firestrike : Skill {
         Vector3 spawnPosition = transform.position + displacement;
         Quaternion spawnRotation = transform.rotation;
         GameObject.Instantiate(visualPrefabs[0], spawnPosition, spawnRotation);
+        resetCooldown();
     }
 
     protected override void review() {

@@ -45,8 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visualPrefabs: []
   skillName: Teleport
-  cooldown: 0
+  cooldown: 4
   cooldownTimer: 0
-  key: 102
+  key: 50
   projectThru: {fileID: 2915973538663780142, guid: 5d933a1cd24361b4a9070c0346be93f5,
     type: 3}

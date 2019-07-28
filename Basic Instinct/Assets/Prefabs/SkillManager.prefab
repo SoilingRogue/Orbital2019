@@ -57,7 +57,7 @@ MonoBehaviour:
     visuals:
     - {fileID: 1097068111972672652, guid: 16d78353568258d4493566c604144867, type: 3}
   - user: {fileID: 0}
-    skill: {fileID: 0}
+    skill: {fileID: 5160657299759270368, guid: 3ec7b637d1368fa47b5544cc95ed9abf, type: 3}
     visuals:
     - {fileID: 168262, guid: 062893e7007e39441aea009115b6cefa, type: 3}
     - {fileID: 6263904387121522124, guid: 889d3a86ac1337a468ff5183047ae99d, type: 3}

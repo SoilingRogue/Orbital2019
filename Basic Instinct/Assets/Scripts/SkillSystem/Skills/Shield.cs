@@ -19,7 +19,7 @@ public class Shield : Skill {
         if (stats != null) {
             stats.setInvulnerable(duration);
         }
-
+        resetCooldown();
         display();
     }
 

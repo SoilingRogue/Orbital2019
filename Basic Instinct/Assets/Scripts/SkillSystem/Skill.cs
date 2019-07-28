@@ -26,12 +26,15 @@ public abstract class Skill : MonoBehaviour {
             Debug.Log(skillName + " used.");
             // gameObject.GetComponent<Animator>().SetBool("skill", true);
             use();
-            cooldownTimer = cooldown;
             // gameObject.GetComponent<Animator>().SetBool("skill", false);
         }
         else {
             printCooldownMessage();
         }
+    }
+
+    protected void resetCooldown() {
+        cooldownTimer = cooldown;
     }
     
     private void printCooldownMessage() {
