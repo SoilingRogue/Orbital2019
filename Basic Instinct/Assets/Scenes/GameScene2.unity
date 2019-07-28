@@ -1428,21 +1428,11 @@ PrefabInstance:
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 1285841993}
-    - target: {fileID: 2915973538663780128, guid: 5d933a1cd24361b4a9070c0346be93f5,
+    - target: {fileID: 8224443313656437349, guid: 5d933a1cd24361b4a9070c0346be93f5,
         type: 3}
-      propertyPath: positionDifference.y
-      value: -1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2915973537271138081, guid: 5d933a1cd24361b4a9070c0346be93f5,
-        type: 3}
-      propertyPath: m_TagString
-      value: MainCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 2915973537271138081, guid: 5d933a1cd24361b4a9070c0346be93f5,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: objectToFollow
+      value: 
+      objectReference: {fileID: 1285841993}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d933a1cd24361b4a9070c0346be93f5, type: 3}
 --- !u!1001 &6984609456852511956
