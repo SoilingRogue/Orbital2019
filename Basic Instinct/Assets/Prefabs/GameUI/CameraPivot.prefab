@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2915973537271138085}
   - component: {fileID: 2915973537271138084}
   - component: {fileID: 2915973537271138083}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -108,6 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2915973538663780143}
   - component: {fileID: 2915973538663780128}
+  - component: {fileID: 8224443313656437349}
   m_Layer: 2
   m_Name: CameraPivot
   m_TagString: Untagged
@@ -129,7 +130,7 @@ Transform:
   - {fileID: 2915973537271138082}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 1.835, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2915973538663780128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,4 +144,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToFollow: {fileID: 0}
-  positionDifference: {x: 0, y: 0, z: 0}
+  positionDifference: {x: 0, y: -1.4, z: 0}
+--- !u!114 &8224443313656437349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2915973538663780142}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24421e29c6130d84391f3e0d68e07899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToFollow: {fileID: 0}
+  positionDifference: {x: 0, y: -1.4, z: 0}

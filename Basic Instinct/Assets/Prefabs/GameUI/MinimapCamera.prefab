@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6984609458181623585}
   - component: {fileID: 6984609458181623591}
   - component: {fileID: 1450780715}
+  - component: {fileID: 506394073734905515}
   m_Layer: 0
   m_Name: MinimapCamera
   m_TagString: Untagged
@@ -96,9 +97,23 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6984609458181623590}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e996e5f9bae4dc1debfcc065dd6f4357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToFollow: {fileID: 0}
+  positionDifference: {x: 0, y: -10, z: 0}
+--- !u!114 &506394073734905515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6984609458181623590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24421e29c6130d84391f3e0d68e07899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectToFollow: {fileID: 0}

@@ -78,7 +78,7 @@ public class PlayerMovement2 : MonoBehaviour
         }
 
         // Setting follow bool to true when moving, sliding or using skill
-        if (anim.GetBool("move") || anim.GetBool("slide") || anim.GetBool("skill"))
+        if (anim.GetBool("move") || anim.GetBool("skill") || anim.GetBool("slide"))
         {
             anim.SetBool("follow", true);
         }
