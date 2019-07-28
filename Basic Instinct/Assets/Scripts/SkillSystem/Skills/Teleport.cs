@@ -17,6 +17,7 @@ public class Teleport : Skill{
         layerMask = 1 << 2;
         layerMask = ~layerMask;
         anim = gameObject.GetComponent<Animator>();
+        projectThru = cam.transform.parent.gameObject;
     }
 
     protected override void initialise()
