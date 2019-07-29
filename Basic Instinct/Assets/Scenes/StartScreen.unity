@@ -6000,7 +6000,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 2.3509887e-38, z: 131092, w: -7.888612e-31}
+  m_BoundingSphereOverride: {x: 8.758e-42, y: 1.04e-43, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -6837,6 +6837,33 @@ MonoBehaviour:
     pitch: 1.17
     pitchVariance: 0.055
     loop: 0
+    mixerGroup: {fileID: 24300002, guid: ba2da956586a8f54997f24bee38df4a2, type: 2}
+    source: {fileID: 0}
+  - name: GangnamStyle
+    clip: {fileID: 8300000, guid: 39a0360f059a4c44187b57ad61e02878, type: 3}
+    volume: 0.278
+    volumeVariance: 0.054
+    pitch: 1.17
+    pitchVariance: 0.055
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: ba2da956586a8f54997f24bee38df4a2, type: 2}
+    source: {fileID: 0}
+  - name: Thriller
+    clip: {fileID: 8300000, guid: 0a3eaa1d286c7524d84d5b5f2d9e4c5c, type: 3}
+    volume: 0.278
+    volumeVariance: 0.054
+    pitch: 1.17
+    pitchVariance: 0.055
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: ba2da956586a8f54997f24bee38df4a2, type: 2}
+    source: {fileID: 0}
+  - name: Camera
+    clip: {fileID: 8300000, guid: 81652031b64c342cc8dbc59c138d77c5, type: 3}
+    volume: 0.278
+    volumeVariance: 0.054
+    pitch: 1.17
+    pitchVariance: 0.055
+    loop: 1
     mixerGroup: {fileID: 24300002, guid: ba2da956586a8f54997f24bee38df4a2, type: 2}
     source: {fileID: 0}
 --- !u!4 &920374352

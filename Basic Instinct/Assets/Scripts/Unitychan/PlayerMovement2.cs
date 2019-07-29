@@ -65,12 +65,15 @@ public class PlayerMovement2 : MonoBehaviour
             // Emotes
             if (Input.GetKeyDown("g")) {
                 anim.Play("Gangnam Style", -1, 0f);
+                playSound("GangnamStyle");
             }
             if (Input.GetKeyDown("t")) {
                 anim.Play("Thriller Part 2", -1, 0f);
+                playSound("Thriller");
             }
             if (Input.GetKeyDown("p")) {
                 anim.Play("POSE01", -1, 0f);
+                playSound("Camera");
             }
         }
 
@@ -131,5 +134,16 @@ public class PlayerMovement2 : MonoBehaviour
     private Quaternion GetCameraTurn()
     {
         return Quaternion.AngleAxis(cam.transform.rotation.eulerAngles.y, Vector3.up);
+    }
+
+    private void playSound(string clipName) {
+        StartCoroutine(playSoundHelper(clipName));
+    }
+
+    private IEnumerator playSoundHelper(string clipName) {
+        AudioManager audioManager = GameObject.FindObjectOfType<AudioManager>();
+        audioManager.Play(clipName);
+        yield return new WaitForSeconds(10f);
+        audioManager.Stop(clipName);
     }
 }
