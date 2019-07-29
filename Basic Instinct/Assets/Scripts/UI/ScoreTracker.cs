@@ -7,6 +7,6 @@ public class ScoreTracker : MonoBehaviour {
     public ScoreSystem scoreSystem;
 
     void Update() {
-        scoreText.text = "Score " + scoreSystem.score;
+        scoreText.text = "Kills " + scoreSystem.score;
     }
 }

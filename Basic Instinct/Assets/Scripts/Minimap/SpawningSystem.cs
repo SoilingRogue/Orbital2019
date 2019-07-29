@@ -84,6 +84,8 @@ public class SpawningSystem : MonoBehaviour {
     }
 
     public void saveWaveCount() {
-        PlayerPrefs.SetInt("WaveCount", currentWave);
+        if (currentWave > PlayerPrefs.GetInt("WaveCount", 0)) {
+            PlayerPrefs.SetInt("WaveCount", currentWave);
+        }
     }
 }

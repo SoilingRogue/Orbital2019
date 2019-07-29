@@ -12,14 +12,14 @@ public class ScoreSystem : MonoBehaviour {
     
     public void saveHighScore() {
         Debug.Log("Saving high score of " + score);
-        int currentHighScore = PlayerPrefs.GetInt("Highscore");
+        int currentHighScore = PlayerPrefs.GetInt("Highscore", 0);
         if (score > currentHighScore) {
             PlayerPrefs.SetInt("Highscore", score);
         }
     }
 
     public int loadHighScore() {
-        int highScore = PlayerPrefs.GetInt("Highscore");
+        int highScore = PlayerPrefs.GetInt("Highscore", 0);
         Debug.Log("Loading high score of " + highScore);
         return highScore;
     }

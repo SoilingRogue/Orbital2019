@@ -10,7 +10,7 @@ public class Scoreboard : MonoBehaviour {
 
     void Start() {
         killsText.text = "Highest kill count is " + PlayerPrefs.GetInt("Highscore", 0);
-        timeText.text = "Longest survival time is " + PlayerPrefs.GetFloat("SurvivalTime", 0);
+        timeText.text = "Longest survival time is " + PlayerPrefs.GetFloat("SurvivalTime", 0).ToString("F");
         waveText.text = "Highest wave encountered is " + PlayerPrefs.GetInt("WaveCount", 0);
     }
 

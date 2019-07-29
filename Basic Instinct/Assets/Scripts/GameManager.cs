@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour {
     public GameObject gameUI;
@@ -9,6 +10,9 @@ public class GameManager : MonoBehaviour {
     public GameObject loseMenu;
     public ScoreSystem scoreSystem;
     public SpawningSystem spawningSystem;
+    public TextMeshProUGUI killsText;
+    public TextMeshProUGUI timeText;
+    public TextMeshProUGUI waveText;
 
     [HideInInspector]
     public float timer;
@@ -38,6 +42,14 @@ public class GameManager : MonoBehaviour {
         gameOver = true;
         // Show mouse cursor
         Cursor.visible = true;
+        // Show stats
+        displayStats();
+    }
+
+    void displayStats() {
+        killsText.text = "You killed " + scoreSystem.score + " enemies";
+        timeText.text = "You survived for " + getTime().ToString("F");
+        waveText.text = "You encountered " + spawningSystem.currentWave + " waves";
     }
 
     public void pauseGame() {
@@ -124,6 +136,13 @@ public class GameManager : MonoBehaviour {
     }
 
     private void saveTime() {
-        PlayerPrefs.SetFloat("SurvivalTime", gameUI.GetComponentInChildren<TimeTracker>().time);
+        float time = getTime();
+        if (time > PlayerPrefs.GetFloat("SurvivalTime")) {
+            PlayerPrefs.SetFloat("SurvivalTime", getTime());
+        }
+    }
+
+    public float getTime() {
+        return gameUI.GetComponentInChildren<TimeTracker>().time;
     }
 }
