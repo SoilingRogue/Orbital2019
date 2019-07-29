@@ -35,8 +35,8 @@ public class SpawningSystem : MonoBehaviour {
 
             spawnEnemies();
             increaseSpawnCount();
-            // 10 sec delay between waves
-            timeToNextSpawn = 20f;
+            // 15 sec delay between waves
+            timeToNextSpawn = 15f;
         }
     }
 
