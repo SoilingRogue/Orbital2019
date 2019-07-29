@@ -958,6 +958,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 329148641}
+    - target: {fileID: 3533134863505556696, guid: acb7920ca974bc149ab57979800e64ba,
+        type: 3}
+      propertyPath: runSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2329654892417845528, guid: acb7920ca974bc149ab57979800e64ba,
         type: 3}
       propertyPath: m_Mass

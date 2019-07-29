@@ -21,8 +21,8 @@ public class Enemy : MonoBehaviour {
         // This only works assuming the scene has only 1 player.
         player = GameObject.FindWithTag("Player");
 
-        // After spawning, attack only after 2s
-        timeToNextAttack = 2f;
+        // After spawning, attack only after 1.5s to 2.5s
+        timeToNextAttack = 2f + Random.Range(-0.5f, 0.5f) ;
 
         scoreSystem = GameObject.FindObjectOfType<ScoreSystem>();
         StartCoroutine(rotationCoroutine());
@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour {
             if (isAggressive) {
                 attack();
             }
-            timeToNextAttack = attackCooldown;
+            timeToNextAttack = attackCooldown + Random.Range(-0.5f, 0.5f);
         }
     }
 

@@ -36,35 +36,9 @@ public class FireProjectile : Skill {
             Physics.IgnoreCollision(projectileCollider, userCollider);
         }
         resetCooldown();
-        
-        // DigitalRuby.PyroParticles.FireProjectileCollisionDelegate del = new DigitalRuby.PyroParticles.FireProjectileCollisionDelegate(applyDamage);
-        // projectileScript.CollisionDelegate = del;
-
-        // addCollider(fireProjectile);
-        // Destroy(fireProjectile, duration);
-
-        // fireProjectile.AddComponent<TestCollider>();
-        // fireProjectile.GetComponentInChildren<Collider>().isTrigger = true;
-
     }
-
-    // public void applyDamage(DigitalRuby.PyroParticles.FireProjectileScript script, Vector3 pos) {
-    //     Debug.Log("Test");
-    // }
 
     protected override void review() {
-        // if (fireProjectile != null) {
-        //     fireProjectile.transform.position += direction * travelSpeed * Time.deltaTime;
-        // }
-    }
-
-    void addCollider(GameObject visual) {
-        // SphereCollider collider = visual.AddComponent<SphereCollider>();
-        // Collider projectileCollider = visual.GetComponent<Collider>();
-        // Collider userCollider = gameObject.GetComponent<Collider>();
-        // if (userCollider != null) {
-        //     Physics.IgnoreCollision(projectileCollider, userCollider);
-        // }
-        // visual.AddComponent<FireProjCollider>();
+        
     }
 }
