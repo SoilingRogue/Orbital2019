@@ -2145,7 +2145,7 @@ GameObject:
   - component: {fileID: 3804053975589665855}
   - component: {fileID: 3533134863505556696}
   m_Layer: 2
-  m_Name: unitychan 1
+  m_Name: UnityChanDefault
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2216,7 +2216,7 @@ CapsuleCollider:
   m_Radius: 0.21808624
   m_Height: 1.6030731
   m_Direction: 1
-  m_Center: {x: 0.025966644, y: 0.7627983, z: -0.064949036}
+  m_Center: {x: 0, y: 0.7627983, z: 0}
 --- !u!114 &173666709436428595
 MonoBehaviour:
   m_ObjectHideFlags: 0
