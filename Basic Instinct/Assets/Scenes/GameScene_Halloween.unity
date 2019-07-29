@@ -175,6 +175,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95892711057718832, guid: b3156cd2babae3f47a613f5301f87251,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 2b1bad5fa6b512e40bd452a0d8c06270,
+        type: 2}
+    - target: {fileID: 1298883125315910, guid: b3156cd2babae3f47a613f5301f87251, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1144207543204106, guid: b3156cd2babae3f47a613f5301f87251, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114817245458673918, guid: b3156cd2babae3f47a613f5301f87251, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b3156cd2babae3f47a613f5301f87251, type: 3}
@@ -214,6 +228,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &230579538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230579535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8629da23fe70b246a835a9d650907c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 1
+  runSpeed: 3
+  slideSpeed: 0.3
+  jumpHeight: 1
+  cam: {fileID: 1675198035}
 --- !u!1001 &767696844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225,6 +256,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UnityChanDefault
+      objectReference: {fileID: 0}
+    - target: {fileID: 2329654893547967078, guid: acb7920ca974bc149ab57979800e64ba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2329654893547802502, guid: acb7920ca974bc149ab57979800e64ba,
         type: 3}
@@ -354,12 +390,12 @@ PrefabInstance:
         type: 3}
       propertyPath: objectToFollow
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 230579535}
     - target: {fileID: 8224443313656437349, guid: 5d933a1cd24361b4a9070c0346be93f5,
         type: 3}
       propertyPath: objectToFollow
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 230579535}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d933a1cd24361b4a9070c0346be93f5, type: 3}
 --- !u!1001 &1398687468
@@ -407,6 +443,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b76c71a1e3f6c4fdab657f4fbf5466de, type: 3}
+--- !u!20 &1675198035 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2915973537271138085, guid: 5d933a1cd24361b4a9070c0346be93f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1012689644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1799658845
 GameObject:
   m_ObjectHideFlags: 0
