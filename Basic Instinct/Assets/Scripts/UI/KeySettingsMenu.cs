@@ -139,4 +139,18 @@ public class KeySettingsMenu : MonoBehaviour {
            anim.WriteDefaultValues();
        }
     }
+
+    public void resetKeys() {
+        // Reset player prefs
+        PlayerPrefs.SetString("Skill_0", "Q");
+        PlayerPrefs.SetString("Skill_1", "E");
+        PlayerPrefs.SetString("Skill_2", "R");
+        PlayerPrefs.SetString("Skill_3", "F");
+
+        // Reset visuals
+        transform.GetChild(0).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "Q";
+        transform.GetChild(1).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "E";
+        transform.GetChild(2).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "R";
+        transform.GetChild(3).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "F";
+    }
 }

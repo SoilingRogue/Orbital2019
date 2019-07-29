@@ -41,20 +41,19 @@ public class OptionsMenu : MonoBehaviour {
         resolutionDropdown.value = defaultIndex;
         resolutionDropdown.RefreshShownValue();
 
+        // Set visuals to match settings
+        
         // Fullscreen
         bool fullscreen = PlayerPrefs.GetInt("Fullscreen", 1) == 1 ? true : false;
         fullscreenToggle.isOn = fullscreen;
-        Screen.fullScreen = fullscreen;
 
         // Quality
         int qualityIndex = PlayerPrefs.GetInt("Quality", 0);
         qualityDropdown.value = qualityIndex;
-        QualitySettings.SetQualityLevel(qualityIndex);
 
         // Volume
         float volume = PlayerPrefs.GetFloat("Volume", 0);
         volumeSlider.value = volume;
-        audioMixer.SetFloat("volume", volume);
     }
 
     public void setResolution(int resolutionIndex) {

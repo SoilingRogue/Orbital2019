@@ -1,14 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using TMPro;
 
 public class MainMenu : MonoBehaviour {
-    public TextMeshProUGUI highscoreText;
+    public AudioMixer audioMixer;
 
     void Start() {
+        // Use settings
+
+        // Fullscreen
+        bool fullscreen = PlayerPrefs.GetInt("Fullscreen", 1) == 1 ? true : false;
+        Screen.fullScreen = fullscreen;
+
+        // Quality
+        int qualityIndex = PlayerPrefs.GetInt("Quality", 0);
+        QualitySettings.SetQualityLevel(qualityIndex);
+
+        // Volume
+        float volume = PlayerPrefs.GetFloat("Volume", 0);
+        audioMixer.SetFloat("volume", volume);
+
         startBackgroundMusic();
-        highscoreText.text = "Highscore " + getHighscore();
     }
 
     private int getHighscore() {
