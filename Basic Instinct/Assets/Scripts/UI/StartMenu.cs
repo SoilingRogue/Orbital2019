@@ -21,7 +21,8 @@ public class StartMenu : MonoBehaviour {
         sceneOptions = new List<string>() {
             "Volcano",
             "Plane",
-            "Halloween"
+            "Halloween",
+            "Sandbox"
         };
         sceneDropdown.ClearOptions();
         sceneDropdown.AddOptions(sceneOptions);
