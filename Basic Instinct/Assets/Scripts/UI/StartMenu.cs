@@ -7,7 +7,11 @@ using TMPro;
 public class StartMenu : MonoBehaviour {
     private int sceneIndex;
     public TMP_Dropdown sceneDropdown;
-    public TMP_Dropdown characterDropdown;
+    // public TMP_Dropdown characterDropdown;
+    public Button button1;
+    public Button button2;
+    public Button button3;
+
     public TextMeshProUGUI skillDescriptionText;
     private GameObject selectedSkillButton;
     private List<string> sceneOptions;
@@ -22,15 +26,25 @@ public class StartMenu : MonoBehaviour {
         sceneDropdown.ClearOptions();
         sceneDropdown.AddOptions(sceneOptions);
 
-        characterOptions = new List<string>() {
-            "Vanilla",
-            "Halloween",
-            "Schoolgirl"
-        };
-        characterDropdown.ClearOptions();
-        characterDropdown.AddOptions(characterOptions);
-        characterDropdown.value = PlayerPrefs.GetInt("CharacterChoice", 0);
-        characterDropdown.RefreshShownValue();
+        int index = PlayerPrefs.GetInt("CharacterChoice", 0);
+        switch (index) {
+            case 0: button1.Select();
+                break;
+            case 1: button2.Select();
+                break;
+            case 2: button3.Select();
+                break;
+        }
+
+        // characterOptions = new List<string>() {
+        //     "Vanilla",
+        //     "Halloween",
+        //     "Schoolgirl"
+        // };
+        // characterDropdown.ClearOptions();
+        // characterDropdown.AddOptions(characterOptions);
+        // characterDropdown.value = PlayerPrefs.GetInt("CharacterChoice", 0);
+        // characterDropdown.RefreshShownValue();
     }
 
     public void loadNextScene() {

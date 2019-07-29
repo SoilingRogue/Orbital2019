@@ -15044,7 +15044,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneDropdown: {fileID: 1363768389}
-  characterDropdown: {fileID: 1704836249}
+  button1: {fileID: 1780233905}
+  button2: {fileID: 31002785}
+  button3: {fileID: 182507465}
   skillDescriptionText: {fileID: 1314512300}
 --- !u!1 &2036683584
 GameObject:
