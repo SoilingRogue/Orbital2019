@@ -68,6 +68,9 @@ public class PlayerMovement2 : MonoBehaviour
             if (Input.GetKeyDown("t")) {
                 anim.Play("Thriller Part 2", -1, 0f);
             }
+            if (Input.GetKeyDown("p")) {
+                anim.Play("POSE01", -1, 0f);
+            }
         }
 
         // Setting follow bool to true when moving, sliding or using skill
