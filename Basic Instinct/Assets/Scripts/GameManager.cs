@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour {
     void Start() {
         startBackgroundMusic();
         timer = 0f;
+        
+        // Hide mouse cursor
+        Cursor.visible = false;
     }
 
     public void loseGame() {
@@ -31,6 +34,8 @@ public class GameManager : MonoBehaviour {
         isPaused = true;
         // Game is over
         gameOver = true;
+        // Show mouse cursor
+        Cursor.visible = true;
     }
 
     public void pauseGame() {
@@ -42,6 +47,8 @@ public class GameManager : MonoBehaviour {
         pauseMenu.SetActive(true);
         // Set variable for other scripts
         isPaused = true;
+        // Show mouse cursor
+        Cursor.visible = true;
     }
 
     public void resumeGame() {
@@ -53,6 +60,8 @@ public class GameManager : MonoBehaviour {
         pauseMenu.SetActive(false);
         // Set variable
         isPaused = false;
+        // Hide mouse cursor
+        Cursor.visible = false;
     }
 
     public void loadMenu() {
@@ -62,6 +71,7 @@ public class GameManager : MonoBehaviour {
         isPaused = false;
         // Load start screen
         SceneManager.LoadScene("StartScreen");
+        
     }
 
     public void quitGame() {

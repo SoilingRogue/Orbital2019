@@ -1508,7 +1508,7 @@ MonoBehaviour:
   fireboltPrefab: {fileID: 4849285411860955109, guid: b23128c11089dd945b3784edd5157046,
     type: 3}
   attackCooldown: 5
-  fireballSpeed: 0.6
+  fireballSpeed: 1
   fireballDuration: 3
   isAggressive: 1
 --- !u!136 &8296172667829815628

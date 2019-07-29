@@ -2141,7 +2141,6 @@ GameObject:
   - component: {fileID: 2329654893557325830}
   - component: {fileID: 2329654892417845528}
   - component: {fileID: 3533134862131377598}
-  - component: {fileID: 3533134862131377568}
   - component: {fileID: 173666709436428595}
   - component: {fileID: 3804053975589665855}
   - component: {fileID: 3533134863505556696}
@@ -2218,24 +2217,6 @@ CapsuleCollider:
   m_Height: 1.6030731
   m_Direction: 1
   m_Center: {x: 0.025966644, y: 0.7627983, z: -0.064949036}
---- !u!114 &3533134862131377568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2329654893547967078}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c5ac02249ff6b04c9cd25b0646b9b01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 1
-  runSpeed: 3
-  runSlideSpeed: 3.3
-  walkSlideSpeed: 1.3
-  jumpHeight: 1
-  cam: {fileID: 0}
 --- !u!114 &173666709436428595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2277,8 +2258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8629da23fe70b246a835a9d650907c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 1
-  runSpeed: 3
+  walkSpeed: 2
+  runSpeed: 6
   slideSpeed: 0.3
   jumpHeight: 1
   cam: {fileID: 0}

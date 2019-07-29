@@ -25,9 +25,28 @@ public class Enemy : MonoBehaviour {
         timeToNextAttack = 2f;
 
         scoreSystem = GameObject.FindObjectOfType<ScoreSystem>();
+        StartCoroutine(rotationCoroutine());
     }
 
     void Update() {
+        timeToNextAttack -= Time.deltaTime;
+        if (timeToNextAttack <= 0) {
+            if (isAggressive) {
+                attack();
+            }
+            timeToNextAttack = attackCooldown;
+        }
+    }
+
+    private IEnumerator rotationCoroutine() {
+        while (true) {
+            // Every 0.5s, turn to face the player
+            facePlayer();
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+    private void facePlayer() {
         if (player != null) {
             // Calculate the direction to face the player
             direction = player.transform.position - transform.position;
@@ -39,14 +58,6 @@ public class Enemy : MonoBehaviour {
         direction.y = 0;
         Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
         transform.rotation = rotation;
-
-        timeToNextAttack -= Time.deltaTime;
-        if (timeToNextAttack <= 0) {
-            if (isAggressive) {
-                attack();
-            }
-            timeToNextAttack = attackCooldown;
-        }
     }
 
     private void OnCollisionEnter(Collision other) {
