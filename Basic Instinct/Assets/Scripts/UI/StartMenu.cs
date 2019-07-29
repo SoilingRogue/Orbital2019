@@ -5,12 +5,10 @@ using UnityEngine.SceneManagement;
 using TMPro;
 
 public class StartMenu : MonoBehaviour {
-    private string sceneName;
+    private int sceneIndex;
     public TMP_Dropdown sceneDropdown;
     public TextMeshProUGUI skillDescriptionText;
     private GameObject selectedSkillButton;
-
-    private List<string> validSceneNames;
     private List<string> sceneOptions;
 
     void Start() {
@@ -19,19 +17,12 @@ public class StartMenu : MonoBehaviour {
             "Plane",
             "Halloween"
         };
-        validSceneNames = new List<string>() {
-            "GameSceneVolcano",
-            "GameScene_Plane",
-            "GameScene_Halloween"
-        };
         sceneDropdown.ClearOptions();
         sceneDropdown.AddOptions(sceneOptions);
-        // Default scene
-        sceneName = validSceneNames[0];
     }
 
     public void loadNextScene() {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneIndex + 1);
     }
 
     public void exitGame() {
@@ -53,8 +44,8 @@ public class StartMenu : MonoBehaviour {
         }
     }
 
-    public void setSceneName(int sceneNameIndex) {
-        sceneName = validSceneNames[sceneNameIndex];
+    public void setSceneIndex(int sceneIndex) {
+        this.sceneIndex = sceneIndex;
     }
 
     public void selectSkillButton(GameObject button) {

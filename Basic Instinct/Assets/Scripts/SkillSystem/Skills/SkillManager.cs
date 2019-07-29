@@ -4,11 +4,26 @@ using System;
 using UnityEngine;
 
 public class SkillManager : MonoBehaviour {
+    public GameObject[] characterPrefabs;
     public SkillHelper[] skillHelpers;
     public KeyCode[] skillKeys;
     private List<Skill> skills;
+    private GameObject chosenUnity;
 
     void Awake() {
+        int index = PlayerPrefs.GetInt("CharacterChoice", 0);
+        chosenUnity = characterPrefabs[index];
+
+        for (int i = 0; i < characterPrefabs.Length; i++) {
+            if (i != index) {
+                characterPrefabs[i].SetActive(false);
+            }
+        }
+
+        foreach (SkillHelper skillHelper in skillHelpers) {
+            skillHelper.user = chosenUnity;
+        }
+        
         bindSkillKeys();
         bindSkills();
     }

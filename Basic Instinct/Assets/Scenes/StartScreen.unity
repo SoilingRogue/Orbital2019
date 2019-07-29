@@ -4578,7 +4578,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 4.8e-44, z: 1.2183e-41, w: 1.01e-43}
+  m_BoundingSphereOverride: {x: NaN, y: NaN, z: NaN, w: NaN}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -8094,7 +8094,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2017151357}
-        m_MethodName: setSceneName
+        m_MethodName: setSceneIndex
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
