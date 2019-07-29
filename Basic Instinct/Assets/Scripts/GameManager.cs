@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour {
     public GameObject pauseMenu;
     public GameObject loseMenu;
     public ScoreSystem scoreSystem;
+    public SpawningSystem spawningSystem;
+
     [HideInInspector]
     public float timer;
     [HideInInspector]
@@ -71,7 +73,6 @@ public class GameManager : MonoBehaviour {
         isPaused = false;
         // Load start screen
         SceneManager.LoadScene("StartScreen");
-        
     }
 
     public void quitGame() {
@@ -89,6 +90,10 @@ public class GameManager : MonoBehaviour {
         loseGame();
         // Save highscore
         scoreSystem.saveHighScore();
+        // Save wave count
+        spawningSystem.saveWaveCount();
+        // Save time
+        saveTime();
     }
 
     void Update() {
@@ -116,5 +121,9 @@ public class GameManager : MonoBehaviour {
         if (audioManager != null) {
             audioManager.Stop("BattleLoop");
         }
+    }
+
+    private void saveTime() {
+        PlayerPrefs.SetFloat("SurvivalTime", gameUI.GetComponentInChildren<TimeTracker>().time);
     }
 }

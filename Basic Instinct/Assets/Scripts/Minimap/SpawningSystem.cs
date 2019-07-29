@@ -35,8 +35,8 @@ public class SpawningSystem : MonoBehaviour {
 
             spawnEnemies();
             increaseSpawnCount();
-            // 15 sec delay between waves
-            timeToNextSpawn = 15f;
+            // 10 sec delay between waves
+            timeToNextSpawn = 10f;
         }
     }
 
@@ -81,5 +81,9 @@ public class SpawningSystem : MonoBehaviour {
         if (audioManager != null) {
             audioManager.Play("EnemiesSpawning");
         }
+    }
+
+    public void saveWaveCount() {
+        PlayerPrefs.SetInt("WaveCount", currentWave);
     }
 }

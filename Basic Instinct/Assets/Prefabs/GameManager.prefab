@@ -52,6 +52,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 8876178939922922295}
   loseMenu: {fileID: 8876178939107013273}
   scoreSystem: {fileID: 5906517628919066459}
+  spawningSystem: {fileID: 8876178940182474179}
   timer: 0
   isPaused: 0
   gameOver: 0
@@ -166,6 +167,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpawningSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742942881037844792, guid: 6ba309361b5a25e48931e622cfa1de7b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ba309361b5a25e48931e622cfa1de7b, type: 3}
@@ -309,6 +315,11 @@ PrefabInstance:
       propertyPath: scoreSystem
       value: 
       objectReference: {fileID: 5906517628919066459}
+    - target: {fileID: 333006968835679567, guid: 9ea9e37e4521bf44aac87ce9c3433b15,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 33.3
+      objectReference: {fileID: 0}
     - target: {fileID: 8667444413077185924, guid: 9ea9e37e4521bf44aac87ce9c3433b15,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -544,16 +555,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 1082682936298444155, guid: e063e9b06bfb03447864778a09b42dbf,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1082682936298444155, guid: e063e9b06bfb03447864778a09b42dbf,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 402108066565430138, guid: e063e9b06bfb03447864778a09b42dbf,
         type: 3}

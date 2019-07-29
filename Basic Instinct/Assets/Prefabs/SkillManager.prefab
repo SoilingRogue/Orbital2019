@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterPrefabs:
-  - {fileID: 2329654893547967078, guid: acb7920ca974bc149ab57979800e64ba, type: 3}
-  - {fileID: 7184884405094768195, guid: ad396be3ab46fb148b91be7e38d7e518, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   skillHelpers:
   - user: {fileID: 0}
     skill: {fileID: 4795996416400762592, guid: e0de19366c5e8cb4da731d9375bedc8f, type: 3}
