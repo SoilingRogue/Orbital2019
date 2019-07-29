@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
     public bool gameOver;
 
     void Start() {
+        startBackgroundMusic();
         timer = 0f;
     }
 
@@ -90,6 +91,20 @@ public class GameManager : MonoBehaviour {
                     pauseGame();
                 }
             }
+        }
+    }
+
+    public void startBackgroundMusic() {
+        AudioManager audioManager = GameObject.FindObjectOfType<AudioManager>();
+        if (audioManager != null) {
+            audioManager.Play("BattleLoop");
+        }
+    }
+
+    public void stopBackgroundMusic() {
+        AudioManager audioManager = GameObject.FindObjectOfType<AudioManager>();
+        if (audioManager != null) {
+            audioManager.Stop("BattleLoop");
         }
     }
 }

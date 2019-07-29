@@ -46,6 +46,7 @@ public class SpawningSystem : MonoBehaviour {
     }
 
     void spawnEnemies() {
+        playEnemiesSpawnSound();
         for (int i = 0; i < nextSpawnCount; i++) {
             // Get random spawn location
             Vector3 position = getRandomSpawnLocation();
@@ -73,5 +74,12 @@ public class SpawningSystem : MonoBehaviour {
         Quaternion dummyRotation = Quaternion.identity;
         GameObject enemyClone = Instantiate(enemyPrefab, position, dummyRotation);
         enemyClone.SetActive(true);
+    }
+
+    public void playEnemiesSpawnSound() {
+        AudioManager audioManager = GameObject.FindObjectOfType<AudioManager>();
+        if (audioManager != null) {
+            audioManager.Play("EnemiesSpawning");
+        }
     }
 }

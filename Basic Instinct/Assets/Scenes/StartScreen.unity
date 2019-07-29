@@ -4578,7 +4578,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 5.542e-42, y: 1.04e-43, z: 1.1831e-41, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 4.8e-44, z: 1.2183e-41, w: 1.01e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -5084,6 +5084,42 @@ MonoBehaviour:
     pitch: 1.17
     pitchVariance: 0.055
     loop: 1
+    mixerGroup: {fileID: 24300002, guid: ba2da956586a8f54997f24bee38df4a2, type: 2}
+    source: {fileID: 0}
+  - name: BattleLoop
+    clip: {fileID: 8300000, guid: 7f0e763695f55d6418d4ae7ba071eb08, type: 3}
+    volume: 0.116
+    volumeVariance: 0.054
+    pitch: 1.17
+    pitchVariance: 0.055
+    loop: 1
+    mixerGroup: {fileID: 24300002, guid: ba2da956586a8f54997f24bee38df4a2, type: 2}
+    source: {fileID: 0}
+  - name: Ouch
+    clip: {fileID: 8300000, guid: 872311653da1a4d1f90f26302192edd5, type: 3}
+    volume: 0.116
+    volumeVariance: 0.054
+    pitch: 1.17
+    pitchVariance: 0.055
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: ba2da956586a8f54997f24bee38df4a2, type: 2}
+    source: {fileID: 0}
+  - name: Death
+    clip: {fileID: 8300000, guid: 78dfa7e84d21b4adab175b30eb01eacc, type: 3}
+    volume: 0.116
+    volumeVariance: 0.054
+    pitch: 1.17
+    pitchVariance: 0.055
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: ba2da956586a8f54997f24bee38df4a2, type: 2}
+    source: {fileID: 0}
+  - name: EnemiesSpawning
+    clip: {fileID: 8300000, guid: db42d1b06099849e69113263385e8cb9, type: 3}
+    volume: 0.278
+    volumeVariance: 0.054
+    pitch: 1.17
+    pitchVariance: 0.055
+    loop: 0
     mixerGroup: {fileID: 24300002, guid: ba2da956586a8f54997f24bee38df4a2, type: 2}
     source: {fileID: 0}
 --- !u!4 &920374352
@@ -6350,7 +6386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 137, y: -29.99997}
+  m_AnchoredPosition: {x: 137, y: -30}
   m_SizeDelta: {x: -471.69995, y: -183.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1131571845

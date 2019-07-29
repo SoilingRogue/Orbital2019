@@ -22,6 +22,7 @@ public class CharacterStats : MonoBehaviour {
             Debug.Log(name + " takes " + damage + " damage.");
             Debug.Log(name + " has " + currentHealth + " health.");
             animator.Play("DAMAGED00");
+            playDamagedSound();
         }
         else {
             Debug.Log("No damage taken. " + name + " is invulnerable.");
@@ -45,17 +46,32 @@ public class CharacterStats : MonoBehaviour {
     }
 
     public void die() {
+        animator.Play("DAMAGED01");
+        playDyingSound();
         StartCoroutine(dieHelper());
     }
 
     private IEnumerator dieHelper() {
-        animator.Play("DAMAGED01");
         if (gameManager != null) {
             yield return new WaitForSeconds(2);
             gameManager.lose();
         }
         else {
             Debug.LogWarning("No GameManager in scene.");
+        }
+    }
+
+    private void playDamagedSound() {
+        AudioManager audioManager = GameObject.FindObjectOfType<AudioManager>();
+        if (audioManager != null) {
+            audioManager.Play("Ouch");
+        }
+    }
+
+    private void playDyingSound() {
+        AudioManager audioManager = GameObject.FindObjectOfType<AudioManager>();
+        if (audioManager != null) {
+            audioManager.Play("Death");
         }
     }
 }
