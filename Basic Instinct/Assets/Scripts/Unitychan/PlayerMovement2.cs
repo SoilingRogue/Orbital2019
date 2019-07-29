@@ -17,6 +17,7 @@ public class PlayerMovement2 : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rBody = GetComponent<Rigidbody>();
+        cam = Camera.main;
     }
 
     void FixedUpdate()

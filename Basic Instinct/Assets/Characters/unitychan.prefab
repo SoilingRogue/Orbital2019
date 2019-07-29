@@ -2198,6 +2198,10 @@ GameObject:
   - component: {fileID: 3702182660529553212}
   - component: {fileID: 415036639234142768}
   - component: {fileID: 1809726377}
+  - component: {fileID: 8711581813395727197}
+  - component: {fileID: 5719888703629888913}
+  - component: {fileID: -6086656632105501679}
+  - component: {fileID: 8931767005802518156}
   m_Layer: 0
   m_Name: unitychan
   m_TagString: Player
@@ -2303,6 +2307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 30
+  currentHealth: 0
   animator: {fileID: 1251068001856368137}
 --- !u!114 &415036639234142768
 MonoBehaviour:
@@ -2332,10 +2337,92 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 1
   runSpeed: 3
-  runSlideSpeed: 3.3
-  walkSlideSpeed: 1.3
+  slideSpeed: 0.3
   jumpHeight: 1
   cam: {fileID: 0}
+--- !u!114 &8711581813395727197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251068001848974441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71bf29c898ac3fc4aab75dca6a5248e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualPrefabs:
+  - {fileID: 3059389732076212686, guid: 9afed131a51e70e4c948386aa1c020b3, type: 3}
+  skillName: 
+  cooldown: 0
+  cooldownTimer: 0
+  key: 113
+  duration: 0
+  diffVector: {x: 0, y: 0, z: 0}
+--- !u!114 &5719888703629888913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251068001848974441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 922d1bb00243dde43959803744cdcfb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualPrefabs:
+  - {fileID: 121802, guid: 8f18e1d8c46c51f429429815455062fc, type: 3}
+  skillName: 
+  cooldown: 0
+  cooldownTimer: 0
+  key: 101
+  damage: 0
+  duration: 0
+  diffVector: {x: 0, y: 0, z: 0}
+  travelSpeed: 0
+--- !u!114 &-6086656632105501679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251068001848974441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea6ab9168fdf23a4ea77c5a7a0b64922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualPrefabs:
+  - {fileID: 1097068111972672652, guid: 16d78353568258d4493566c604144867, type: 3}
+  skillName: 
+  cooldown: 0
+  cooldownTimer: 0
+  key: 114
+  scale: 0
+  count: 0
+--- !u!114 &8931767005802518156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251068001848974441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48091b863c80f474da231a78ce7ee6b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualPrefabs:
+  - {fileID: 168262, guid: 062893e7007e39441aea009115b6cefa, type: 3}
+  - {fileID: 6263904387121522124, guid: 889d3a86ac1337a468ff5183047ae99d, type: 3}
+  - {fileID: 8455051216170730425, guid: dd4191c9e455a52438a250cef0151676, type: 3}
+  skillName: 
+  cooldown: 0
+  cooldownTimer: 0
+  key: 102
+  projectThru: {fileID: 0}
 --- !u!1 &1251068001848974443
 GameObject:
   m_ObjectHideFlags: 0

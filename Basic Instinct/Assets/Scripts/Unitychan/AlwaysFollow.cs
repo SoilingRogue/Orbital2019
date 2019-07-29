@@ -5,6 +5,8 @@ public class AlwaysFollow : MonoBehaviour {
     public Vector3 positionDifference;
 
     void Start() {
+        objectToFollow = GameObject.FindGameObjectWithTag("Player");
+
         transform.position = objectToFollow.transform.position - positionDifference;
     }
 
