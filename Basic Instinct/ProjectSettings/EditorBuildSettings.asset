@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene_Plane.unity
     guid: 2d831b20467d4474abcbdd43aef141d3
+  - enabled: 1
+    path: Assets/Scenes/GameScene_Halloween.unity
+    guid: ed834a9f97e8d4279bc3d2351b409d91
   m_configObjects: {}
