@@ -16,11 +16,13 @@ public class StartMenu : MonoBehaviour {
     void Start() {
         sceneOptions = new List<string>() {
             "Volcano",
-            "Plane"
+            "Plane",
+            "Halloween"
         };
         validSceneNames = new List<string>() {
-            "GameScene1",
-            "GameScene2"
+            "GameSceneVolcano",
+            "GameScene_Plane",
+            "GameScene_Halloween"
         };
         sceneDropdown.ClearOptions();
         sceneDropdown.AddOptions(sceneOptions);
