@@ -73,7 +73,8 @@ public class PlayerMovement2 : MonoBehaviour
                 playSound("Thriller");
             }
             if (Input.GetKeyDown("p")) {
-                string name = string.Format("POSE{0,10:D2}", poseIndex + 1);
+                string name = string.Format("POSE{0:D2}", poseIndex + 1);
+                Debug.Log(name);
                 anim.Play(name, -1, 0f);
                 playSound("Camera");
             }
