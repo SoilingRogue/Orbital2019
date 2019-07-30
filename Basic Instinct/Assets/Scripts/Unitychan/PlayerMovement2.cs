@@ -11,6 +11,7 @@ public class PlayerMovement2 : MonoBehaviour
     private float moveSpeed;
     private Vector3 movementVector;
     public Camera cam;
+    private int poseIndex = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -72,8 +73,19 @@ public class PlayerMovement2 : MonoBehaviour
                 playSound("Thriller");
             }
             if (Input.GetKeyDown("p")) {
-                anim.Play("POSE01", -1, 0f);
+                string name = string.Format("POSE{0,10:D2}", poseIndex + 1);
+                anim.Play(name, -1, 0f);
                 playSound("Camera");
+            }
+            if (Input.GetKeyDown("b"))
+            {
+                poseIndex--;
+                if (poseIndex < 0) poseIndex = 30;
+            }
+            if (Input.GetKeyDown("n"))
+            {
+                poseIndex++;
+                poseIndex = poseIndex % 31;
             }
         }
         
