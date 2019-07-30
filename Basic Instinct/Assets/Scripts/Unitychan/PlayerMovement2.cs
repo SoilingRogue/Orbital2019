@@ -76,6 +76,12 @@ public class PlayerMovement2 : MonoBehaviour
                 playSound("Camera");
             }
         }
+        
+        if(anim.GetBool("slide"))
+        {
+            Vector3 addedVel = transform.forward.normalized * (moveSpeed + slideSpeed);
+            rBody.velocity += addedVel;
+        }
 
         // Setting follow bool to true when moving, sliding or using skill
         if (anim.GetBool("move") || anim.GetBool("skill") || anim.GetBool("slide"))
@@ -123,8 +129,6 @@ public class PlayerMovement2 : MonoBehaviour
         anim.SetBool("slide", true);
         Debug.Log("sliding");
         anim.Play("SLIDE00_F", -1, 0f);
-        Vector3 addedVel = transform.forward.normalized * (moveSpeed + slideSpeed);
-        rBody.velocity += addedVel;
 
         // Delay adding of force to rBody to sync the animations
         yield return new WaitForSeconds(1.3f);
