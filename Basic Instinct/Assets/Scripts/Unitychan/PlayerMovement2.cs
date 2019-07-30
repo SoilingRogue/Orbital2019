@@ -11,7 +11,7 @@ public class PlayerMovement2 : MonoBehaviour
     private float moveSpeed;
     private Vector3 movementVector;
     public Camera cam;
-    private int poseIndex = 0;
+    private int poseIndex = 0, currentPose = -1;
     
     // Start is called before the first frame update
     void Start()
@@ -38,6 +38,8 @@ public class PlayerMovement2 : MonoBehaviour
                 // Set follow bool to true for camera following in FollowPosition.cs
                 anim.SetBool("move", true);
                 
+                anim.SetBool("pose", false); // Disable posing while moving
+
                 // Running
                 anim.SetBool("run", Input.GetKey(KeyCode.LeftShift));
             
@@ -73,10 +75,7 @@ public class PlayerMovement2 : MonoBehaviour
                 playSound("Thriller");
             }
             if (Input.GetKeyDown("p")) {
-                string name = string.Format("POSE{0:D2}", poseIndex + 1);
-                Debug.Log(name);
-                anim.Play(name, -1, 0f);
-                playSound("Camera");
+                anim.SetBool("pose", !anim.GetBool("pose"));
             }
             if (Input.GetKeyDown("b"))
             {
@@ -87,6 +86,19 @@ public class PlayerMovement2 : MonoBehaviour
             {
                 poseIndex++;
                 poseIndex = poseIndex % 31;
+            }
+
+            if (anim.GetBool("pose"))
+            {
+                // Only play animation if it isn't being played currently
+                if (currentPose != poseIndex)
+                {
+                    currentPose = poseIndex;
+                    string name = string.Format("POSE{0:D2}", poseIndex + 1);
+                    Debug.Log(name);
+                    anim.Play(name, -1, 0f);
+                    playSound("Camera");
+                }
             }
         }
         
