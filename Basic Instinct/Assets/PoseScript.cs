@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleScript : StateMachineBehaviour
+public class PoseScript : StateMachineBehaviour
 {
-
-
     // OnStateEnter is called before OnStateEnter is called on any state inside this state machine
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
-    //
+    //    
     //}
 
     // OnStateUpdate is called before OnStateUpdate is called on any state inside this state machine
@@ -25,10 +23,10 @@ public class IdleScript : StateMachineBehaviour
     //}
 
     // OnStateMove is called before OnStateMove is called on any state inside this state machine
-    // override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    // {
-
-    // }
+    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateIK is called before OnStateIK is called on any state inside this state machine
     //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -39,7 +37,8 @@ public class IdleScript : StateMachineBehaviour
     // OnStateMachineEnter is called when entering a state machine via its Entry Node
     override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
     {
-        animator.SetInteger("idleIndex", Random.Range(1,4));
+        animator.SetFloat("poseIndex", Random.Range(0f, 1f));
+        animator.SetBool("idle", false);
     }
 
     // OnStateMachineExit is called when exiting a state machine via its Exit Node
