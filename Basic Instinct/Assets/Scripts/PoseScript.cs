@@ -37,7 +37,7 @@ public class PoseScript : StateMachineBehaviour
     // OnStateMachineEnter is called when entering a state machine via its Entry Node
     override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
     {
-        animator.SetFloat("poseIndex", Random.Range(0f, 1f));
+        // animator.SetFloat("poseIndex", Random.Range(0f, 1f));
         animator.SetBool("idle", false);
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PoseSelection : MonoBehaviour
 {
     private Animator anim;
-    private float cooldown = 4f, duration = 4f;
+    private float timer = 0f, duration = 15f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,10 +18,11 @@ public class PoseSelection : MonoBehaviour
     {
         if (!anim.GetBool("idle")) 
         {
-            cooldown -= Time.deltaTime;
-            if (cooldown <= 0)
+            anim.SetFloat("poseIndex", timer);
+            timer += 1 / duration * Time.deltaTime;
+            if (timer >= 1)
             {
-                cooldown = duration;
+                timer = 0;
                 anim.SetBool("idle", true);
             }
         }
