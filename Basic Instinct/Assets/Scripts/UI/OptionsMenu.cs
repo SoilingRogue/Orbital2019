@@ -28,18 +28,39 @@ public class OptionsMenu : MonoBehaviour {
                 resolutions.Add(res);
             }
         }
-        int defaultIndex = 0;
-        for (int i = 0; i < resolutions.Count; i++) {
-            Resolution res = resolutions[i];
-            options.Add(res.width + " X " + res.height);
-            if (res.width == PlayerPrefs.GetInt("ResolutionWidth", Screen.currentResolution.width) && 
-                res.height == PlayerPrefs.GetInt("ResolutionHeight", Screen.currentResolution.height)) {
-                defaultIndex = i;
+        
+        // Fix weird bug
+        if (resolutions.Count == 0) {
+            foreach (Resolution res in Screen.resolutions) {
+                resolutions.Add(res);
             }
-        }
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = defaultIndex;
-        resolutionDropdown.RefreshShownValue();
+            int defaultIndex = 0;
+            for (int i = 0; i < resolutions.Count; i++) {
+                Resolution res = resolutions[i];
+                options.Add(res.ToString());
+                if (res.width == PlayerPrefs.GetInt("ResolutionWidth", Screen.currentResolution.width) && 
+                    res.height == PlayerPrefs.GetInt("ResolutionHeight", Screen.currentResolution.height)) {
+                    defaultIndex = i;
+                }
+            }
+            resolutionDropdown.AddOptions(options);
+            resolutionDropdown.value = defaultIndex;
+            resolutionDropdown.RefreshShownValue();
+        }   
+        else {
+            int defaultIndex = 0;
+            for (int i = 0; i < resolutions.Count; i++) {
+                Resolution res = resolutions[i];
+                options.Add(res.width + " X " + res.height);
+                if (res.width == PlayerPrefs.GetInt("ResolutionWidth", Screen.currentResolution.width) && 
+                    res.height == PlayerPrefs.GetInt("ResolutionHeight", Screen.currentResolution.height)) {
+                    defaultIndex = i;
+                }
+            }
+            resolutionDropdown.AddOptions(options);
+            resolutionDropdown.value = defaultIndex;
+            resolutionDropdown.RefreshShownValue();
+        }    
 
         // Set visuals to match settings
         
