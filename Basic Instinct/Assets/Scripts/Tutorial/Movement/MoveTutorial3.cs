@@ -12,6 +12,7 @@ public class MoveTutorial3 : Tutorial // Slide & jump tut
         {
             slide = true;
         }
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             jump = true;
