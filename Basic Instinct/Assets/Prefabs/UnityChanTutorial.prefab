@@ -4689,9 +4689,10 @@ GameObject:
   - component: {fileID: 3268751276025378595}
   - component: {fileID: 2178656401033769902}
   - component: {fileID: 2926898201784254114}
-  - component: {fileID: 3268751277872858693}
+  - component: {fileID: 4374323477291354893}
+  - component: {fileID: 1447918933153922837}
   m_Layer: 2
-  m_Name: UnityChanDefault
+  m_Name: UnityChanTutorial
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4792,7 +4793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 2178656401033769902}
   damagePerHit: 10
---- !u!114 &3268751277872858693
+--- !u!114 &4374323477291354893
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4801,14 +4802,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 4323526353565913339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8629da23fe70b246a835a9d650907c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 212d9a1c6ede07448a1e7073b6c07eea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 2
-  runSpeed: 5
-  slideSpeed: 0.3
-  jumpHeight: 1
+  walkSpeed: 1
   cam: {fileID: 0}
+--- !u!114 &1447918933153922837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4323526353565913339}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef3716c2cadc394da25b67081a26564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4323526353565913341
 GameObject:
   m_ObjectHideFlags: 0
