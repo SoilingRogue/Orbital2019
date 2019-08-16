@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialMovement2 : MonoBehaviour
+public class TutorialMovement3 : MonoBehaviour
 {
     private Animator anim;
     private float inputH, inputV;

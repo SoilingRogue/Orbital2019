@@ -2,19 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouseTutorial : Tutorial
+public class MouseTutorial1 : Tutorial // MouseMovement tut
 {
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public override void CheckIfHappening()
     {
 
-        if (true)
+        if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
         {
             TutorialManager.Instance.CompletedTutorial();
         }

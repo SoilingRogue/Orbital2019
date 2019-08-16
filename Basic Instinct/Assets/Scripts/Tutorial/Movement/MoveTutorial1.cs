@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyTutorial : Tutorial
+public class MoveTutorial1 : Tutorial // Walk tut
 {
     public List<string> keys = new List<string>();
 
@@ -19,6 +19,12 @@ public class KeyTutorial : Tutorial
 
         if (keys.Count == 0)
         {
+            GameObject gameObject = GameObject.Find("UnityChanTutorial");
+            Debug.Log(gameObject);
+            // GameObject varGameObject = GameObject.FindWithTag("Player"); then disable or enable script/component
+            gameObject.GetComponent<TutorialMovement2>().enabled = true;
+            gameObject.GetComponent<TutorialMovement1>().enabled = false;
+            
             TutorialManager.Instance.CompletedTutorial();
         }
     }
