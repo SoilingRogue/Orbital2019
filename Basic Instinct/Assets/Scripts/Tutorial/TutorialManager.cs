@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TutorialManager : MonoBehaviour
 {
     public List<Tutorial> tutorials = new List<Tutorial>();
-    public Text expText;
+    public TextMeshProUGUI expText;
     private static TutorialManager instance;
     public static TutorialManager Instance
     {
