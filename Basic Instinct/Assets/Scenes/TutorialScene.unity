@@ -166,51 +166,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &94392570
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 94392572}
-  - component: {fileID: 94392571}
-  m_Layer: 0
-  m_Name: TutorialManager 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &94392571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 94392570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 914ff4c0460db4b4989f74137c921848, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popup: []
-  spawner: {fileID: 0}
---- !u!4 &94392572
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 94392570}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.9, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &508740974
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,6 +739,11 @@ MonoBehaviour:
   order: 4
   explanation: Running. Hold down Left Shift while moving (W A S D) to run. This
     allows for faster movement around the terrain.
+  keys:
+  - w
+  - a
+  - s
+  - d
 --- !u!114 &987169254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -939,7 +899,7 @@ Transform:
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1315808090
 PrefabInstance:
@@ -991,7 +951,7 @@ PrefabInstance:
     - target: {fileID: 2915973538663780143, guid: 5d933a1cd24361b4a9070c0346be93f5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2915973538663780143, guid: 5d933a1cd24361b4a9070c0346be93f5,
         type: 3}
@@ -1201,7 +1161,7 @@ RectTransform:
   m_Children:
   - {fileID: 508740975}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1258,7 +1218,7 @@ PrefabInstance:
     - target: {fileID: 4323526353565617435, guid: 8d53d14086df4424f9321e5c2e1a2df8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4323526353565617435, guid: 8d53d14086df4424f9321e5c2e1a2df8,
         type: 3}

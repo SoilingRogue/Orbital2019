@@ -8,9 +8,9 @@ public class MouseTutorial2 : Tutorial // MouseScroll tut
 
     public override void CheckIfHappening()
     {
+        StartCoroutine(SetBoolean());
         if (Input.GetAxis("Mouse ScrollWheel") != 0f)
         {
-            StartCoroutine(SetBoolean());
             if (readyForNext)
             {
                 GameObject gameObject = GameObject.Find("UnityChanTutorial");
@@ -25,7 +25,7 @@ public class MouseTutorial2 : Tutorial // MouseScroll tut
 
     private IEnumerator SetBoolean() 
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         readyForNext = true;
     }
 }

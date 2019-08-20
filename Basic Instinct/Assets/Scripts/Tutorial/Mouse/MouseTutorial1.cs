@@ -8,15 +8,16 @@ public class MouseTutorial1 : Tutorial // MouseMovement tut
 
     public override void CheckIfHappening()
     {
+        StartCoroutine(SetBoolean());
         if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
         {
-            StartCoroutine(SetBoolean());
             if (readyForNext) 
             {
                 TutorialManager.Instance.CompletedTutorial();
             }
         }
     }
+    
     private IEnumerator SetBoolean() 
     {
         yield return new WaitForSeconds(5);

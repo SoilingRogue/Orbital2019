@@ -4,9 +4,21 @@ using UnityEngine;
 
 public class MoveTutorial2 : Tutorial // Run tut
 {
+        public List<string> keys = new List<string>();
+
     public override void CheckIfHappening()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
+        for (int i = 0; i < keys.Count; ++i)
+        {
+            if (Input.inputString.Contains(keys[i]) && Input.GetKey(KeyCode.LeftShift))
+            {
+                keys.RemoveAt(i);
+                break;
+            }
+        }
+
+        if (keys.Count == 0)
+        // if (Input.GetKey(KeyCode.LeftShift) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
         {
             GameObject gameObject = GameObject.Find("UnityChanTutorial");
             Debug.Log(gameObject);
