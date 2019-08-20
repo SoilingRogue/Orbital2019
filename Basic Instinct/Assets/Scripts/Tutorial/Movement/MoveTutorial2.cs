@@ -6,7 +6,7 @@ public class MoveTutorial2 : Tutorial // Run tut
 {
     public override void CheckIfHappening()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)))
+        if (Input.GetKey(KeyCode.LeftShift) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
         {
             GameObject gameObject = GameObject.Find("UnityChanTutorial");
             Debug.Log(gameObject);

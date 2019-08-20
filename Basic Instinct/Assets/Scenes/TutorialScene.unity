@@ -692,6 +692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 987169244}
+  - component: {fileID: 987169257}
   - component: {fileID: 987169256}
   - component: {fileID: 987169255}
   - component: {fileID: 987169254}
@@ -737,7 +738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8170e5c431f9bf541aa80d35755cc9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 10
+  order: 12
   explanation: 
 --- !u!114 &987169246
 MonoBehaviour:
@@ -751,7 +752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407ffc22cce775f4eadd5dfd19ebc8f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 9
+  order: 11
   explanation: 
 --- !u!114 &987169247
 MonoBehaviour:
@@ -765,7 +766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c78ae928169fb0e41bd43a4823c43a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 8
+  order: 10
   explanation: 
 --- !u!114 &987169248
 MonoBehaviour:
@@ -779,7 +780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 343e563ad67d89647abf4ef6120ed0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 7
+  order: 9
   explanation: 
 --- !u!114 &987169249
 MonoBehaviour:
@@ -793,7 +794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e310f7a831c25489de7674ba937bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 6
+  order: 8
   explanation: 
 --- !u!114 &987169250
 MonoBehaviour:
@@ -807,7 +808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebe2f7eb3e56c7c4982f99270125931a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 5
+  order: 7
   explanation: 
 --- !u!114 &987169251
 MonoBehaviour:
@@ -821,7 +822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a09613fd498994bbffda395ee12ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 9
+  order: 6
   explanation: 
 --- !u!114 &987169252
 MonoBehaviour:
@@ -835,7 +836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d482c263dc9fbf94fb94d1018241624d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 4
+  order: 5
   explanation: 'Sliding & Jumping. Press Left Ctrl while walking/ running to slide.
     While sliding, your movement speed is increased.
 
@@ -855,7 +856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dad19b5fb6bccf4ebf3330b7bb538d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 3
+  order: 4
   explanation: Running. Hold down Left Shift while moving (W A S D) to run. This
     allows for faster movement around the terrain.
 --- !u!114 &987169254
@@ -870,7 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc7840c1c49feaf4a9d4006790d73f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 2
+  order: 3
   explanation: Moving. Press W A S D to move the character around.
   keys:
   - w
@@ -889,7 +890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca4673b85b542848bcdc0b035506400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 1
+  order: 2
   explanation: Scroll the mouse wheel to zoom in and out to adjust your FOV around
     the character.
 --- !u!114 &987169256
@@ -904,8 +905,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1223d3ee8c9e8bb468abdffb898dacff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 0
+  order: 1
   explanation: Move the mouse left and right to look around the character.
+--- !u!114 &987169257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987169243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532b8066b2f50e34e82cf7d16c5d99a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  order: 0
+  explanation: Welcome to the tutorial. In this tutorial, you will be learning basic
+    gameplay mechanics including movement and skills.
 --- !u!1001 &1315808090
 PrefabInstance:
   m_ObjectHideFlags: 0

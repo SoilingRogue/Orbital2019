@@ -8,14 +8,16 @@ public class MoveTutorial3 : Tutorial // Slide & jump tut
 
     public override void CheckIfHappening()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl) && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)))
+        if (Input.GetKeyDown(KeyCode.LeftControl) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
         {
             slide = true;
+            Debug.Log("Slide true");
         }
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
             jump = true;
+            Debug.Log("Jump true");
         }
 
         if (slide && jump)
