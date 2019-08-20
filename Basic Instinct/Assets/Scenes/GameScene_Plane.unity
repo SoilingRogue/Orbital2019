@@ -316,10 +316,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7089c3390db4946a546507dce01200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitychan: {fileID: 0}
-  unitychanCamera: {fileID: 415506650}
-  separationVector: {x: 0, y: 0, z: 0}
-  baseAngle: 0
 --- !u!81 &415506649
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1158,6 +1154,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8876178939107013273, guid: 17f8bb743027c984c93fde5b4814a32d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8876178940182474181, guid: 17f8bb743027c984c93fde5b4814a32d,
         type: 3}
       propertyPath: m_IsActive
@@ -1172,10 +1173,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 100000, guid: b76c71a1e3f6c4fdab657f4fbf5466de, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b76c71a1e3f6c4fdab657f4fbf5466de, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.9961195
@@ -1222,6 +1219,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: b76c71a1e3f6c4fdab657f4fbf5466de, type: 3}
       propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b76c71a1e3f6c4fdab657f4fbf5466de, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

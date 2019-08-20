@@ -68,26 +68,29 @@ public class PlayerMovement2 : MonoBehaviour
             // Emotes
             if (Input.GetKeyDown("g")) {
                 anim.Play("Gangnam Style", -1, 0f);
-                playSound("GangnamStyle");
+                playSound("GangnamStyle", 10);
             }
             if (Input.GetKeyDown("t")) {
                 anim.Play("Thriller Part 2", -1, 0f);
-                playSound("Thriller");
+                playSound("Thriller", 10);
             }
             if (Input.GetKeyDown("p")) {
                 // anim.SetBool("pose", !anim.GetBool("pose"));
                 anim.SetBool("pose", true);
                 currentPose--;
+                playSound("Camera");
             }
             if (Input.GetKeyDown("b"))
             {
                 poseIndex--;
                 if (poseIndex < 0) poseIndex = 30;
+                playSound("Camera");
             }
             if (Input.GetKeyDown("n"))
             {
                 poseIndex++;
                 poseIndex = poseIndex % 31;
+                playSound("Camera");
             }
 
             if (anim.GetBool("pose"))
@@ -99,7 +102,6 @@ public class PlayerMovement2 : MonoBehaviour
                     string name = string.Format("POSE{0:D2}", currentPose + 1);
                     Debug.Log(name);
                     anim.Play(name, -1, 0f);
-                    // playSound("Camera");
                 }
             }
         }
@@ -168,13 +170,18 @@ public class PlayerMovement2 : MonoBehaviour
     }
 
     private void playSound(string clipName) {
-        StartCoroutine(playSoundHelper(clipName));
-    }
-
-    private IEnumerator playSoundHelper(string clipName) {
         AudioManager audioManager = GameObject.FindObjectOfType<AudioManager>();
         audioManager.Play(clipName);
-        yield return new WaitForSeconds(10f);
+    }
+
+    private void playSound(string clipName, float duration) {
+        StartCoroutine(playSoundHelper(clipName, duration));
+    }
+
+    private IEnumerator playSoundHelper(string clipName, float duration) {
+        AudioManager audioManager = GameObject.FindObjectOfType<AudioManager>();
+        audioManager.Play(clipName);
+        yield return new WaitForSeconds(duration);
         audioManager.Stop(clipName);
     }
 }

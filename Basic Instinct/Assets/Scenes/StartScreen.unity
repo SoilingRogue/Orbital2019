@@ -6000,8 +6000,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 7.4992238e+28, y: 7.2064716e+31, z: 4.1037286e+30,
-    w: 2.8178745e+20}
+  m_BoundingSphereOverride: {x: 1.83e-41, y: 1.04e-43, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -6864,7 +6863,7 @@ MonoBehaviour:
     volumeVariance: 0.054
     pitch: 1.17
     pitchVariance: 0.055
-    loop: 1
+    loop: 0
     mixerGroup: {fileID: 24300002, guid: ba2da956586a8f54997f24bee38df4a2, type: 2}
     source: {fileID: 0}
 --- !u!4 &920374352
