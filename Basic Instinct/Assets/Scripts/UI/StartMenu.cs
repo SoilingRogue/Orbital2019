@@ -52,6 +52,10 @@ public class StartMenu : MonoBehaviour {
         SceneManager.LoadScene(sceneIndex + 1);
     }
 
+    public void loadTutorial() {
+        SceneManager.LoadScene("TutorialScene");
+    }
+
     public void exitGame() {
         Debug.Log("Quit Game.");
         Application.Quit();
