@@ -1275,6 +1275,23 @@ MonoBehaviour:
   slideSpeed: 0.3
   jumpHeight: 18
   cam: {fileID: 1315808091}
+--- !u!114 &2329654893084593362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2329654893084593360}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054651abaacbdd64ca3c71acd8589bc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 1
+  runSpeed: 3
+  slideSpeed: 0.3
+  jumpHeight: 18
+  cam: {fileID: 1315808091}
 --- !u!1001 &2974413126526306612
 PrefabInstance:
   m_ObjectHideFlags: 0
