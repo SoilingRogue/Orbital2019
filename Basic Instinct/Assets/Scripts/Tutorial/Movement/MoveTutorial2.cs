@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class MoveTutorial2 : Tutorial // Run tut
 {
-        public List<string> keys = new List<string>();
+    public List<string> keys = new List<string>();
+    public GameObject gameObject2;
 
     public override void CheckIfHappening()
     {
+        gameObject2.SetActive(true);
         for (int i = 0; i < keys.Count; ++i)
         {
             if (Input.inputString.Contains(keys[i]) && Input.GetKey(KeyCode.LeftShift))
@@ -20,6 +22,7 @@ public class MoveTutorial2 : Tutorial // Run tut
         if (keys.Count == 0)
         // if (Input.GetKey(KeyCode.LeftShift) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
         {
+            gameObject2.SetActive(false);
             GameObject gameObject = GameObject.Find("UnityChanTutorial");
             Debug.Log(gameObject);
             // GameObject varGameObject = GameObject.FindWithTag("Player"); then disable or enable script/component
