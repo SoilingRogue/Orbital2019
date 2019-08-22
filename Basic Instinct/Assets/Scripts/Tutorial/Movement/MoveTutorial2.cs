@@ -12,11 +12,15 @@ public class MoveTutorial2 : Tutorial // Run tut
         gameObject2.SetActive(true);
         for (int i = 0; i < keys.Count; ++i)
         {
-            if (Input.inputString.Contains(keys[i]) && Input.GetKey(KeyCode.LeftShift))
-            {
+            if (Input.GetKeyDown(keys[i]) && Input.GetKey(KeyCode.LeftShift)) {
                 keys.RemoveAt(i);
                 break;
             }
+            // if (Input.inputString.Contains(keys[i]) && Input.GetKey(KeyCode.LeftShift))
+            // {
+            //     keys.RemoveAt(i);
+            //     break;
+            // }
         }
 
         if (keys.Count == 0)
