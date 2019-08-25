@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class TutorialManager : MonoBehaviour
@@ -81,5 +82,6 @@ public class TutorialManager : MonoBehaviour
         expText.text = "Completed all tuts";
 
         // loadscene
+        SceneManager.LoadScene("Sandbox");
     }
 }
