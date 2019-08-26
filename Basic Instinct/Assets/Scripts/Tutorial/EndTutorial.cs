@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UITutorial2 : Tutorial // Health, icons, timing etc tut
+public class EndTutorial : Tutorial // Intro words to show before tutorial officially starts
 {
     private bool readyForNext;
 
@@ -17,7 +17,7 @@ public class UITutorial2 : Tutorial // Health, icons, timing etc tut
 
     private IEnumerator SetBoolean() 
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(8);
         readyForNext = true;
     }
 }

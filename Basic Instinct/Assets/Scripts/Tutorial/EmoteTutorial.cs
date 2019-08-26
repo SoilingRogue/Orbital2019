@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UITutorial2 : Tutorial // Health, icons, timing etc tut
+public class EmoteTutorial : Tutorial // Intro words to show before tutorial officially starts
 {
     private bool readyForNext;
 
