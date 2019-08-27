@@ -79,7 +79,7 @@ public class TutorialManager : MonoBehaviour
 
     public void CompletedAllTutorials()
     {
-        expText.text = "Completed all tuts";
+        expText.text = "";
 
         // loadscene
         SceneManager.LoadScene("Sandbox");
